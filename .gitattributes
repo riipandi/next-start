@@ -1,0 +1,7 @@
+* text=auto
+*.css linguist-vendored
+*.scss linguist-vendored
+*.js linguist-vendored
+changelog.md export-ignore
+readme.md export-ignore
+license.txt export-ignore
