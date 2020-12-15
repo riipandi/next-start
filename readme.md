@@ -17,6 +17,15 @@ $ npm run start
 
 > For detailed explanation on how things work, check out [Next.js docs](https://nextjs.org).
 
+## Deploy your own
+You'll want to fork this repository and deploy your own Next.js website. You can do a one-click
+deploy with the button below.
+
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=riipandi/next-tailwind-starter)
+
+Once you have an image generator that sparks joy, you can setup [automatic GitHub](https://vercel.com/github) 
+deployments so that pushing to master will deploy to production! 🚀
+
 ## License
 Copyright (c) Aris Ripandi <riipandi@gmail.com>
 
