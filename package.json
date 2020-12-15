@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@graywolfai/react-heroicons": "^1.2.0",
+    "@headlessui/react": "^0.2.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "^0.3.1",
