@@ -15,7 +15,7 @@ export default function Home() {
           </div>
           <div className="w-full p-8 font-sans text-center md:w-7/12 md:text-left md:p-12">
             <div className="text-6xl font-bold tracking-wide">Hello</div>
-            <div className="my-4 text-xl font-semibold tracking-tight md:text-3xl">
+            <div className="my-4 text-xl font-semibold md:text-3xl">
               We are still build something amazing for you.
             </div>
             <div className="mb-8 text-lg md:text-2xl">
