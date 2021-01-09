@@ -22,8 +22,8 @@ export default function Home() {
               Nothing to see here yet! Please come back soon.
             </div>
             <a
-              href="https://github.com/riipandi/next-tailwind-starter"
-              className="inline-flex items-center px-8 py-3 font-sans text-base font-medium text-white transition duration-500 ease-in-out transform border border-transparent rounded-md shadow-sm hover:scale-110 bg-gradient-to-r from-pink-500 to-orange-500 hover:from-orange-500 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:from-orange-500 focus:to-pink-500"
+              href="https://github.com/riipandi/clipr-page"
+              className="inline-flex items-center px-8 py-3 font-sans text-base font-medium text-white transition duration-500 ease-in-out transform rounded-md shadow-sm hover:scale-110 bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-secondary-500 hover:to-primary-500 focus:outline-none"
             >
               <span>Back to project page</span>
               <ChevronRightSolid className="w-6 h-6 ml-1 -mr-1" />
