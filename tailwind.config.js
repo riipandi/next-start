@@ -11,9 +11,9 @@ module.exports = {
       },
       colors: {
         gray: defaultColor.coolGray,
-        primary: defaultColor.indigo,
+        primary: defaultColor.green,
         secondary: defaultColor.blue,
-        accent: defaultColor.amber,
+        accent: defaultColor.rose
       }
     }
   },
