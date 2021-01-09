@@ -10,12 +10,10 @@ module.exports = {
         sans: ['Barlow Semi Condensed', 'Inter', ...defaultTheme.fontFamily.sans]
       },
       colors: {
-        gray: defaultColor.trueGray,
-        primary: defaultColor.amber,
-        success: defaultColor.emerald,
-        info: defaultColor.blue,
-        warning: defaultColor.pink,
-        danger: defaultColor.rose
+        gray: defaultColor.coolGray,
+        primary: defaultColor.indigo,
+        secondary: defaultColor.blue,
+        accent: defaultColor.amber,
       }
     }
   },
