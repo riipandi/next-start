@@ -2,7 +2,7 @@ import Head from 'next/head'
 // import Link from "next/link";
 
 const SiteLayout = ({ children }) => (
-  <div className="overflow-x-hidden bg-gradient-to-r from-pink-500 to-blue-500">
+  <div className="overflow-x-hidden bg-gradient-to-r from-primary-500 to-secondary-500">
     <Head>
       <link rel="icon" href="/favicon.ico" />
       <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
