@@ -2,6 +2,13 @@
 This is a starter template for [Next.js](https://nextjs.org/) with 
 [TailwindCSS](https://tailwindcss.com) and [TailwindUI](https://tailwindui.com) preset.
 
+## Quick Installation
+```bash
+npx create-next-app myapp-name --use-npm -e "https://github.com/riipandi/next-tailwind-starter"
+```
+
+> Don't forget to change `myapp-name` with your real application name.
+
 ## Quick Start
 ```bash
 # install dependencies
