@@ -22,7 +22,7 @@ export default function Home() {
               Nothing to see here yet! Please come back soon.
             </div>
             <a
-              href="https://github.com/riipandi/clipr-page"
+              href="https://github.com/riipandi/next-tailwind-starter"
               className="inline-flex items-center px-8 py-3 font-sans text-base font-medium text-white transition duration-500 ease-in-out transform rounded-md shadow-sm hover:scale-110 bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-secondary-500 hover:to-primary-500 focus:outline-none"
             >
               <span>Back to project page</span>
