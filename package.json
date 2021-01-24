@@ -7,6 +7,16 @@
     "build": "next build && next export",
     "start": "next start"
   },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
+  },
   "dependencies": {
     "next": "^10.0.4",
     "react": "17.0.1",
@@ -23,15 +33,5 @@
     "prettier": "^2.2.1",
     "sharp": "^0.27.0",
     "tailwindcss": "^2.0.2"
-  },
-  "prettier": {
-    "arrowParens": "always",
-    "bracketSpacing": true,
-    "printWidth": 100,
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "none",
-    "useTabs": false
   }
 }
