@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Barlow Semi Condensed', 'Inter', ...defaultTheme.fontFamily.sans]
+        sans: ['Barlow Semi Condensed', ...defaultTheme.fontFamily.sans]
       },
       colors: {
         gray: defaultColor.coolGray,
