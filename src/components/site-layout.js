@@ -9,7 +9,6 @@ const SiteLayout = ({ children }) => (
       <link rel="icon" type="image/png" href="/favicon.png" />
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/favicon.ico" />
-      <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     </Head>
     {children}
     <style jsx global>{`
