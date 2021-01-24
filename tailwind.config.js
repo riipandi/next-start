@@ -13,7 +13,10 @@ module.exports = {
         gray: defaultColor.coolGray,
         primary: defaultColor.green,
         secondary: defaultColor.blue,
-        accent: defaultColor.rose
+        accent: defaultColor.rose,
+        'light-blue': defaultColor.lightBlue,
+        teal: defaultColor.teal,
+        cyan: defaultColor.cyan
       }
     }
   },
@@ -24,6 +27,7 @@ module.exports = {
     // Additional first-party plugins
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio')
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp')
   ]
 }
