@@ -17,7 +17,20 @@ module.exports = {
         'light-blue': defaultColor.lightBlue,
         teal: defaultColor.teal,
         cyan: defaultColor.cyan
-      }
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.700'),
+            a: {
+              color: theme('colors.primary.500'),
+              '&:hover': {
+                color: theme('colors.primary.600')
+              },
+            },
+          },
+        },
+      })
     }
   },
   variants: {
