@@ -1,5 +1,5 @@
 import 'tailwindcss/tailwind.css'
-import '../assets/fonts/barlow.css'
+import '../assets/fonts/_clarity_city.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

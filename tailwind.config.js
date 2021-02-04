@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Barlow Semi Condensed', ...defaultTheme.fontFamily.sans]
+        sans: ['Clarity City', ...defaultTheme.fontFamily.sans]
       },
       colors: {
         gray: defaultColor.coolGray,
@@ -26,10 +26,10 @@ module.exports = {
               color: theme('colors.primary.500'),
               '&:hover': {
                 color: theme('colors.primary.600')
-              },
-            },
-          },
-        },
+              }
+            }
+          }
+        }
       })
     }
   },
