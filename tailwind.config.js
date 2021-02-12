@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         sans: ['Clarity City', ...defaultTheme.fontFamily.sans]
       },
+      screens: {
+        standalone: { raw: '(display-mode: standalone)' }
+      },
       colors: {
         gray: defaultColor.coolGray,
         primary: defaultColor.green,
