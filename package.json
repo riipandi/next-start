@@ -1,10 +1,11 @@
 {
   "name": "next-tailwind-starter",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
+    "lint": "next lint",
     "start": "next start"
   },
   "dependencies": {
@@ -22,6 +23,8 @@
     "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.1",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
     "sharp": "^0.28.3",
