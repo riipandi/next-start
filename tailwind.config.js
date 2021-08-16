@@ -17,7 +17,6 @@ module.exports = {
         primary: defaultColor.green,
         secondary: defaultColor.blue,
         accent: defaultColor.rose,
-        'light-blue': defaultColor.lightBlue,
         teal: defaultColor.teal,
         cyan: defaultColor.cyan
       },

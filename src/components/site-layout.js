@@ -1,5 +1,4 @@
 import Head from 'next/head'
-// import Link from "next/link";
 
 const SiteLayout = ({ children }) => (
   <div className="overflow-x-hidden bg-gradient-to-r from-primary-500 to-secondary-500">
