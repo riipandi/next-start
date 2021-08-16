@@ -1,12 +1,13 @@
 {
   "name": "next-tailwind-starter",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "start": "next start",
     "lint": "next lint",
-    "start": "next start"
+    "lint:fix": "next lint --fix"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.1.0",
