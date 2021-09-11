@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import { NextLink } from '@/components/Common'
 import SiteLayout from '@/components/site-layout'
+import ThemeSwitcher from '@/components/theme-switcher'
 
 export default function About() {
   return (
@@ -39,6 +40,12 @@ export default function About() {
                 Back to homepage
               </a>
             </NextLink>
+          </div>
+          <div className='flex justify-center mx-auto mt-2'>
+            <div className='inline-flex items-center justify-center mx-auto mt-12'>
+              <ThemeSwitcher />
+              <span className='ml-3 -mr-1 font-medium'>Toggle Dark Mode</span>
+            </div>
           </div>
         </div>
       </div>
