@@ -32,7 +32,7 @@ $ npm run start
 You'll want to fork this repository and deploy your own Next.js website. You can do a one-click
 deploy with the button below.
 
-[![Deploy to Vercel](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Friipandi%2Fnext-tailwind-starter)
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Friipandi%2Fnext-tailwind-starter)
 
 Once you have an image generator that sparks joy, you can setup [automatic GitHub](https://vercel.com/github) 
 deployments so that pushing to master will deploy to production! 🚀
