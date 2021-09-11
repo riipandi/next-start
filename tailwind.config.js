@@ -2,6 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const defaultColor = require('tailwindcss/colors')
 
 module.exports = {
+  mode: 'jit',
   purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'media', // or 'media' or 'class'
   theme: {
@@ -21,7 +22,7 @@ module.exports = {
         cyan: defaultColor.cyan
       },
       typography: (theme) => ({
-        DEFAULT: {
+        default: {
           css: {
             color: theme('colors.gray.700'),
             a: {

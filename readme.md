@@ -1,7 +1,13 @@
-# Next.js Tailwind Starter
+![Github Cover](public/images/og-image.png)
+
+<div align="center">
+    <strong>The Next.js Tailwind Starter</strong>
+</div>
+
+![separator](public/images/separator.jpg)
 
 A starter for [Next.js](https://nextjs.org/) with [Tailwind CSS](https://tailwindcss.com) and Typescript.
-Pre-configured with [TailwindUI](https://tailwindui.com) and some additional components.
+Pre-configured with absolute import, [TailwindUI](https://tailwindui.com) and some additional components.
 
 ## Quick Installation
 

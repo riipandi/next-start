@@ -6,10 +6,7 @@
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-    src:
-    local('Clarity City'),
-    url('ClarityCity-Thin.woff2') format('woff2'),
-    url('ClarityCity-Thin.woff') format('woff');
+  src: local('Clarity City'), url('ClarityCity-Thin.woff2') format('woff2'), url('ClarityCity-Thin.woff') format('woff');
 }
 
 @font-face {
@@ -17,9 +14,7 @@
   font-style: italic;
   font-weight: 100;
   font-display: swap;
-    src:
-    local('Clarity City'),
-    url('ClarityCity-ThinItalic.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-ThinItalic.woff2') format('woff2'),
     url('ClarityCity-ThinItalic.woff') format('woff');
 }
 
@@ -29,9 +24,7 @@
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src:
-    local('Clarity City'),
-    url('ClarityCity-ExtraLight.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-ExtraLight.woff2') format('woff2'),
     url('ClarityCity-ExtraLight.woff') format('woff');
 }
 
@@ -40,9 +33,7 @@
   font-style: italic;
   font-weight: 200;
   font-display: swap;
-    src:
-    local('Clarity City'),
-    url('ClarityCity-ExtraLightItalic.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-ExtraLightItalic.woff2') format('woff2'),
     url('ClarityCity-ExtraLightItalic.woff') format('woff');
 }
 
@@ -52,10 +43,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-    src:
-    local('Clarity City'),
-    url('ClarityCity-Light.woff2') format('woff2'),
-    url('ClarityCity-Light.woff') format('woff');
+  src: local('Clarity City'), url('ClarityCity-Light.woff2') format('woff2'), url('ClarityCity-Light.woff') format('woff');
 }
 
 @font-face {
@@ -63,9 +51,7 @@
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-    src:
-    local('Clarity City'),
-    url('ClarityCity-LightItalic.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-LightItalic.woff2') format('woff2'),
     url('ClarityCity-LightItalic.woff') format('woff');
 }
 
@@ -75,9 +61,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src:
-    local('Clarity City'),
-    url('ClarityCity-Regular.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-Regular.woff2') format('woff2'),
     url('ClarityCity-Regular.woff') format('woff');
 }
 
@@ -86,9 +70,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-    src:
-    local('Clarity City'),
-    url('ClarityCity-RegularItalic.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-RegularItalic.woff2') format('woff2'),
     url('ClarityCity-RegularItalic.woff') format('woff');
 }
 
@@ -98,10 +80,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src:
-    local('Clarity City'),
-    url('ClarityCity-Medium.woff2') format('woff2'),
-    url('ClarityCity-Medium.woff') format('woff');
+  src: local('Clarity City'), url('ClarityCity-Medium.woff2') format('woff2'), url('ClarityCity-Medium.woff') format('woff');
 }
 
 @font-face {
@@ -109,9 +88,7 @@
   font-style: italic;
   font-weight: 500;
   font-display: swap;
-  src:
-    local('Clarity City'),
-    url('ClarityCity-MediumItalic.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-MediumItalic.woff2') format('woff2'),
     url('ClarityCity-MediumItalic.woff') format('woff');
 }
 
@@ -121,9 +98,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src:
-    local('Clarity City'),
-    url('ClarityCity-SemiBold.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-SemiBold.woff2') format('woff2'),
     url('ClarityCity-SemiBold.woff') format('woff');
 }
 
@@ -132,9 +107,7 @@
   font-style: italic;
   font-weight: 600;
   font-display: swap;
-    src:
-    local('Clarity City'),
-    url('ClarityCity-SemiBoldItalic.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-SemiBoldItalic.woff2') format('woff2'),
     url('ClarityCity-SemiBoldItalic.woff') format('woff');
 }
 
@@ -144,10 +117,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src:
-    local('Clarity City'),
-    url('ClarityCity-Bold.woff2') format('woff2'),
-    url('ClarityCity-Bold.woff') format('woff');
+  src: local('Clarity City'), url('ClarityCity-Bold.woff2') format('woff2'), url('ClarityCity-Bold.woff') format('woff');
 }
 
 @font-face {
@@ -155,9 +125,7 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src:
-    local('Clarity City'),
-    url('ClarityCity-BoldItalic.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-BoldItalic.woff2') format('woff2'),
     url('ClarityCity-BoldItalic.woff') format('woff');
 }
 
@@ -167,9 +135,7 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src:
-    local('Clarity City'),
-    url('ClarityCity-ExtraBold.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-ExtraBold.woff2') format('woff2'),
     url('ClarityCity-ExtraBold.woff') format('woff');
 }
 
@@ -178,9 +144,7 @@
   font-style: italic;
   font-weight: 800;
   font-display: swap;
-  src:
-    local('Clarity City'),
-    url('ClarityCity-ExtraBoldItalic.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-ExtraBoldItalic.woff2') format('woff2'),
     url('ClarityCity-ExtraBoldItalic.woff') format('woff');
 }
 
@@ -189,18 +153,13 @@
   font-family: 'Clarity City';
   font-style: normal;
   font-weight: 900;
-  src:
-    local('Clarity City'),
-    url('ClarityCity-Black.woff2') format('woff2'),
-    url('ClarityCity-Black.woff') format('woff');
+  src: local('Clarity City'), url('ClarityCity-Black.woff2') format('woff2'), url('ClarityCity-Black.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Clarity City';
   font-style: italic;
   font-weight: 900;
-  src:
-    local('Clarity City'),
-    url('ClarityCity-BlackItalic.woff2') format('woff2'),
+  src: local('Clarity City'), url('ClarityCity-BlackItalic.woff2') format('woff2'),
     url('ClarityCity-BlackItalic.woff') format('woff');
 }

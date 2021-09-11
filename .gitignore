@@ -1,14 +1,13 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# essentials
 /node_modules
 /.pnp
 .pnp.js
-
-# testing
+.DS_Store
+.DS_Store?
 /coverage
 
 # next.js
+/.vercel/
 /.next/
 /out/
 
@@ -16,19 +15,16 @@
 /build
 /dist
 
-# misc
-.DS_Store
-.DS_Store?
-
-# debug
+# debug files
+# yarn.lock
 # package-lock.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-# yarn.lock
 
-# local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# env files
+.env.*
+!.env.example
+
+# next-sitemap
+public/sitemap.xml

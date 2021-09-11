@@ -1,35 +1,56 @@
 {
   "name": "next-tailwind-starter",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "eslint src --fix && yarn format",
+    "format": "prettier --write src",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.1.0",
-    "framer-motion": "^4.1.17",
-    "next": "^11.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@headlessui/react": "^1.4.0",
-    "@heroicons/react": "^1.0.3",
+    "@headlessui/react": "^1.4.1",
+    "@heroicons/react": "^1.0.4",
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.3.1",
+    "framer-motion": "^4.1.17",
+    "next": "^11.1.2",
+    "react-dom": "17.0.2",
+    "react": "17.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.1",
+    "@types/react": "^17.0.20",
+    "@types/tailwindcss": "^2.2.1",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "autoprefixer": "^10.3.4",
+    "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "postcss": "^8.3.6",
-    "prettier": "^2.3.2",
-    "sharp": "^0.28.3",
-    "tailwindcss": "^2.2.7"
+    "prettier": "^2.4.0",
+    "sharp": "^0.29.1",
+    "tailwindcss": "^2.2.15",
+    "typescript": "^4.4.3"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,}": [
+      "eslint --max-warnings=0",
+      "prettier -w"
+    ],
+    "src/**/*.{json,css,scss,md}": [
+      "prettier -w"
+    ]
   },
   "browserslist": [
     ">0.2%",
