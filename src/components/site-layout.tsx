@@ -82,13 +82,6 @@ const SiteLayout = ({
         children}
 
       {withFooter && <Footer />}
-
-      <style jsx global>{`
-        html,
-        body {
-          @apply font-sans antialiased;
-        }
-      `}</style>
     </div>
   )
 }
