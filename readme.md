@@ -13,6 +13,10 @@ and some additional components.
 ## Quick Installation
 
 ```bash
+# Using Yarn is recomended
+npx create-next-app myapp-name -e "https://github.com/riipandi/next-tailwind-starter"
+
+# If you want to use npm instead
 npx create-next-app myapp-name --use-npm -e "https://github.com/riipandi/next-tailwind-starter"
 ```
 
@@ -20,16 +24,22 @@ npx create-next-app myapp-name --use-npm -e "https://github.com/riipandi/next-ta
 
 ## Quick Start
 
+### Using NPM
+
 ```bash
-# install dependencies
-$ npm install --no-optional
+npm install     # install dependencies
+npm run dev     # serve with hot reload at localhost:3000
+npm run build   # build for production
+npm run start   # launch generated build
+```
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+### Using Yarn
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+```bash
+yarn         # install dependencies
+yarn dev     # serve with hot reload at localhost:3000
+yarn build   # build for production
+yarn start   # launch generated build
 ```
 
 > For detailed explanation on how things work, check out [Next.js docs](https://nextjs.org).

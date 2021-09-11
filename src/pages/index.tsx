@@ -5,7 +5,7 @@ import SiteLayout from '@/components/site-layout'
 
 export default function Home() {
   return (
-    <SiteLayout fullTitle='This is Next.js Tailwind Starter' animate className='bg-white dark:bg-black'>
+    <SiteLayout fullTitle='This is Next.js Tailwind Starter' className='bg-white dark:bg-black'>
       <div className='flex items-center justify-center min-h-screen py-20 lg:py-40'>
         <div className='top-0 left-0 hidden mt-32 lg:block lg:absolute'>
           <Image src='https://shuffle.dev/zeus-assets/icons/dots/blue-dot-left-bars.svg' width={300} height={300} alt='' />
