@@ -9,7 +9,7 @@
     "lint": "next lint",
     "lint:fix": "eslint src --fix && yarn format",
     "format": "prettier --write src",
-    "prepare": "husky install"
+    "prepare": "husky install .husky"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.1.0",
