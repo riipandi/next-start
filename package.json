@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && yarn format",
-    "format": "prettier --write src",
-    "prepare": "husky install .husky"
+    "format": "prettier --write src"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.1.0",
@@ -35,7 +34,6 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint": "7.32.0",
-    "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "postcss": "^8.3.6",
     "prettier": "^2.4.0",
