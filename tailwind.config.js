@@ -16,11 +16,8 @@ module.exports = {
       },
       colors: {
         gray: defaultColor.coolGray,
-        primary: defaultColor.green,
-        secondary: defaultColor.blue,
-        accent: defaultColor.rose,
-        teal: defaultColor.teal,
-        cyan: defaultColor.cyan
+        primary: defaultColor.blue,
+        secondary: defaultColor.indigo
       },
       typography: (theme) => ({
         default: {

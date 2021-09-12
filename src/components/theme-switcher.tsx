@@ -3,9 +3,7 @@ import { LightBulbIcon, MoonIcon } from '@heroicons/react/outline'
 import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
+import { classNames } from '@/utils/helper'
 
 const ThemeSwitcher = ({ ...props }) => {
   const [enabled, setEnabled] = useState(false)
