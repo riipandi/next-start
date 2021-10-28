@@ -35,8 +35,10 @@ export default function Home() {
         <div className='container relative px-4 mx-auto'>
           <div className='max-w-3xl mx-auto text-center'>
             <h2 className='text-xl font-medium text-blue-500'>404 Not Found</h2>
-            <h1 className='mt-6 mb-4 text-3xl font-semibold lg:mb-6'>Sorry, we can&apos;t find that page!</h1>
-            <p className='mb-6 text-xl text-gray-500 lg:mb-12'>
+            <h1 className='my-6 text-3xl font-bold lg:text-4xl dark:text-white lg:mb-8'>
+              Sorry, we can&apos;t find that page!
+            </h1>
+            <p className='mb-6 text-xl leading-8 text-gray-500 lg:mb-12'>
               Check that you typed the address correctly, go back to your previous page or try using our site search to find
               something specific.
             </p>
