@@ -15,7 +15,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Clarity City', ...defaultTheme.fontFamily.sans]
+        sans: ['Clarity City', ...defaultTheme.fontFamily.sans],
+        slab: ['Sriracha', ...defaultTheme.fontFamily.sans]
       },
       screens: {
         standalone: { raw: '(display-mode: standalone)' }

@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         <div className='container relative px-4 mx-auto'>
           <div className='max-w-3xl mx-auto text-center'>
-            <h2 className='text-xl font-medium text-blue-500'>{process.env.siteMeta.title}</h2>
+            <h2 className='text-xl font-medium text-blue-500 font-slab'>{process.env.siteMeta.title}</h2>
             <h1 className='mt-6 mb-6 text-4xl font-semibold dark:text-white lg:mb-10'>Welcome to your Next site!</h1>
             <p className='mb-6 text-xl leading-8 text-gray-500 dark:text-gray-300 lg:mb-12'>
               This is a starter for Next.js with Tailwind CSS and Typescript, already pre-configured with TailwindUI and some
