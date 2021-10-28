@@ -4,7 +4,13 @@ const defaultColor = require('tailwindcss/colors')
 
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*.{js,ts,jsx,tsx}'],
+  purge: {
+    enabled: true,
+    content: ['./src/**/*.{js,ts,jsx,tsx}'],
+    options: {
+      safelist: ['dark'] //specific classes
+    }
+  },
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
