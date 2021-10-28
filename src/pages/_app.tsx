@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       {/* Example SplitBee analytics integration using Next Script */}
-      <Script src='/bee.js' strategy='lazyOnload' />
+      <Script src='/bee.js' />
 
       {/* Load the application components */}
       <Component {...pageProps} />
