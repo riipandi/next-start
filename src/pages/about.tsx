@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
+import { ThemeSwitcher } from '@/components/Common'
+import { SiteLayout } from '@/components/Layouts'
 import { BasicLink } from '@/components/Link'
-import SiteLayout from '@/components/site-layout'
-import ThemeSwitcher from '@/components/theme-switcher'
 
 export default function About() {
   return (

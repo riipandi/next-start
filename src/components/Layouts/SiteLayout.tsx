@@ -6,7 +6,7 @@ import { Footer, Header } from '@/components/Common'
 const pageVariants = {
   initial: {
     opacity: 0,
-    x: '-100vw',
+    x: 0,
     scale: 0.8
   },
   in: {
@@ -56,7 +56,7 @@ const SiteLayout = ({
   const pageImage = ogImage || process.env.siteMeta.imageUrl
 
   return (
-    <div {...props}>
+    <div {...props} className='flex flex-col min-h-screen bg-white dark:bg-black'>
       <Head>
         <meta name='description' content={pageDescription} />
         <meta property='og:locale' content='id_ID' />
@@ -74,12 +74,14 @@ const SiteLayout = ({
 
       {withHeader && <Header />}
 
-      {(animate && (
-        <motion.div initial='initial' animate='in' exit='out' variants={pageVariants} transition={pageTransition}>
-          {children}
-        </motion.div>
-      )) ||
-        children}
+      <main className='flex-grow'>
+        {(animate && (
+          <motion.div initial='initial' animate='in' exit='out' variants={pageVariants} transition={pageTransition}>
+            {children}
+          </motion.div>
+        )) ||
+          children}
+      </main>
 
       {withFooter && <Footer />}
     </div>

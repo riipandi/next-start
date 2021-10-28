@@ -4,11 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
 
-import SiteLayout from '@/components/site-layout'
+import { SiteLayout } from '@/components/Layouts'
 
 export default function Home() {
   return (
-    <SiteLayout>
+    <SiteLayout animate>
       <Head>
         <title>404 - Page Not Found</title>
       </Head>

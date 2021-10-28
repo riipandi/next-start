@@ -1,12 +1,12 @@
 import Image from 'next/image'
 
+import { ThemeSwitcher } from '@/components/Common'
+import { SiteLayout } from '@/components/Layouts'
 import { BasicLink } from '@/components/Link'
-import SiteLayout from '@/components/site-layout'
-import ThemeSwitcher from '@/components/theme-switcher'
 
 export default function Home() {
   return (
-    <SiteLayout fullTitle='This is Next.js Tailwind Starter' withHeader className='bg-white dark:bg-black'>
+    <SiteLayout fullTitle='This is Next.js Tailwind Starter' withHeader withFooter animate>
       <div className='flex items-center justify-center min-h-screen py-20 lg:py-30'>
         <div className='top-0 left-0 hidden mt-32 lg:block lg:absolute'>
           <Image src='https://shuffle.dev/zeus-assets/icons/dots/blue-dot-left-bars.svg' width={300} height={300} alt='' />
