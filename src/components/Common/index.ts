@@ -1,6 +1,6 @@
 import Button from './Button'
 import Footer from './Footer'
 import Header from './Header'
-import ThemeSwitcher from './ThemeSwitcher'
+import ToggleDarkMode from './ToggleDarkMode'
 
-export { Button, Footer, Header, ThemeSwitcher }
+export { Button, Footer, Header, ToggleDarkMode }

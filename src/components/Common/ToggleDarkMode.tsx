@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 
 import { classNames } from '@/utils/helper'
 
-const ThemeSwitcher = ({ ...props }) => {
+const ToggleDarkMode = ({ ...props }) => {
   const [enabled, setEnabled] = useState(false)
   const { theme, setTheme } = useTheme()
 
@@ -58,4 +58,4 @@ const ThemeSwitcher = ({ ...props }) => {
   )
 }
 
-export default ThemeSwitcher
+export default ToggleDarkMode

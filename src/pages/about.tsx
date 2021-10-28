@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { ThemeSwitcher } from '@/components/Common'
+import { ToggleDarkMode } from '@/components/Common'
 import { SiteLayout } from '@/components/Layouts'
 import { BasicLink } from '@/components/Link'
 
@@ -44,7 +44,7 @@ export default function About() {
           </div>
           <div className='flex justify-center mx-auto mt-2'>
             <div className='inline-flex items-center justify-center mx-auto mt-12'>
-              <ThemeSwitcher />
+              <ToggleDarkMode />
               <span className='ml-3 -mr-1 font-medium'>Toggle Dark Mode</span>
             </div>
           </div>
