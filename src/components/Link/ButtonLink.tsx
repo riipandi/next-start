@@ -15,8 +15,8 @@ const ButtonLink = ({ children, className = '', variants = 'primary', ...props }
         'border border-gray-600',
         'focus:outline-none focus-visible:text-primary-400',
         {
-          'bg-dark text-white': variants === 'primary',
-          'bg-white text-dark hover:bg-gray-200 hover:text-dark focus-visible:text-dark': variants === 'secondary'
+          'bg-dark text-light-50': variants === 'primary',
+          'bg-light-50 text-dark hover:bg-gray-200 hover:text-dark focus-visible:text-dark': variants === 'secondary'
         },
         className
       )}

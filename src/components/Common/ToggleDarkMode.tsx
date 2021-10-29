@@ -23,8 +23,8 @@ const ToggleDarkMode = ({ ...props }) => {
       checked={enabled}
       onChange={handleChange}
       className={classNames(
-        enabled ? 'bg-blue-600' : 'bg-gray-200',
-        'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+        enabled ? 'bg-primary-600' : 'bg-gray-200',
+        'relative inline-flex flex-shrink-0 h-5 w-10 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500'
       )}
       {...props}
     >
@@ -32,7 +32,7 @@ const ToggleDarkMode = ({ ...props }) => {
       <span
         className={classNames(
           enabled ? 'translate-x-5' : 'translate-x-0',
-          'pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200'
+          'pointer-events-none relative inline-block h-4 w-4 rounded-full bg-light-50 shadow transform ring-0 transition ease-in-out duration-200'
         )}
       >
         <span
@@ -51,7 +51,7 @@ const ToggleDarkMode = ({ ...props }) => {
           )}
           aria-hidden='true'
         >
-          <MoonIcon className='w-3 h-3 text-blue-600' />
+          <MoonIcon className='w-3 h-3 text-secondary-600' />
         </span>
       </span>
     </Switch>

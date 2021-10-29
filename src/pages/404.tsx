@@ -34,16 +34,16 @@ export default function Home() {
         </div>
         <div className='container relative px-4 mx-auto'>
           <div className='max-w-3xl mx-auto text-center'>
-            <h2 className='text-xl font-medium text-blue-500'>404 Not Found</h2>
-            <h1 className='my-6 text-3xl font-bold lg:text-4xl dark:text-white lg:mb-8'>
+            <h2 className='text-xl font-medium dark:text-primary-50 text-secondary-500 font-slab'>404 Not Found</h2>
+            <h1 className='mt-6 mb-6 text-4xl font-bold lg:text-5xl text--gradient text--shadow lg:mb-10'>
               Sorry, we can&apos;t find that page!
             </h1>
-            <p className='mb-6 text-xl leading-8 text-gray-500 lg:mb-12'>
+            <p className='mb-6 text-xl leading-8 text-gray-900 dark:text-light-400 lg:mb-12'>
               Check that you typed the address correctly, go back to your previous page or try using our site search to find
               something specific.
             </p>
             <Link href='/'>
-              <a className='inline-flex items-center justify-center w-full px-8 py-4 mb-2 mr-4 text-sm font-medium leading-normal text-white transition duration-200 bg-red-400 rounded md:w-auto hover:bg-red-300'>
+              <a className='inline-flex items-center justify-center w-full px-8 py-4 mb-2 mr-4 text-sm font-medium leading-normal transition duration-200 rounded text-light-50 bg-primary-400 md:w-auto hover:bg-primary-300'>
                 <ChevronDoubleLeftIcon className='w-4 h-4 mr-1 -ml-1' /> Go back to Homepage
               </a>
             </Link>
