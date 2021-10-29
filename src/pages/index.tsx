@@ -55,7 +55,7 @@ export default function Home() {
           </div>
           <div className='flex justify-center mx-auto mt-2'>
             <div className='inline-flex items-center justify-center mx-auto mt-12'>
-              <ToggleDarkMode />
+              <ToggleDarkMode mode='bulb' />
               <span className='ml-3 -mr-1 font-medium text-gray-900 dark:text-light-400'>Toggle Dark Mode</span>
             </div>
           </div>
