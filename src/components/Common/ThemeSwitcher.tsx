@@ -7,35 +7,30 @@ import React, { useEffect, useState } from 'react'
 import { classNames } from '@/utils/helper'
 
 type Props = {
-  mode?: string
   className?: string
+  asToggle?: boolean
 }
 
-enum Mode {
-  toggle,
-  button
-}
-
-const ToggleDarkMode = ({ mode: Mode, ...props }: Props) => {
-  const [enabled, setEnabled] = useState(false)
+const ThemeSwitcher = ({ asToggle = false, ...props }: Props) => {
+  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const isDark = theme === 'dark'
 
-  useEffect(() => {
-    setEnabled(theme === 'dark')
-  }, [theme])
+  useEffect(() => setMounted(true), [])
 
   const handleChange = () => {
-    setEnabled(!enabled)
-    setTheme(enabled && theme == 'dark' ? 'light' : 'dark')
+    setTheme(isDark ? 'light' : 'dark')
   }
 
-  if (Mode === 'toggle') {
+  if (!mounted) return null
+
+  if (asToggle) {
     return (
       <Switch
-        checked={enabled}
+        checked={isDark}
         onChange={handleChange}
         className={classNames(
-          enabled ? 'bg-primary-600' : 'bg-gray-200',
+          theme === 'dark' ? 'bg-primary-600' : 'bg-gray-200',
           'relative inline-flex flex-shrink-0 h-5 w-10 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500'
         )}
         {...props}
@@ -43,13 +38,13 @@ const ToggleDarkMode = ({ mode: Mode, ...props }: Props) => {
         <span className='sr-only'>Dark Mode</span>
         <span
           className={classNames(
-            enabled ? 'translate-x-5' : 'translate-x-0',
+            theme === 'dark' ? 'translate-x-5' : 'translate-x-0',
             'pointer-events-none relative inline-block h-4 w-4 rounded-full bg-light-50 shadow transform ring-0 transition ease-in-out duration-200'
           )}
         >
           <span
             className={classNames(
-              enabled ? 'opacity-0 ease-out duration-100' : 'opacity-100 ease-in duration-200',
+              theme === 'dark' ? 'opacity-0 ease-out duration-100' : 'opacity-100 ease-in duration-200',
               'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity'
             )}
             aria-hidden='true'
@@ -58,7 +53,7 @@ const ToggleDarkMode = ({ mode: Mode, ...props }: Props) => {
           </span>
           <span
             className={classNames(
-              enabled ? 'opacity-100 ease-in duration-200' : 'opacity-0 ease-out duration-100',
+              theme === 'dark' ? 'opacity-100 ease-in duration-200' : 'opacity-0 ease-out duration-100',
               'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity'
             )}
             aria-hidden='true'
@@ -71,8 +66,8 @@ const ToggleDarkMode = ({ mode: Mode, ...props }: Props) => {
   }
 
   return (
-    <button type='button' onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} {...props}>
-      {theme === 'dark' ? (
+    <button type='button' onClick={handleChange} {...props}>
+      {isDark ? (
         <MoonStars className='w-5 h-5 dark:text-primary-50 dark:hover:text-primary-200' />
       ) : (
         <SunDim className='w-5 h-5 text-gray-700 hover:text-primary-400' />
@@ -81,4 +76,4 @@ const ToggleDarkMode = ({ mode: Mode, ...props }: Props) => {
   )
 }
 
-export default ToggleDarkMode
+export default ThemeSwitcher

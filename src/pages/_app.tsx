@@ -10,7 +10,7 @@ import '@/assets/styles/global.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute='class'>
+    <ThemeProvider attribute='class' defaultTheme='light' enableSystem={false}>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
