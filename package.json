@@ -5,10 +5,12 @@
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p ${PORT:=3000}",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && yarn format",
-    "format": "prettier --write src"
+    "format": "prettier --write src",
+    "build:docker": "docker build -t $npm_package_name:latest -t $npm_package_name:v$npm_package_version .",
+    "run:docker": "docker run -p 3000:3000 $npm_package_name:latest"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.1.0",
