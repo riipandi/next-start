@@ -1,12 +1,11 @@
 import { Switch } from '@headlessui/react'
-import { LightBulbIcon, MoonIcon } from '@heroicons/react/outline'
 import { useTheme } from 'next-themes'
-import { MoonStars, SunDim } from 'phosphor-react'
+import { CloudMoon, MoonStars, Sun, SunDim } from 'phosphor-react'
 import React, { useEffect, useState } from 'react'
 
 import { classNames } from '@/utils/helper'
 
-type Props = {
+interface Props {
   className?: string
   asToggle?: boolean
 }
@@ -49,7 +48,7 @@ const ThemeSwitcher = ({ asToggle = false, ...props }: Props) => {
             )}
             aria-hidden='true'
           >
-            <LightBulbIcon className='w-3 h-3 text-gray-400' />
+            <Sun weight='bold' className='w-3 h-3 text-gray-400' />
           </span>
           <span
             className={classNames(
@@ -58,7 +57,7 @@ const ThemeSwitcher = ({ asToggle = false, ...props }: Props) => {
             )}
             aria-hidden='true'
           >
-            <MoonIcon className='w-3 h-3 text-secondary-600' />
+            <MoonStars weight='regular' className='w-3 h-3 text-secondary-600' />
           </span>
         </span>
       </Switch>
@@ -68,9 +67,9 @@ const ThemeSwitcher = ({ asToggle = false, ...props }: Props) => {
   return (
     <button type='button' onClick={handleChange} {...props}>
       {isDark ? (
-        <MoonStars className='w-5 h-5 dark:text-primary-50 dark:hover:text-primary-200' />
+        <CloudMoon weight='duotone' className='w-5 h-5 dark:text-primary-50 dark:hover:text-primary-200' />
       ) : (
-        <SunDim className='w-5 h-5 text-gray-700 hover:text-primary-400' />
+        <SunDim weight='duotone' className='w-5 h-5 text-gray-700 hover:text-primary-400' />
       )}
     </button>
   )

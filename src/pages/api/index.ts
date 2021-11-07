@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-type Response = {
+interface Response {
   message: string
   error: boolean
 }

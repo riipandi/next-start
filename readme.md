@@ -6,14 +6,15 @@
 
 ![separator](public/images/separator.jpg)
 
-A starter for [Next.js](https://nextjs.org/) with [Tailwind CSS](https://tailwindcss.com) and Typescript.
-Pre-configured with absolute import, [TailwindUI](https://tailwindui.com), [Framer Motion](https://www.framer.com/motion/), 
-and some additional components.
+A starter for [Next.js](https://nextjs.org/) with [Tailwind CSS](https://tailwindcss.com) 
+and [Typescript](https://www.typescriptlang.org/). Pre-configured with absolute import, 
+[TailwindUI](https://tailwindui.com), [Framer Motion](https://www.framer.com/motion/), 
+and some goodies.
 
 ## Quick Installation
 
 ```bash
-# Using Yarn is recomended
+d# Using Yarn is recomended
 npx create-next-app myapp-name -e "https://github.com/riipandi/next-tailwind-starter"
 
 # If you want to use npm instead
@@ -46,8 +47,8 @@ yarn start   # launch generated build
 
 ## Deploy your own
 
-You'll want to fork this repository and deploy your own Next.js website. You can do a one-click
-deploy with the button below.
+You'll want to fork this repository and deploy your own Next.js website. 
+You can do a one-click deploy with the button below.
 
 [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Friipandi%2Fnext-tailwind-starter)
 

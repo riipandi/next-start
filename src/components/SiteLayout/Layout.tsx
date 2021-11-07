@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 
-import { Footer, Header } from '@/components/Common'
+import { Footer, Header } from '@/components/SiteLayout'
 
 const pageVariants = {
   initial: {
@@ -39,17 +39,7 @@ interface Props {
   withFooter?: boolean
 }
 
-const SiteLayout = ({
-  children,
-  title,
-  fullTitle,
-  description,
-  ogImage,
-  animate,
-  withHeader,
-  withFooter,
-  ...props
-}: Props) => {
+const Layout = ({ children, title, fullTitle, description, ogImage, animate, withHeader, withFooter, ...props }: Props) => {
   const defaultTitle = fullTitle || title ? `${title} - ${process.env.siteMeta.title}` : `${process.env.siteMeta.title}`
   const pageTitle = fullTitle ? fullTitle : defaultTitle
   const pageDescription = description || process.env.siteMeta.description
@@ -94,4 +84,4 @@ const SiteLayout = ({
   )
 }
 
-export default SiteLayout
+export default Layout
