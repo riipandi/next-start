@@ -10,7 +10,7 @@ const nextConfig = {
     }
   },
   images: {
-    domains: ['doodleipsum.com', 'images.unsplash.com', 'shuffle.dev', 'tailwindui.com']
+    domains: ['doodleipsum.com', 'images.unsplash.com', 'pbs.twimg.com', 'shuffle.dev', 'tailwindui.com']
   },
   eslint: {
     dirs: ['src']
