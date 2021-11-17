@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
+// const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
-  reactStrictMode: true,
   env: {
     siteMeta: {
       url: process.env.SITE_URL || 'http://localhost:3000',
@@ -15,6 +15,9 @@ const nextConfig = {
   eslint: {
     dirs: ['src']
   },
+  reactStrictMode: true,
+  poweredByHeader: false,
+  // assetPrefix: isProd ? 'https://cdn.example.com' : '',
   async rewrites() {
     return [
       {

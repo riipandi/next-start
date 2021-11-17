@@ -23,7 +23,13 @@ const BasicLink = ({ children, href, newTab = false, className, ...props }: Basi
   }
 
   return (
-    <a target='_blank' rel='noopener noreferrer' href={href} {...props} className={clsx(className, 'cursor-[pointer')}>
+    <a
+      href={href}
+      target={isNewTab ? '_blank' : '_self'}
+      rel='noopener noreferrer'
+      className={clsx(className, 'cursor-pointer')}
+      {...props}
+    >
       {children}
     </a>
   )

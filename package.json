@@ -13,7 +13,6 @@
     "run:docker": "docker run -p 3000:3000 $npm_package_name:latest"
   },
   "dependencies": {
-    "@emotion/is-prop-valid": "^1.1.0",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.5",
     "@tailwindcss/aspect-ratio": "^0.3.0",
