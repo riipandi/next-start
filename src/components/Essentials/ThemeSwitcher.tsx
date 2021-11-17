@@ -66,6 +66,7 @@ const ThemeSwitcher = ({ asToggle = false, ...props }: Props) => {
 
   return (
     <button type='button' onClick={handleChange} {...props}>
+      <span className='sr-only'>Toggle Dark Mode</span>
       {isDark ? (
         <CloudMoon weight='duotone' className='w-5 h-5 dark:text-primary-50 dark:hover:text-primary-200' />
       ) : (
