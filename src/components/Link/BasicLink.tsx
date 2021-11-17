@@ -9,7 +9,7 @@ export type BasicLinkProps = {
 } & React.ComponentPropsWithoutRef<'a'> &
   LinkProps
 
-const BasicLink = ({ children, href, newTab, className, ...props }: BasicLinkProps) => {
+const BasicLink = ({ children, href, newTab = false, className, ...props }: BasicLinkProps) => {
   const isNewTab = newTab !== undefined ? newTab : href && !href.startsWith('/') && !href.startsWith('#')
 
   if (!isNewTab) {
