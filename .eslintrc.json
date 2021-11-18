@@ -10,8 +10,8 @@
     "no-unused-vars": "off",
     "no-console": "warn",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-
-    // Sort
+    "@typescript-eslint/no-var-requires": "off",
+    "@next/next/no-img-element": "off",
     "simple-import-sort/exports": "warn",
     "simple-import-sort/imports": [
       "warn",
