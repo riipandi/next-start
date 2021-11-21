@@ -1,10 +1,15 @@
 import Image from 'next/image'
+import { useTheme } from 'next-themes'
 
 import { ThemeSwitcher } from '@/components/Essentials'
 import { BasicLink } from '@/components/Link'
 import { Layout } from '@/components/SiteLayout'
 
+import { siteMeta } from '@/config/site'
+
 export default function Home() {
+  const { theme } = useTheme()
+
   return (
     <Layout fullTitle='This is Next.js Tailwind Starter' withHeader withFooter animate>
       <div className='flex items-center justify-center min-h-screen py-20 lg:py-30'>
@@ -30,7 +35,7 @@ export default function Home() {
         <div className='container relative px-4 mx-auto'>
           <div className='max-w-3xl mx-auto text-center'>
             <h2 className='text-xl font-medium dark:text-primary-50 text-secondary-500 font-slab'>
-              {process.env.siteMeta.title}
+              {siteMeta.defaultTitle}
             </h2>
             <h1 className='mt-6 mb-6 text-4xl font-bold lg:text-5xl text--gradient text--shadow lg:mb-10'>
               Welcome to your Next site!
@@ -56,7 +61,9 @@ export default function Home() {
           <div className='flex justify-center mx-auto mt-2'>
             <div className='inline-flex items-center justify-center mx-auto mt-12'>
               <ThemeSwitcher />
-              <span className='ml-3 -mr-1 font-medium text-gray-900 dark:text-light-400'>Toggle Dark Mode</span>
+              <span className='ml-3 -mr-1 font-medium text-gray-900 dark:text-light-400'>
+                Toggle {theme === 'dark' ? 'Light' : 'Dark'} Mode
+              </span>
             </div>
           </div>
         </div>

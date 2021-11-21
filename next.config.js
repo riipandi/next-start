@@ -1,13 +1,7 @@
 /** @type {import('next').NextConfig} */
-// const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
   env: {
-    siteMeta: {
-      url: process.env.SITE_URL || 'http://localhost:3000',
-      title: 'Next.js Tailwind Starter',
-      description: 'A starter for Next.js with Tailwind CSS and Typescript',
-      imageUrl: '/images/og-image.png'
-    }
+    SPLITBEE_TOKEN: process.env.SPLITBEE_TOKEN || ''
   },
   images: {
     domains: ['doodleipsum.com', 'images.unsplash.com', 'pbs.twimg.com', 'shuffle.dev', 'tailwindui.com']
@@ -17,7 +11,6 @@ const nextConfig = {
   },
   reactStrictMode: true,
   poweredByHeader: false,
-  // assetPrefix: isProd ? 'https://cdn.example.com' : '',
   async rewrites() {
     return [
       {

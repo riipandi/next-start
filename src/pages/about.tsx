@@ -1,6 +1,3 @@
-import Image from 'next/image'
-
-import { ThemeSwitcher } from '@/components/Essentials'
 import { BasicLink } from '@/components/Link'
 import { Layout } from '@/components/SiteLayout'
 
@@ -8,25 +5,6 @@ export default function About() {
   return (
     <Layout title='About' animate>
       <div className='flex items-center justify-center min-h-screen py-20 lg:py-40'>
-        <div className='top-0 left-0 hidden mt-32 lg:block lg:absolute'>
-          <Image src='https://shuffle.dev/zeus-assets/icons/dots/blue-dot-left-bars.svg' width={300} height={300} alt='' />
-        </div>
-        <div className='hidden h-16 mt-4 ml-auto lg:absolute'>
-          <Image
-            src='https://shuffle.dev/zeus-assets/icons/dots/yellow-dot-right-shield.svg'
-            width={200}
-            height={200}
-            alt=''
-          />
-        </div>
-        <div className='top-0 right-0 hidden mt-64 lg:block lg:absolute'>
-          <Image
-            src='https://shuffle.dev/zeus-assets/icons/dots/yellow-dot-right-shield.svg'
-            width={300}
-            height={300}
-            alt=''
-          />
-        </div>
         <div className='container relative px-4 mx-auto'>
           <div className='max-w-3xl mx-auto text-center'>
             <h1 className='mt-6 mb-6 text-4xl font-bold lg:text-5xl text--gradient text--shadow lg:mb-10'>
@@ -42,12 +20,6 @@ export default function About() {
             >
               Back to homepage
             </BasicLink>
-          </div>
-          <div className='flex justify-center mx-auto mt-2'>
-            <div className='inline-flex items-center justify-center mx-auto mt-12'>
-              <ThemeSwitcher asToggle />
-              <span className='ml-3 -mr-1 font-medium text-gray-900 dark:text-light-400'>Toggle Dark Mode</span>
-            </div>
           </div>
         </div>
       </div>

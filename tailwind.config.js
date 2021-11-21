@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const defaultTheme = require('tailwindcss/defaultTheme')
-// const defaultColor = require('tailwindcss/colors')
+const defaultColor = require('tailwindcss/colors')
 
 module.exports = {
   // mode: 'jit',
@@ -22,18 +22,7 @@ module.exports = {
         standalone: { raw: '(display-mode: standalone)' }
       },
       colors: {
-        gray: {
-          50: '#7e7b8f',
-          100: '#747185',
-          200: '#6a677b',
-          300: '#605d71',
-          400: '#565367',
-          500: '#4c495d',
-          600: '#423f53',
-          700: '#383549',
-          800: '#2e2b3f',
-          900: '#242135'
-        },
+        gray: defaultColor.trueGray,
         primary: {
           50: '#b25de3',
           100: '#a853d9',
@@ -58,29 +47,29 @@ module.exports = {
           800: '#0f0a20',
           900: '#050016'
         },
-        accent: {
-          50: '#8881a1',
-          100: '#7e7797',
-          200: '#746d8d',
-          300: '#6a6383',
-          400: '#605979',
-          500: '#564f6f',
-          600: '#4c4565',
-          700: '#423b5b',
-          800: '#383151',
-          900: '#2e2747'
+        dark: {
+          50: '#4f565d',
+          100: '#454c53',
+          200: '#3b4249',
+          300: '#31383f',
+          400: '#272e35',
+          500: '#1d242b',
+          600: '#131a21',
+          700: '#091017',
+          800: '#00060d',
+          900: '#000003'
         },
         light: {
           50: '#ffffff',
-          100: '#f9ffff',
-          200: '#eff5fe',
-          300: '#e5ebf4',
-          400: '#dbe1ea',
-          500: '#d1d7e0',
-          600: '#c7cdd6',
-          700: '#bdc3cc',
-          800: '#b3b9c2',
-          900: '#a9afb8'
+          100: '#ffffff',
+          200: '#ffffff',
+          300: '#ffffff',
+          400: '#ffffff',
+          500: '#fafafa',
+          600: '#f0f0f0',
+          700: '#e6e6e6',
+          800: '#dcdcdc',
+          900: '#d2d2d2'
         }
       },
       typography: (theme) => ({

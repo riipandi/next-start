@@ -3,6 +3,8 @@ import Head from 'next/head'
 
 import { Footer, Header } from '@/components/SiteLayout'
 
+import { siteMeta } from '@/config/site'
+
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -40,10 +42,10 @@ interface Props {
 }
 
 const Layout = ({ children, title, fullTitle, description, ogImage, animate, withHeader, withFooter, ...props }: Props) => {
-  const defaultTitle = fullTitle || title ? `${title} - ${process.env.siteMeta.title}` : `${process.env.siteMeta.title}`
+  const defaultTitle = fullTitle || title ? `${title} - ${siteMeta.defaultTitle}` : `${siteMeta.defaultTitle}`
   const pageTitle = fullTitle ? fullTitle : defaultTitle
-  const pageDescription = description || process.env.siteMeta.description
-  const pageImage = ogImage || process.env.siteMeta.imageUrl
+  const pageDescription = description || siteMeta.description
+  const pageImage = ogImage || siteMeta.imageUrl
 
   return (
     <div className='flex flex-col min-h-screen bg-light-100 dark:bg-gray-900'>
@@ -53,8 +55,8 @@ const Layout = ({ children, title, fullTitle, description, ogImage, animate, wit
         <meta property='og:type' content='website' />
         <meta property='og:title' content={pageTitle} />
         <meta property='og:description' content={pageDescription} />
-        <meta property='og:url' content={process.env.siteMeta.url} />
-        <meta property='og:site_name' content={process.env.siteMeta.title} />
+        <meta property='og:url' content={siteMeta.siteUrl} />
+        <meta property='og:site_name' content={siteMeta.defaultTitle} />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:description' content={pageDescription} />
         <meta name='twitter:title' content={pageTitle} />
