@@ -1,5 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon, XIcon } from '@heroicons/react/outline'
+import { useRouter } from 'next/router'
 import { Fragment } from 'react'
 
 import { BasicLink } from '@/components/Essentials'
@@ -12,22 +13,24 @@ type SidebarProps = {
 }
 
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: true },
-  { name: 'Team', href: '#', icon: UsersIcon, current: false },
-  { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-  { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Documents', href: '#', icon: InboxIcon, current: false },
-  { name: 'Reports', href: '#', icon: ChartBarIcon, current: false }
+  { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
+  { name: 'Team', href: '#', icon: UsersIcon },
+  { name: 'Projects', href: '#', icon: FolderIcon },
+  { name: 'Calendar', href: '#', icon: CalendarIcon },
+  { name: 'Documents', href: '#', icon: InboxIcon },
+  { name: 'Reports', href: '#', icon: ChartBarIcon }
 ]
 
 const secondaryNavigation = [
-  { name: 'Website redesign', href: '#', current: false },
-  { name: 'GraphQL API', href: '#', current: false },
-  { name: 'Customer migration guides', href: '#', current: false },
-  { name: 'Profit sharing program', href: '#', current: false }
+  { name: 'Website redesign', href: '#' },
+  { name: 'GraphQL API', href: '#' },
+  { name: 'Customer migration guides', href: '#' },
+  { name: 'Profit sharing program', href: '#' }
 ]
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
+  const router = useRouter()
+
   return (
     <>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -88,7 +91,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-blue-800 text-white' : 'text-blue-100 hover:bg-blue-600',
+                          router.pathname === item.href ? 'bg-blue-800 text-white' : 'text-blue-100 hover:bg-blue-600',
                           'group flex items-center px-2 py-2 text-base font-medium rounded-md'
                         )}
                       >
@@ -108,7 +111,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            item.current ? 'bg-blue-800 text-white' : 'text-blue-100 hover:bg-blue-600',
+                            router.pathname === item.href ? 'bg-blue-800 text-white' : 'text-blue-100 hover:bg-blue-600',
                             'group flex items-center px-3 py-2 text-base font-medium rounded-md'
                           )}
                         >
@@ -146,7 +149,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     key={item.name}
                     href={item.href}
                     className={classNames(
-                      item.current ? 'bg-blue-800 text-white' : 'text-blue-100 hover:bg-blue-600',
+                      router.pathname === item.href ? 'bg-blue-800 text-white' : 'text-blue-100 hover:bg-blue-600',
                       'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
                     )}
                   >
@@ -166,7 +169,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       key={item.name}
                       href={item.href}
                       className={classNames(
-                        item.current ? 'bg-blue-800 text-white' : 'text-blue-100 hover:bg-blue-600',
+                        router.pathname === item.href ? 'bg-blue-800 text-white' : 'text-blue-100 hover:bg-blue-600',
                         'group flex items-center px-3 py-2 text-sm font-medium rounded-md'
                       )}
                     >
