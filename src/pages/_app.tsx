@@ -3,9 +3,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { ThemeProvider } from 'next-themes'
 
-// import '@/assets/fonts/_font_sans.css'
-// import '@/assets/fonts/_font_serif.css'
-// import '@/assets/fonts/_font_slab.css'
+import '@/assets/fonts/_jakarta_sans.css'
 import '@/assets/styles/global.css'
 
 function MyApp({ Component, pageProps }: AppProps) {

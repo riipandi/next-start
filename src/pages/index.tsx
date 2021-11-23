@@ -34,9 +34,7 @@ export default function Home() {
         </div>
         <div className='container relative px-4 mx-auto'>
           <div className='max-w-3xl mx-auto text-center'>
-            <h2 className='text-xl font-medium dark:text-primary-50 text-secondary-500 font-slab'>
-              {siteMeta.defaultTitle}
-            </h2>
+            <h2 className='text-xl font-medium dark:text-primary-50 text-secondary-500'>{siteMeta.defaultTitle}</h2>
             <h1 className='mt-6 mb-6 text-4xl font-bold lg:text-5xl text--gradient text--shadow lg:mb-10'>
               Welcome to your Next site!
             </h1>

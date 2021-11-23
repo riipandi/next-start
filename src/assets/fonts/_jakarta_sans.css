@@ -1,0 +1,170 @@
+/*   Fonts taken from: http://www.cufonfonts.com   */
+
+/* ------------------------------------------- Font weight 100 -------------------------------------------  */
+/* @font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-Thin.woff2') format('woff2'),
+  url('PlusJakartaSans-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-ThinItalic.woff2') format('woff2'),
+    url('PlusJakartaSans-ThinItalic.woff') format('woff');
+} */
+
+/* ------------------------------------------- Font weight 200 -------------------------------------------  */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-ExtraLight.woff2') format('woff2'),
+    url('PlusJakartaSans-ExtraLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-ExtraLightItalic.woff2') format('woff2'),
+    url('PlusJakartaSans-ExtraLightItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 300 -------------------------------------------  */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-Light.woff2') format('woff2'),
+    url('PlusJakartaSans-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-LightItalic.woff2') format('woff2'),
+    url('PlusJakartaSans-LightItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 400 -------------------------------------------  */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-Regular.woff2') format('woff2'),
+    url('PlusJakartaSans-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-Italic.woff2') format('woff2'),
+    url('PlusJakartaSans-Italic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 500 -------------------------------------------  */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-Medium.woff2') format('woff2'),
+    url('PlusJakartaSans-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-MediumItalic.woff2') format('woff2'),
+    url('PlusJakartaSans-MediumItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 600 -------------------------------------------  */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-SemiBold.woff2') format('woff2'),
+    url('PlusJakartaSans-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-SemiBoldItalic.woff2') format('woff2'),
+    url('PlusJakartaSans-SemiBoldItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 700 -------------------------------------------  */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-Bold.woff2') format('woff2'),
+    url('PlusJakartaSans-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-BoldItalic.woff2') format('woff2'),
+    url('PlusJakartaSans-BoldItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 800 -------------------------------------------  */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-ExtraBold.woff2') format('woff2'),
+    url('PlusJakartaSans-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-ExtraBoldItalic.woff2') format('woff2'),
+    url('PlusJakartaSans-ExtraBoldItalic.woff') format('woff');
+}
+
+/* ------------------------------------------- Font weight 900 -------------------------------------------  */
+/* @font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-Black.woff2') format('woff2'),
+  url('PlusJakartaSans-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Plus Jakarta Sans'), url('PlusJakartaSans-BlackItalic.woff2') format('woff2'),
+    url('PlusJakartaSans-BlackItalic.woff') format('woff');
+} */
