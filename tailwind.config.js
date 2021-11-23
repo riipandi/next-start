@@ -5,7 +5,7 @@ const defaultColor = require('tailwindcss/colors')
 module.exports = {
   // mode: 'jit',
   purge: {
-    enabled: true,
+    enabled: process.env.NODE_ENV === 'production',
     content: ['./src/**/*.{js,ts,jsx,tsx}'],
     options: {
       safelist: ['dark'] //specific classes
