@@ -14,7 +14,7 @@ and some goodies.
 ## Quick Installation
 
 ```bash
-d# Using Yarn is recomended
+# Using Yarn is recomended
 npx create-next-app myapp-name -e "https://github.com/riipandi/next-tailwind-starter"
 
 # If you want to use npm instead
