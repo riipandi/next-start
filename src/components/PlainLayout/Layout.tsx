@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 
-import { Footer, Header } from '@/components/SiteLayout'
-
 import { siteMeta } from '@/config/site'
 
 const pageVariants = {
@@ -37,17 +35,15 @@ interface Props {
   description?: string
   ogImage?: string
   animate?: boolean
-  withHeader?: boolean
-  withFooter?: boolean
 }
 
-const Layout = ({ children, title, fullTitle, description, ogImage, animate, withHeader, withFooter, ...props }: Props) => {
+const Layout = ({ children, title, fullTitle, description, ogImage, animate, ...props }: Props) => {
   const defaultTitle = fullTitle || title ? `${title} - ${siteMeta.defaultTitle}` : `${siteMeta.defaultTitle}`
   const pageTitle = fullTitle ? fullTitle : defaultTitle
   const pageDescription = description || siteMeta.description
 
   return (
-    <div className='flex flex-col min-h-screen bg-light-100 dark:bg-gray-900'>
+    <>
       <Head>
         <meta name='description' content={pageDescription} />
         <meta property='og:locale' content='id_ID' />
@@ -63,25 +59,12 @@ const Layout = ({ children, title, fullTitle, description, ogImage, animate, wit
         <title>{pageTitle}</title>
       </Head>
 
-      {withHeader && <Header />}
-
-      <main className='flex-grow'>
-        {(animate && (
-          <motion.div
-            initial='initial'
-            animate='in'
-            exit='out'
-            variants={pageVariants}
-            transition={pageTransition}
-            {...props}
-          >
-            {children}
-          </motion.div>
-        )) || <div {...props}>{children}</div>}
-      </main>
-
-      {withFooter && <Footer />}
-    </div>
+      {(animate && (
+        <motion.div initial='initial' animate='in' exit='out' variants={pageVariants} transition={pageTransition} {...props}>
+          {children}
+        </motion.div>
+      )) || <div {...props}>{children}</div>}
+    </>
   )
 }
 

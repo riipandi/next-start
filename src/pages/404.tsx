@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { CaretDoubleLeft } from 'phosphor-react'
 import * as React from 'react'
 
-import { Layout } from '@/components/SiteLayout'
+import Layout from '@/components/PlainLayout'
 
 export default function Home() {
   return (

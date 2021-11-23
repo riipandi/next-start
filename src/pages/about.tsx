@@ -1,4 +1,4 @@
-import { BasicLink } from '@/components/Link'
+import { BasicLink } from '@/components/Essentials'
 import { Layout } from '@/components/SiteLayout'
 
 export default function About() {

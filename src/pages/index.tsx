@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
 
-import { ThemeSwitcher } from '@/components/Essentials'
-import { BasicLink } from '@/components/Link'
+import { BasicLink, ThemeSwitcher } from '@/components/Essentials'
 import { Layout } from '@/components/SiteLayout'
 
 import { siteMeta } from '@/config/site'
@@ -38,9 +37,19 @@ export default function Home() {
             <h1 className='mt-6 mb-6 text-4xl font-bold lg:text-5xl text--gradient text--shadow lg:mb-10'>
               Welcome to your Next site!
             </h1>
-            <p className='mb-6 text-xl leading-8 text-gray-900 dark:text-light-400 lg:mb-12'>
+            <p className='mb-4 text-xl leading-8 text-gray-900 lg:mb-6 dark:text-light-400'>
               This is a starter for Next.js with Tailwind CSS and Typescript, already pre-configured with TailwindUI and some
               additional components.
+            </p>
+            <p className='mb-6 text-xl leading-8 text-gray-900 dark:text-light-400 lg:mb-12'>
+              You can{' '}
+              <BasicLink
+                href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Friipandi%2Fnext-tailwind-starter'
+                className='hover:underline text-primary-500 dark:text-primary-100'
+                newTab
+              >
+                deploy your own to Vercel &rarr;
+              </BasicLink>
             </p>
             <BasicLink
               href='/about'
@@ -49,11 +58,10 @@ export default function Home() {
               About page
             </BasicLink>
             <BasicLink
-              href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Friipandi%2Fnext-tailwind-starter'
+              href='/dashboard'
               className='inline-block w-full px-8 py-3 mb-2 text-sm font-medium leading-normal transition duration-200 border rounded border-secondary-300 md:w-auto hover:border-secondary-400 hover:bg-secondary-400 dark:hover:bg-secondary-300 hover:text-light-50 dark:text-light-50 dark:bg-secondary-400'
-              newTab
             >
-              Deploy to Vercel
+              Example dashboard
             </BasicLink>
           </div>
           <div className='flex justify-center mx-auto mt-2'>
