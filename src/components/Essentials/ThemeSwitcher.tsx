@@ -8,9 +8,10 @@ import { classNames } from '@/utils/helper'
 interface Props {
   className?: string
   asToggle?: boolean
+  iconSize?: number
 }
 
-const ThemeSwitcher = ({ asToggle = false, ...props }: Props) => {
+const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
   const isDark = theme === 'dark'
@@ -68,9 +69,21 @@ const ThemeSwitcher = ({ asToggle = false, ...props }: Props) => {
     <button type='button' onClick={handleChange} {...props}>
       <span className='sr-only'>Toggle Dark Mode</span>
       {isDark ? (
-        <CloudMoon weight='duotone' className='w-5 h-5 dark:text-primary-50 dark:hover:text-primary-200' />
+        <CloudMoon
+          weight='duotone'
+          className={classNames(
+            iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
+            'dark:text-primary-50 dark:hover:text-primary-200'
+          )}
+        />
       ) : (
-        <SunDim weight='duotone' className='w-5 h-5 text-gray-700 hover:text-primary-400' />
+        <SunDim
+          weight='duotone'
+          className={classNames(
+            iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
+            'text-gray-700 hover:text-primary-400'
+          )}
+        />
       )}
     </button>
   )
