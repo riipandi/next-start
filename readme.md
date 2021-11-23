@@ -1,4 +1,4 @@
-![Github Cover](public/images/og-image.png)
+![Github Cover](https://banners.beyondco.de/Next.js%20Tailwind%20Starter.png?theme=light&packageManager=&packageName=&pattern=pieFactory&style=style_1&description=A+starter+for+Next.js+with+Tailwind+CSS+and+Typescript.&md=1&showWatermark=1&fontSize=100px&images=template)
 
 <div align="center">
     <strong>The Next.js Tailwind Starter</strong>
