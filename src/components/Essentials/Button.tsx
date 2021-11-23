@@ -11,12 +11,13 @@ const Button = ({ children, className = '', variants = 'primary', ...props }: Bu
     <button
       {...props}
       className={clsx(
-        'py-2 px-4 rounded font-bold hover:text-primary-400 animated-underline',
+        'py-2 px-4 rounded font-bold hover:text-brand-400 animated-underline',
         'border border-gray-600',
-        'focus:outline-none focus-visible:text-primary-400',
+        'focus:outline-none focus-visible:text-brand-400',
         {
-          'bg-dark text-light-50': variants === 'primary',
-          'bg-light-50 text-dark hover:bg-gray-200 hover:text-dark focus-visible:text-dark': variants === 'secondary'
+          'bg-gray-900 text-gray-50': variants === 'primary',
+          'bg-gray-50 text-gray-900 hover:bg-gray-200 hover:text-gray-900 focus-visible:text-gray-900':
+            variants === 'secondary'
         },
         className
       )}

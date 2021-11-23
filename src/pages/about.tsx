@@ -10,13 +10,13 @@ export default function About() {
             <h1 className='mt-6 mb-6 text-4xl font-bold lg:text-5xl text--gradient text--shadow lg:mb-10'>
               Sample About Page
             </h1>
-            <p className='mb-6 text-xl leading-8 text-gray-900 dark:text-light-400 lg:mb-12'>
+            <p className='mb-6 text-xl leading-8 text-gray-900 dark:text-gray-400 lg:mb-12'>
               This is a starter for Next.js with Tailwind CSS and Typescript, already pre-configured with TailwindUI and some
               additional components.
             </p>
             <BasicLink
               href='/'
-              className='inline-block w-full px-10 py-3 mb-2 mr-4 text-sm font-medium leading-normal transition duration-200 rounded text-light-50 bg-primary-400 md:w-auto hover:bg-primary-300'
+              className='inline-block w-full px-10 py-3 mb-2 mr-4 text-sm font-medium leading-normal transition duration-200 rounded text-gray-50 bg-brand-400 md:w-auto hover:bg-brand-300'
             >
               Back to homepage
             </BasicLink>

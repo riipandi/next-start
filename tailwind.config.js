@@ -22,7 +22,7 @@ module.exports = {
       },
       colors: {
         gray: defaultColor.trueGray,
-        primary: {
+        brand: {
           50: '#b25de3',
           100: '#a853d9',
           200: '#9e49cf',
@@ -34,7 +34,7 @@ module.exports = {
           800: '#620d93',
           900: '#580389'
         },
-        secondary: {
+        accent: {
           50: '#5f5a70',
           100: '#555066',
           200: '#4b465c',
@@ -45,30 +45,6 @@ module.exports = {
           700: '#19142a',
           800: '#0f0a20',
           900: '#050016'
-        },
-        dark: {
-          50: '#4f565d',
-          100: '#454c53',
-          200: '#3b4249',
-          300: '#31383f',
-          400: '#272e35',
-          500: '#1d242b',
-          600: '#131a21',
-          700: '#091017',
-          800: '#00060d',
-          900: '#000003'
-        },
-        light: {
-          50: '#ffffff',
-          100: '#ffffff',
-          200: '#ffffff',
-          300: '#ffffff',
-          400: '#ffffff',
-          500: '#fafafa',
-          600: '#f0f0f0',
-          700: '#e6e6e6',
-          800: '#dcdcdc',
-          900: '#d2d2d2'
         }
       },
       typography: (theme) => ({
@@ -76,9 +52,9 @@ module.exports = {
           css: {
             color: theme('colors.gray.700'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.brand.500'),
               '&:hover': {
-                color: theme('colors.primary.600')
+                color: theme('colors.brand.600')
               }
             }
           }

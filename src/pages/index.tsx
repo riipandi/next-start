@@ -33,19 +33,19 @@ export default function Home() {
         </div>
         <div className='container relative px-4 mx-auto'>
           <div className='max-w-3xl mx-auto text-center'>
-            <h2 className='text-xl font-medium dark:text-primary-50 text-secondary-500'>{siteMeta.defaultTitle}</h2>
+            <h2 className='text-xl font-medium dark:text-brand-50 text-accent-500'>{siteMeta.defaultTitle}</h2>
             <h1 className='mt-6 mb-6 text-4xl font-bold lg:text-5xl text--gradient text--shadow lg:mb-10'>
               Welcome to your Next site!
             </h1>
-            <p className='mb-4 text-xl leading-8 text-gray-900 lg:mb-6 dark:text-light-400'>
+            <p className='mb-4 text-xl leading-8 text-gray-900 lg:mb-6 dark:text-gray-400'>
               This is a starter for Next.js with Tailwind CSS and Typescript, already pre-configured with TailwindUI and some
               additional components.
             </p>
-            <p className='mb-6 text-xl leading-8 text-gray-900 dark:text-light-400 lg:mb-12'>
+            <p className='mb-6 text-xl leading-8 text-gray-900 dark:text-gray-400 lg:mb-12'>
               You can{' '}
               <BasicLink
                 href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Friipandi%2Fnext-tailwind-starter'
-                className='hover:underline text-primary-500 dark:text-primary-100'
+                className='hover:underline text-brand-500 dark:text-brand-100'
                 newTab
               >
                 deploy your own to Vercel &rarr;
@@ -53,13 +53,13 @@ export default function Home() {
             </p>
             <BasicLink
               href='/about'
-              className='inline-block w-full px-8 py-3 mb-2 mr-4 text-sm font-medium leading-normal transition duration-200 rounded text-light-50 bg-primary-400 md:w-auto hover:bg-primary-300'
+              className='inline-block w-full px-8 py-3 mb-2 mr-4 text-sm font-medium leading-normal transition duration-200 rounded text-gray-50 bg-brand-400 md:w-auto hover:bg-brand-300'
             >
               About page
             </BasicLink>
             <BasicLink
               href='/dashboard'
-              className='inline-block w-full px-8 py-3 mb-2 text-sm font-medium leading-normal transition duration-200 border rounded border-secondary-300 md:w-auto hover:border-secondary-400 hover:bg-secondary-400 dark:hover:bg-secondary-300 hover:text-light-50 dark:text-light-50 dark:bg-secondary-400'
+              className='inline-block w-full px-8 py-3 mb-2 text-sm font-medium leading-normal transition duration-200 border rounded border-accent-300 md:w-auto hover:border-accent-400 hover:bg-accent-400 dark:hover:bg-accent-300 hover:text-gray-50 dark:text-gray-50 dark:bg-accent-400'
             >
               Example dashboard
             </BasicLink>
@@ -67,7 +67,7 @@ export default function Home() {
           <div className='flex justify-center mx-auto mt-2'>
             <div className='inline-flex items-center justify-center mx-auto mt-12'>
               <ThemeSwitcher iconSize={5} />
-              <span className='ml-3 -mr-1 font-medium text-gray-900 dark:text-light-400'>
+              <span className='ml-3 -mr-1 font-medium text-gray-900 dark:text-gray-400'>
                 Toggle {theme === 'dark' ? 'Light' : 'Dark'} Mode
               </span>
             </div>

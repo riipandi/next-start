@@ -20,7 +20,7 @@ h6 {
 }
 
 .text--gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-tr from-purple-400 to-primary-500;
+  @apply bg-clip-text text-transparent bg-gradient-to-tr from-purple-400 to-brand-500;
 }
 
 .text--shadow {
