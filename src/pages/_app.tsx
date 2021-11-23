@@ -1,22 +1,29 @@
-import { AppProps } from 'next/app'
+import splitbee from '@splitbee/web'
+import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import Script from 'next/script'
 import { ThemeProvider } from 'next-themes'
+import { useEffect } from 'react'
 
 import '@/assets/fonts/_jakarta_sans.css'
 import '@/assets/styles/global.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'development') {
+      splitbee.init({
+        token: process.env.SPLITBEE_TOKEN,
+        disableCookie: false,
+        scriptUrl: '/bee.js',
+        apiUrl: '/_hive'
+      })
+    }
+  }, [])
+
   return (
     <ThemeProvider attribute='class' defaultTheme='light' enableSystem={false}>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
-
-      {/* Example SplitBee analytics integration using Next Script */}
-      <Script src='/bee.js' />
-
-      {/* Load the application components */}
       <Component {...pageProps} />
     </ThemeProvider>
   )
