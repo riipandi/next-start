@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
+    MAINTENANCE_MODE: process.env.MAINTENANCE_MODE || false,
     SPLITBEE_TOKEN: process.env.SPLITBEE_TOKEN || ''
   },
   images: {

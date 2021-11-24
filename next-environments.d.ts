@@ -4,6 +4,7 @@
 
 declare namespace NodeJS {
   interface ProcessEnv extends NodeJS.ProcessEnv {
+    MAINTENANCE_MODE: boolean
     SPLITBEE_TOKEN: string
   }
 }

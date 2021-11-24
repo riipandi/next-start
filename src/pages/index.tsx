@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
 
+import { Maintenance } from '@/components/Elements'
 import { BasicLink, ThemeSwitcher } from '@/components/Essentials'
 import { Layout } from '@/components/SiteLayout'
 
@@ -8,6 +9,10 @@ import { siteMeta } from '@/config/site'
 
 export default function Home() {
   const { theme } = useTheme()
+
+  if (process.env.MAINTENANCE_MODE) {
+    return <Maintenance />
+  }
 
   return (
     <Layout fullTitle='This is Next.js Tailwind Starter' withHeader withFooter animate>
