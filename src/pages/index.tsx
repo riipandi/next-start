@@ -10,7 +10,7 @@ import { siteMeta } from '@/config/site'
 export default function Home() {
   const { theme } = useTheme()
 
-  if (siteMeta.maintenance) {
+  if (siteMeta.maintenance === true) {
     return <Maintenance />
   }
 

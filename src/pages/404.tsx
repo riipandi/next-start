@@ -5,7 +5,7 @@ import * as React from 'react'
 
 import Layout from '@/components/PlainLayout'
 
-export default function Home() {
+export default function Error404() {
   return (
     <Layout fullTitle='404 - Page Not Found' animate>
       <div className='flex items-center justify-center min-h-screen py-20 lg:py-40'>
