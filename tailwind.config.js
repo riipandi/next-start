@@ -15,7 +15,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'Inter UI', ...defaultTheme.fontFamily.sans]
+        sans: ['Plus Jakarta Sans', 'Inter UI', ...defaultTheme.fontFamily.sans],
+        mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono]
       },
       screens: {
         standalone: { raw: '(display-mode: standalone)' }

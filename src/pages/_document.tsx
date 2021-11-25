@@ -31,6 +31,7 @@ export default class MyDocument extends Document {
           {/* Load fonts from CDN */}
           {/* <link rel='stylesheet' href='https://gfont.barrista.workers.dev/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap' /> */}
           {/* <link rel='stylesheet' href='https://fonts.cdnfonts.com/css/inter-ui' /> */}
+          {/* <link rel='stylesheet' href='https://fonts.cdnfonts.com/css/jetbrains-mono' /> */}
         </Head>
         <body>
           <Main />
