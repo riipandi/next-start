@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 
+import { ScrollUp } from '@/components/Essentials'
 import { Footer, Header } from '@/components/SiteLayout'
 
 import { siteMeta } from '@/config/site'
@@ -81,6 +82,7 @@ const Layout = ({ children, title, fullTitle, description, ogImage, animate, wit
       </main>
 
       {withFooter && <Footer />}
+      <ScrollUp />
     </div>
   )
 }
