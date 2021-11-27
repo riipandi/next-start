@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 interface Response {
-  message: string
   error: boolean
+  message?: string
 }
 
 const handler = (req: NextApiRequest, res: NextApiResponse<Response>) => {
