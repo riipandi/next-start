@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <Layout fullTitle='This is Next.js Tailwind Starter' withHeader withFooter animate>
-      <div className='flex items-center justify-center min-h-screen py-20 lg:py-30'>
+      <div className='flex flex-col items-center justify-center min-h-screen py-20 lg:py-30'>
         <div className='top-0 left-0 hidden mt-32 lg:block lg:absolute'>
           <Image src='https://shuffle.dev/zeus-assets/icons/dots/blue-dot-left-bars.svg' width={300} height={300} alt='' />
         </div>
@@ -58,15 +58,15 @@ export default function Home() {
             </p>
             <BasicLink
               href='/about'
-              className='inline-block w-full px-8 py-3 mb-2 mr-4 text-sm font-medium leading-normal transition duration-200 rounded text-gray-50 bg-brand-400 md:w-auto hover:bg-brand-300'
+              className='inline-block w-full px-8 py-3 mb-2 mr-4 text-sm font-medium leading-normal text-white transition duration-200 border border-transparent rounded bg-brand-400 md:w-auto hover:bg-opacity-90'
             >
               About page
             </BasicLink>
             <BasicLink
-              href='/dashboard'
-              className='inline-block w-full px-8 py-3 mb-2 text-sm font-medium leading-normal transition duration-200 border rounded border-accent-300 md:w-auto hover:border-accent-400 hover:bg-accent-400 dark:hover:bg-accent-300 hover:text-gray-50 dark:text-gray-50 dark:bg-accent-400'
+              href='/empty'
+              className='inline-block w-full px-8 py-3 mb-2 text-sm font-medium leading-normal transition duration-500 border rounded border-accent-300 md:w-auto hover:border-accent-400 hover:bg-accent-400 dark:hover:bg-accent-300 hover:text-white dark:text-white dark:bg-accent-400'
             >
-              Example dashboard
+              Empty page
             </BasicLink>
           </div>
           <div className='flex justify-center mx-auto mt-2'>
