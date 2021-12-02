@@ -1,12 +1,24 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+import { throwError } from '@/utils/api-helper'
+
 interface Response {
-  error: boolean
-  message?: string
+  message: string
 }
 
-const handler = (req: NextApiRequest, res: NextApiResponse<Response>) => {
-  res.status(200).json({ error: false, message: 'Hello world' })
+async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const { method } = req
+  switch (method) {
+    case 'GET':
+      return handleRequet(req, res)
+    default:
+      res.setHeader('Allow', ['GET'])
+      res.status(405).json(throwError(405, `Method ${method} Not Allowed`))
+  }
+}
+
+const handleRequet = async (req: NextApiRequest, res: NextApiResponse<Response>) => {
+  res.status(200).json({ message: 'Hello world' })
 }
 
 export default handler
