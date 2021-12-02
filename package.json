@@ -1,6 +1,6 @@
 {
   "name": "next-tailwind-starter",
-  "version": "12.9.3",
+  "version": "12.9.4",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
@@ -13,6 +13,7 @@
     "run:docker": "docker run -p 3000:3000 $npm_package_name:latest"
   },
   "dependencies": {
+    "@floating-ui/react-dom": "^0.1.2",
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "@splitbee/web": "^0.3.0",
