@@ -14,10 +14,7 @@ export default function About() {
               This is a starter for Next.js with Tailwind CSS and Typescript, already pre-configured with TailwindUI and some
               additional components.
             </p>
-            <BasicLink
-              href='/'
-              className='inline-block w-full px-10 py-3 mb-2 mr-4 text-sm font-medium leading-normal transition duration-200 rounded text-gray-50 bg-primary-400 md:w-auto hover:bg-primary-300'
-            >
+            <BasicLink href='/' className='inline-block px-5 text-sm btn btn--primary btn--md'>
               Back to homepage
             </BasicLink>
           </div>
