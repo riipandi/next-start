@@ -8,6 +8,7 @@ import { useEffect } from 'react'
 import 'aos/dist/aos.css'
 import '@/assets/fonts/_jakarta_sans.css'
 import '@/assets/styles/global.css'
+import '@/assets/styles/styles.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {

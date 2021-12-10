@@ -10,14 +10,14 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req
   switch (method) {
     case 'GET':
-      return handleRequet(req, res)
+      return handleRequest(req, res)
     default:
       res.setHeader('Allow', ['GET'])
       res.status(405).json(throwError(405, `Method ${method} Not Allowed`))
   }
 }
 
-const handleRequet = async (req: NextApiRequest, res: NextApiResponse<Response>) => {
+const handleRequest = async (req: NextApiRequest, res: NextApiResponse<Response>) => {
   res.status(200).json({ message: 'Hello world' })
 }
 

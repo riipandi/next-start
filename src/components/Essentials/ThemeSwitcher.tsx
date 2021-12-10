@@ -30,8 +30,8 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
         checked={isDark}
         onChange={handleChange}
         className={classNames(
-          theme === 'dark' ? 'bg-brand-600' : 'bg-gray-200',
-          'relative inline-flex flex-shrink-0 h-5 w-10 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-500'
+          theme === 'dark' ? 'bg-primary-600' : 'bg-gray-200',
+          'relative inline-flex flex-shrink-0 h-5 w-10 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500'
         )}
         {...props}
       >
@@ -58,7 +58,7 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
             )}
             aria-hidden='true'
           >
-            <MoonStars weight='regular' className='w-3 h-3 text-accent-600' />
+            <MoonStars weight='regular' className='w-3 h-3 text-secondary-600' />
           </span>
         </span>
       </Switch>
@@ -73,13 +73,16 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
           weight='duotone'
           className={classNames(
             iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
-            'dark:text-brand-50 dark:hover:text-brand-200'
+            'dark:text-primary-50 dark:hover:text-primary-200'
           )}
         />
       ) : (
         <SunDim
           weight='duotone'
-          className={classNames(iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5', 'text-gray-700 hover:text-brand-400')}
+          className={classNames(
+            iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
+            'text-gray-700 hover:text-primary-400'
+          )}
         />
       )}
     </button>

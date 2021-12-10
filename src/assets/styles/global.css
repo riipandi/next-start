@@ -3,6 +3,7 @@
 /* Start purging... */
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 /* Stop purging. */
 
 html,
@@ -17,12 +18,4 @@ h4,
 h5,
 h6 {
   @apply font-sans;
-}
-
-.text--gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-tr from-purple-400 to-brand-500;
-}
-
-.text--shadow {
-  @apply filter drop-shadow-lg md:drop-shadow-2xl;
 }

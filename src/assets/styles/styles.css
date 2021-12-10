@@ -1,0 +1,33 @@
+/* Styles for text */
+.text--gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-tr from-purple-400 to-primary-500;
+}
+
+.text--shadow {
+  @apply filter drop-shadow-lg md:drop-shadow-2xl;
+}
+
+/* Pre-defined button style */
+.btn {
+  @apply font-medium rounded-md transition duration-300;
+}
+
+.btn--sm {
+  @apply text-xs px-3 py-2;
+}
+
+.btn--md {
+  @apply text-sm px-5 py-3;
+}
+
+.btn--lg {
+  @apply text-base px-8 py-4;
+}
+
+.btn--primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.btn--outline {
+  @apply border rounded border-secondary-500 md:w-auto hover:border-secondary-400 hover:bg-secondary-400 dark:hover:bg-secondary-600 hover:text-white dark:text-white dark:bg-secondary-500;
+}

@@ -13,7 +13,7 @@ export default function ErrorPage() {
           </div>
           <div className='py-12'>
             <div className='text-center'>
-              <p className='text-sm font-semibold tracking-wide uppercase text-brand-600'>Hey, we got some problems!</p>
+              <p className='text-sm font-semibold tracking-wide uppercase text-primary-600'>Hey, we got some problems!</p>
               <h1 className='mt-4 text-4xl font-bold tracking-tight text-gray-900 lg:mt-6 sm:text-5xl'>
                 Server error 500 :-(
               </h1>
@@ -23,7 +23,7 @@ export default function ErrorPage() {
               <div className='mt-6'>
                 <BasicLink
                   href='https://aris.web.id'
-                  className='text-base font-medium text-brand-600 hover:text-brand-400'
+                  className='text-base font-medium text-primary-600 hover:text-primary-400'
                   newTab
                 >
                   Meanwhile, you can subscribe to the latest updates <span aria-hidden='true'> &rarr;</span>

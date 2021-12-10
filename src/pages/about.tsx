@@ -16,7 +16,7 @@ export default function About() {
             </p>
             <BasicLink
               href='/'
-              className='inline-block w-full px-10 py-3 mb-2 mr-4 text-sm font-medium leading-normal transition duration-200 rounded text-gray-50 bg-brand-400 md:w-auto hover:bg-brand-300'
+              className='inline-block w-full px-10 py-3 mb-2 mr-4 text-sm font-medium leading-normal transition duration-200 rounded text-gray-50 bg-primary-400 md:w-auto hover:bg-primary-300'
             >
               Back to homepage
             </BasicLink>

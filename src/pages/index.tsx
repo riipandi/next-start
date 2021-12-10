@@ -38,7 +38,7 @@ export default function Home() {
         </div>
         <div className='container relative px-4 mx-auto'>
           <div className='max-w-3xl mx-auto text-center'>
-            <h2 className='text-xl font-medium dark:text-brand-50 text-accent-500'>{siteMeta.defaultTitle}</h2>
+            <h2 className='text-xl font-medium dark:text-primary-50 text-secondary-500'>{siteMeta.defaultTitle}</h2>
             <h1 className='mt-6 mb-6 text-4xl font-bold lg:text-5xl text--gradient text--shadow lg:mb-10'>
               Welcome to your Next site!
             </h1>
@@ -50,24 +50,20 @@ export default function Home() {
               You can{' '}
               <BasicLink
                 href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Friipandi%2Fnext-tailwind-starter'
-                className='hover:underline text-brand-500 dark:text-brand-100'
+                className='underline text-primary-500 dark:text-primary-100 decoration-primary-500 hover:text-gray-900'
                 newTab
               >
                 deploy your own to Vercel &rarr;
               </BasicLink>
             </p>
-            <BasicLink
-              href='/about'
-              className='inline-block w-full px-8 py-3 mb-2 mr-4 text-sm font-medium leading-normal text-white transition duration-200 border border-transparent rounded bg-brand-400 md:w-auto hover:bg-opacity-90'
-            >
-              About page
-            </BasicLink>
-            <BasicLink
-              href='/empty'
-              className='inline-block w-full px-8 py-3 mb-2 text-sm font-medium leading-normal transition duration-500 border rounded border-accent-300 md:w-auto hover:border-accent-400 hover:bg-accent-400 dark:hover:bg-accent-300 hover:text-white dark:text-white dark:bg-accent-400'
-            >
-              Empty page
-            </BasicLink>
+            <div className='flex justify-center mx-auto space-x-4'>
+              <BasicLink href='/about' className='inline-block px-5 text-sm btn btn--primary btn--md'>
+                About page
+              </BasicLink>
+              <BasicLink href='/empty' className='inline-block w-full px-5 text-sm btn btn--outline btn--md'>
+                Empty page
+              </BasicLink>
+            </div>
           </div>
           <div className='flex justify-center mx-auto mt-2'>
             <div className='inline-flex items-center justify-center mx-auto mt-12'>

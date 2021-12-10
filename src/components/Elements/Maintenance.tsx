@@ -15,7 +15,7 @@ const Maintenance = () => {
           </div>
           <div className='py-12'>
             <div className='text-center'>
-              <p className='text-sm font-semibold tracking-wide uppercase text-brand-600'>Hey, we are here</p>
+              <p className='text-sm font-semibold tracking-wide uppercase text-primary-600'>Hey, we are here</p>
               <h1 className='mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl'>Almost ready ...</h1>
               <p className='mt-6 text-lg text-gray-600'>
                 We appreciate your interest, but be patient we are preparing everything.
@@ -23,7 +23,7 @@ const Maintenance = () => {
               <div className='mt-6'>
                 <BasicLink
                   href='https://aris.web.id'
-                  className='text-base font-medium text-brand-600 hover:text-brand-400'
+                  className='text-base font-medium text-primary-600 hover:text-primary-400'
                   newTab
                 >
                   Meanwhile, you can subscribe to the latest updates <span aria-hidden='true'> &rarr;</span>
