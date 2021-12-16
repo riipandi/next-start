@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 
-import { siteMeta } from '@/config/site'
+import { siteMeta } from '@/libraries/config'
 
 const pageVariants = {
   initial: {

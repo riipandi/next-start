@@ -1,9 +1,9 @@
 import Image from 'next/image'
 
+import { siteMeta } from '@/libraries/config'
+
 import { BasicLink } from '@/components/Essentials'
 import Layout from '@/components/PlainLayout'
-
-import { siteMeta } from '@/config/site'
 
 const Maintenance = () => {
   return (

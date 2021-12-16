@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import { useState } from 'react'
 
-import { Sidebar, Topbar } from '@/components/AppLayout'
+import { siteMeta } from '@/libraries/config'
 
-import { siteMeta } from '@/config/site'
+import { Sidebar, Topbar } from '@/components/AppLayout'
 
 interface Props {
   children: React.ReactNode

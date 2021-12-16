@@ -2,10 +2,10 @@ import { Menu, Transition } from '@headlessui/react'
 import { BellIcon, CogIcon, LogoutIcon, MenuAlt2Icon, UserIcon } from '@heroicons/react/outline'
 import { Fragment } from 'react'
 
+import { classNames } from '@/libraries/helper'
+
 import { Breadcrumbs } from '@/components/AppLayout'
 import { BasicLink } from '@/components/Essentials'
-
-import { classNames } from '@/utils/helper'
 
 type TopbarProps = {
   setSidebarOpen: (value: boolean) => void

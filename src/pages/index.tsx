@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
 
+import { siteMeta } from '@/libraries/config'
+
 import { Maintenance } from '@/components/Elements'
 import { BasicLink, ThemeSwitcher } from '@/components/Essentials'
 import { Layout } from '@/components/SiteLayout'
-
-import { siteMeta } from '@/config/site'
 
 export default function Home() {
   const { theme } = useTheme()

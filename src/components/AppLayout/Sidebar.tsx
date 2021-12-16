@@ -3,9 +3,9 @@ import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon,
 import { useRouter } from 'next/router'
 import { Fragment } from 'react'
 
-import { BasicLink } from '@/components/Essentials'
+import { classNames } from '@/libraries/helper'
 
-import { classNames } from '@/utils/helper'
+import { BasicLink } from '@/components/Essentials'
 
 type SidebarProps = {
   sidebarOpen: boolean

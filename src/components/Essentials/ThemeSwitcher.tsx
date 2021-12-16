@@ -3,7 +3,7 @@ import { useTheme } from 'next-themes'
 import { CloudMoon, MoonStars, Sun, SunDim } from 'phosphor-react'
 import React, { useEffect, useState } from 'react'
 
-import { classNames } from '@/utils/helper'
+import { classNames } from '@/libraries/helper'
 
 interface Props {
   className?: string

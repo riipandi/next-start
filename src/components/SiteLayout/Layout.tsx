@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 
+import { siteMeta } from '@/libraries/config'
+
 import { ScrollUp } from '@/components/Essentials'
 import { Footer, Header } from '@/components/SiteLayout'
-
-import { siteMeta } from '@/config/site'
 
 const pageVariants = {
   initial: {

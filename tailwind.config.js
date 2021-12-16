@@ -3,8 +3,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const defaultColor = require('tailwindcss/colors')
 
 module.exports = {
-  darkMode: 'class',
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -38,7 +38,6 @@ module.exports = {
     // Additional first-party plugins
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/line-clamp')
   ]
 }
