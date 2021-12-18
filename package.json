@@ -1,10 +1,10 @@
 {
     "name": "next-tailwind-starter",
-    "version": "12.11.2",
+    "version": "12.11.3",
     "private": true,
     "scripts": {
         "dev": "NODE_OPTIONS='--inspect' next dev",
-        "build": "next build",
+        "build": "NEXT_TELEMETRY_DISABLED=1 next build",
         "start": "next start --port ${PORT:=3000}",
         "lint": "next lint",
         "lint:fix": "eslint src --fix && yarn format",
