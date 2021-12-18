@@ -1,66 +1,133 @@
 {
-  "name": "next-tailwind-starter",
-  "version": "12.11.0",
-  "private": true,
-  "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev",
-    "build": "next build",
-    "start": "next start --port ${PORT:=3000}",
-    "lint": "next lint",
-    "lint:fix": "eslint src --fix && yarn format",
-    "format": "prettier --write src",
-    "build:docker": "docker build -t $npm_package_name:latest -t $npm_package_name:v$npm_package_version .",
-    "run:docker": "docker run -p 3000:3000 $npm_package_name:latest"
-  },
-  "dependencies": {
-    "@floating-ui/react-dom": "^0.3.3",
-    "@headlessui/react": "^1.4.2",
-    "@heroicons/react": "^1.0.5",
-    "@splitbee/web": "^0.3.0",
-    "@tailwindcss/forms": "^0.4.0",
-    "@tailwindcss/line-clamp": "^0.3.0",
-    "@tailwindcss/typography": "^0.5.0",
-    "akar-icons": "^1.9.5",
-    "framer-motion": "^5.5.4",
-    "next": "12.0.7",
-    "next-themes": "^0.0.15",
-    "phosphor-react": "^1.3.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.16.5",
-    "@types/node": "^17.0.0",
-    "@types/react": "^17.0.37",
-    "@types/tailwindcss": "^2.2.4",
-    "@typescript-eslint/eslint-plugin": "^5.7.0",
-    "@typescript-eslint/parser": "^5.6.0",
-    "autoprefixer": "^10.4.0",
-    "clsx": "^1.1.1",
-    "eslint": "~7.32.0",
-    "eslint-config-next": "12.0.4",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
-    "lint-staged": "^12.1.2",
-    "postcss": "^8.4.5",
-    "prettier": "^2.5.1",
-    "sharp": "^0.29.3",
-    "tailwindcss": "^3.0.5",
-    "typescript": "^4.5.4"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,}": [
-      "eslint --max-warnings=0",
-      "prettier -w"
+    "name": "next-tailwind-starter",
+    "version": "12.11.1",
+    "private": true,
+    "scripts": {
+        "dev": "NODE_OPTIONS='--inspect' next dev",
+        "build": "next build",
+        "start": "next start --port ${PORT:=3000}",
+        "lint": "next lint",
+        "lint:fix": "eslint src --fix && yarn format",
+        "format": "prettier --write src",
+        "build:docker": "docker build -t $npm_package_name:latest -t $npm_package_name:v$npm_package_version .",
+        "run:docker": "docker run -p 3000:3000 $npm_package_name:latest"
+    },
+    "dependencies": {
+        "@floating-ui/react-dom": "^0.3.3",
+        "@headlessui/react": "^1.4.2",
+        "@heroicons/react": "^1.0.5",
+        "@splitbee/web": "^0.3.0",
+        "@tailwindcss/forms": "^0.4.0",
+        "@tailwindcss/line-clamp": "^0.3.0",
+        "@tailwindcss/typography": "^0.5.0",
+        "akar-icons": "^1.9.5",
+        "framer-motion": "^5.5.4",
+        "next": "12.0.7",
+        "next-themes": "^0.0.15",
+        "phosphor-react": "^1.3.1",
+        "react": "17.0.2",
+        "react-dom": "17.0.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.16.5",
+        "@types/node": "^17.0.0",
+        "@types/react": "^17.0.37",
+        "@types/tailwindcss": "^2.2.4",
+        "@typescript-eslint/eslint-plugin": "^5.7.0",
+        "@typescript-eslint/parser": "^5.6.0",
+        "autoprefixer": "^10.4.0",
+        "clsx": "^1.1.1",
+        "eslint": "~7.32.0",
+        "eslint-config-next": "12.0.4",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-simple-import-sort": "^7.0.0",
+        "lint-staged": "^12.1.2",
+        "postcss": "^8.4.5",
+        "prettier": "^2.5.1",
+        "sharp": "^0.29.3",
+        "tailwindcss": "^3.0.5",
+        "typescript": "^4.5.4"
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx,ts,tsx,}": [
+            "eslint --max-warnings=0",
+            "prettier -w"
+        ],
+        "src/**/*.{json,css,scss,md}": [
+            "prettier -w"
+        ]
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
     ],
-    "src/**/*.{json,css,scss,md}": [
-      "prettier -w"
-    ]
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es2021": true,
+            "node": true
+        },
+        "plugins": ["@typescript-eslint", "simple-import-sort"],
+        "extends": [
+            "eslint:recommended",
+            "next",
+            "next/core-web-vitals",
+            "plugin:@typescript-eslint/recommended",
+            "prettier"
+        ],
+        "rules": {
+            "no-unused-vars": "off",
+            "no-console": "warn",
+            "@typescript-eslint/explicit-module-boundary-types": "off",
+            "@typescript-eslint/no-explicit-any": "off",
+            "@typescript-eslint/no-var-requires": "off",
+            "@next/next/no-img-element": "off",
+            "simple-import-sort/exports": "warn",
+            "simple-import-sort/imports": [
+                "warn",
+                {
+                    "groups": [
+                        ["^@?\\w", "^\\u0000"],
+                        ["^.+\\.s?css$"],
+                        ["^@/lib", "^@/hooks"],
+                        ["^@/assets"],
+                        ["^@/components"],
+                        ["^@/"],
+                        [
+                            "^\\./?$",
+                            "^\\.(?!/?$)",
+                            "^\\.\\./?$",
+                            "^\\.\\.(?!/?$)",
+                            "^\\.\\./\\.\\./?$",
+                            "^\\.\\./\\.\\.(?!/?$)",
+                            "^\\.\\./\\.\\./\\.\\./?$",
+                            "^\\.\\./\\.\\./\\.\\.(?!/?$)"
+                        ],
+                        ["^@/types"],
+                        ["^"]
+                    ]
+                }
+            ]
+        },
+        "globals": {
+            "React": true,
+            "JSX": true
+        }
+    },
+    "eslintIgnore": [
+        "build"
+    ],
+    "prettier": {
+        "arrowParens": "always",
+        "bracketSpacing": true,
+        "jsxSingleQuote": true,
+        "printWidth": 125,
+        "semi": false,
+        "singleQuote": true,
+        "tabWidth": 2,
+        "trailingComma": "none",
+        "useTabs": false
+    }
 }
