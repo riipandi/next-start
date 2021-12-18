@@ -1,7 +1,6 @@
-import clsx from 'clsx'
 import Link, { LinkProps } from 'next/link'
 
-export type BasicLinkProps = {
+export type AnchorProps = {
   children: React.ReactNode
   className?: string
   href: string
@@ -9,27 +8,15 @@ export type BasicLinkProps = {
 } & React.ComponentPropsWithoutRef<'a'> &
   LinkProps
 
-const BasicLink = ({ children, href, newTab = false, className, ...props }: BasicLinkProps) => {
-  const isNewTab = newTab !== undefined ? newTab : href && !href.startsWith('/') && !href.startsWith('#')
+const BasicLink = ({ children, href, newTab = false, className, ...props }: AnchorProps) => {
+  const isNewTab = newTab === undefined || href.startsWith('/') || href.valueOf() == '#' ? false : true
 
-  if (!isNewTab) {
-    return (
-      <Link href={href}>
-        <a {...props} className={className}>
-          {children}
-        </a>
-      </Link>
-    )
-  }
-
-  return (
-    <a
-      href={href}
-      target={isNewTab ? '_blank' : '_self'}
-      rel='noopener noreferrer'
-      className={clsx(className, 'cursor-pointer')}
-      {...props}
-    >
+  return href.startsWith('/') || href === '' ? (
+    <Link href={href} {...props}>
+      <a className={className}>{children}</a>
+    </Link>
+  ) : (
+    <a href={href} target={isNewTab ? '_blank' : '_self'} rel='noopener noreferrer' className={className} {...props}>
       {children}
     </a>
   )
