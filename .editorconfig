@@ -9,12 +9,16 @@ indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
 
-[*.{js,jsx,ts,tsx,yml}]
+[*.{js,jsx,prisma,ts,tsx,yml}]
 indent_size = 2
 
-[*.md]
+[*.{json,md}]
+indent_size = 4
 max_line_length = off
 trim_trailing_whitespace = false
 
 [*.txt]
 insert_final_newline = false
+
+[{Makefile,**.mk}]
+indent_style = tab
