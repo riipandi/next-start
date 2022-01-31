@@ -2,12 +2,12 @@ import Link from 'next/link'
 import { CaretDoubleLeft } from 'phosphor-react'
 import * as React from 'react'
 
-import Layout from '@/components/BaseLayout'
+import Container from '@/components/BaseLayout'
 import { Image } from '@/components/Elements'
 
 export default function Error404() {
   return (
-    <Layout fullTitle='404 - Page Not Found' animate>
+    <Container fullTitle='404 - Page Not Found' animate>
       <div className='flex items-center justify-center min-h-screen py-20 lg:py-40'>
         <div className='top-0 left-0 hidden mt-32 lg:block lg:absolute'>
           <Image src='https://shuffle.dev/zeus-assets/icons/dots/blue-dot-left-bars.svg' width={300} height={300} alt='' />
@@ -46,6 +46,6 @@ export default function Error404() {
           </div>
         </div>
       </div>
-    </Layout>
+    </Container>
   )
 }

@@ -1,9 +1,9 @@
 import { Anchor } from '@/components/Elements'
-import { Layout } from '@/components/SiteLayout'
+import { Container } from '@/components/SiteLayout'
 
 export default function About() {
   return (
-    <Layout title='About' animate>
+    <Container title='About' animate>
       <div className='flex items-center justify-center min-h-screen py-20 lg:py-40'>
         <div className='container relative px-4 mx-auto'>
           <div className='max-w-3xl mx-auto text-center'>
@@ -19,6 +19,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </Layout>
+    </Container>
   )
 }

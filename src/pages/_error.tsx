@@ -1,9 +1,9 @@
-import Layout from '@/components/BaseLayout'
+import Container from '@/components/BaseLayout'
 import { Anchor, Image } from '@/components/Elements'
 
 export default function ErrorPage() {
   return (
-    <Layout fullTitle='Something wrong!'>
+    <Container fullTitle='Something wrong!'>
       <div className='flex flex-col min-h-screen pb-12 bg-white'>
         <main className='flex flex-col justify-center flex-grow w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
           <div className='flex justify-center flex-shrink-0'>
@@ -54,6 +54,6 @@ export default function ErrorPage() {
           </nav>
         </footer>
       </div>
-    </Layout>
+    </Container>
   )
 }

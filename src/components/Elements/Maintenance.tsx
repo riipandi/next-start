@@ -1,11 +1,11 @@
 import { siteMeta } from '@/libraries/config'
 
-import Layout from '@/components/BaseLayout'
+import Container from '@/components/BaseLayout'
 import { Anchor, Image } from '@/components/Elements'
 
 const Maintenance = () => {
   return (
-    <Layout fullTitle={siteMeta.defaultTitle} animate>
+    <Container fullTitle={siteMeta.defaultTitle} animate>
       <div className='flex flex-col min-h-screen pb-12 bg-white'>
         <main className='flex flex-col justify-center flex-grow w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
           <div className='flex justify-center flex-shrink-0'>
@@ -54,7 +54,7 @@ const Maintenance = () => {
           </nav>
         </footer>
       </div>
-    </Layout>
+    </Container>
   )
 }
 
