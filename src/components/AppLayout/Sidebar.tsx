@@ -3,9 +3,9 @@ import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon,
 import { useRouter } from 'next/router'
 import { Fragment } from 'react'
 
-import { classNames } from '@/libraries/helper'
+import { classNames } from '@/libraries/utils'
 
-import { BasicLink } from '@/components/Essentials'
+import { Anchor } from '@/components/Elements'
 
 type SidebarProps = {
   sidebarOpen: boolean
@@ -87,7 +87,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <nav className='flex-1 px-2 space-y-7' aria-label='Sidebar'>
                   <div className='space-y-1'>
                     {navigation.map((item) => (
-                      <BasicLink
+                      <Anchor
                         key={item.name}
                         href={item.href}
                         className={classNames(
@@ -97,7 +97,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       >
                         <item.icon className='flex-shrink-0 w-6 h-6 mr-4 text-blue-300' aria-hidden='true' />
                         {item.name}
-                      </BasicLink>
+                      </Anchor>
                     ))}
                   </div>
                   <div className='mx-2 border-t border-opacity-50 border-blue-80'></div>
@@ -107,7 +107,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     </h3>
                     <div className='space-y-1' role='group' aria-labelledby='projects-headline'>
                       {secondaryNavigation.map((item) => (
-                        <BasicLink
+                        <Anchor
                           key={item.name}
                           href={item.href}
                           className={classNames(
@@ -116,7 +116,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           )}
                         >
                           <span className='truncate'>{item.name}</span>
-                        </BasicLink>
+                        </Anchor>
                       ))}
                     </div>
                   </div>
@@ -145,7 +145,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <nav className='flex-1 px-2 space-y-7' aria-label='Sidebar'>
               <div className='space-y-1'>
                 {navigation.map((item) => (
-                  <BasicLink
+                  <Anchor
                     key={item.name}
                     href={item.href}
                     className={classNames(
@@ -155,7 +155,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   >
                     <item.icon className='flex-shrink-0 w-6 h-6 mr-3 text-blue-300' aria-hidden='true' />
                     {item.name}
-                  </BasicLink>
+                  </Anchor>
                 ))}
               </div>
               <div className='mx-2 border-t border-opacity-50 border-blue-80'></div>
@@ -165,7 +165,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </h3>
                 <div className='space-y-1' role='group' aria-labelledby='projects-headline'>
                   {secondaryNavigation.map((item) => (
-                    <BasicLink
+                    <Anchor
                       key={item.name}
                       href={item.href}
                       className={classNames(
@@ -174,7 +174,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       )}
                     >
                       <span className='truncate'>{item.name}</span>
-                    </BasicLink>
+                    </Anchor>
                   ))}
                 </div>
               </div>

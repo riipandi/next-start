@@ -8,7 +8,7 @@ export type AnchorProps = {
 } & React.ComponentPropsWithoutRef<'a'> &
   LinkProps
 
-const BasicLink = ({ children, href, newTab = false, className, ...props }: AnchorProps) => {
+const Anchor = ({ children, href, newTab = false, className, ...props }: AnchorProps) => {
   const isNewTab = newTab === undefined || href.startsWith('/') || href.valueOf() == '#' ? false : true
 
   return href.startsWith('/') || href === '' ? (
@@ -22,4 +22,4 @@ const BasicLink = ({ children, href, newTab = false, className, ...props }: Anch
   )
 }
 
-export default BasicLink
+export default Anchor

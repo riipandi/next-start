@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { throwError } from '@/libraries/api-helper'
+import { throwError } from '@/libraries/helper'
 
 interface Response {
   message: string

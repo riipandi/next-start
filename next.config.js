@@ -1,23 +1,33 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    MAINTENANCE_MODE: process.env.MAINTENANCE_MODE || false,
-    SPLITBEE_TOKEN: process.env.SPLITBEE_TOKEN || ''
-  },
   images: {
-    domains: ['doodleipsum.com', 'images.unsplash.com', 'pbs.twimg.com', 'shuffle.dev', 'tailwindui.com']
+    formats: ['image/avif', 'image/webp'],
+    loader: 'imgix',
+    path: '',
+    domains: [
+      'localhost',
+      'doodleipsum.com',
+      'error404.fun',
+      'images.unsplash.com',
+      'pbs.twimg.com',
+      'res.cloudinary.com',
+      's.gravatar.com',
+      'shuffle.dev',
+      'tailwindui.com',
+      'via.placeholder.com'
+    ]
   },
   eslint: {
     dirs: ['src']
   },
   reactStrictMode: true,
-  poweredByHeader: false,
-  async rewrites() {
-    return [
-      { source: '/bee.js', destination: 'https://cdn.splitbee.io/sb.js' },
-      { source: '/_hive/:slug', destination: 'https://hive.splitbee.io/:slug' }
-    ]
-  }
+  poweredByHeader: false
+  // async rewrites() {
+  //   return [
+  //     { source: '/bee.js', destination: 'https://cdn.splitbee.io/sb.js' },
+  //     { source: '/_hive/:slug', destination: 'https://hive.splitbee.io/:slug' }
+  //   ]
+  // }
 }
 
 module.exports = nextConfig

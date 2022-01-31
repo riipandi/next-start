@@ -2,10 +2,10 @@ import { Menu, Transition } from '@headlessui/react'
 import { BellIcon, CogIcon, LogoutIcon, MenuAlt2Icon, UserIcon } from '@heroicons/react/outline'
 import { Fragment } from 'react'
 
-import { classNames } from '@/libraries/helper'
+import { classNames } from '@/libraries/utils'
 
 import { Breadcrumbs } from '@/components/AppLayout'
-import { BasicLink } from '@/components/Essentials'
+import { Anchor } from '@/components/Elements'
 
 type TopbarProps = {
   setSidebarOpen: (value: boolean) => void
@@ -14,7 +14,7 @@ type TopbarProps = {
 const userNavigation = [
   { name: 'Your Profile', href: '#', icon: UserIcon },
   { name: 'Settings', href: '#', icon: CogIcon },
-  { name: 'Sign out', href: '#', icon: LogoutIcon }
+  { name: 'Sign out', href: '/', icon: LogoutIcon }
 ]
 
 const Topbar = ({ setSidebarOpen }: TopbarProps) => {
@@ -59,7 +59,7 @@ const Topbar = ({ setSidebarOpen }: TopbarProps) => {
               <Menu.Items className='absolute right-0 z-50 w-48 mt-2 origin-top-right bg-white rounded-md shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none'>
                 {userNavigation.map((item, index, row) => (
                   <Menu.Item key={item.name}>
-                    <BasicLink
+                    <Anchor
                       href={item.href}
                       className={classNames(
                         index != row.length - 1 ? 'border-b' : 'rounded-md',
@@ -68,7 +68,7 @@ const Topbar = ({ setSidebarOpen }: TopbarProps) => {
                     >
                       <item.icon className='flex-shrink-0 w-5 h-5 mr-2 -ml-1 text-gray-500' aria-hidden='true' />
                       <span>{item.name}</span>
-                    </BasicLink>
+                    </Anchor>
                   </Menu.Item>
                 ))}
               </Menu.Items>

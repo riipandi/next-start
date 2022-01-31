@@ -1,18 +1,12 @@
-import Image from 'next/image'
 import { useTheme } from 'next-themes'
 
 import { siteMeta } from '@/libraries/config'
 
-import { Maintenance } from '@/components/Elements'
-import { BasicLink, ThemeSwitcher } from '@/components/Essentials'
+import { Anchor, Image, ThemeSwitcher } from '@/components/Elements'
 import { Layout } from '@/components/SiteLayout'
 
 export default function Home() {
   const { theme } = useTheme()
-
-  if (siteMeta.maintenance === true) {
-    return <Maintenance />
-  }
 
   return (
     <Layout fullTitle='This is Next.js Tailwind Starter' withHeader withFooter animate>
@@ -46,26 +40,19 @@ export default function Home() {
               This is a starter for Next.js with Tailwind CSS and Typescript, already pre-configured with TailwindUI and some
               additional components.
             </p>
-            <p className='mb-6 text-xl leading-8 text-gray-900 dark:text-gray-400 lg:mb-12'>
-              You can{' '}
-              <BasicLink
-                href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Friipandi%2Fnext-tailwind-starter'
-                className='underline text-primary-500 dark:text-primary-100 decoration-primary-500 hover:text-gray-900'
-                newTab
-              >
-                deploy your own to Vercel &rarr;
-              </BasicLink>
-            </p>
-            <div className='flex justify-center mx-auto space-x-4'>
-              <BasicLink href='/about' className='inline-block px-5 text-sm btn btn--primary btn--md'>
+            <div className='flex justify-center py-8 mx-auto space-x-4'>
+              <Anchor href='/about' className='inline-block px-5 text-sm btn btn--primary btn--md'>
                 About page
-              </BasicLink>
-              <BasicLink href='/empty' className='inline-block w-full px-5 text-sm btn btn--outline btn--md'>
-                Empty page
-              </BasicLink>
+              </Anchor>
+              <Anchor
+                href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Friipandi%2Fnext-tailwind-starter'
+                className='inline-block w-full px-5 text-sm btn btn--outline btn--md'
+              >
+                Deploy your own
+              </Anchor>
             </div>
           </div>
-          <div className='flex justify-center mx-auto mt-2'>
+          <div className='flex justify-center mx-auto'>
             <div className='inline-flex items-center justify-center mx-auto mt-12'>
               <ThemeSwitcher iconSize={5} />
               <span className='ml-3 -mr-1 font-medium text-gray-900 dark:text-gray-400'>

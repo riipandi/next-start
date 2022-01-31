@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import { siteMeta } from '@/libraries/config'
 
-import { ScrollUp } from '@/components/Essentials'
+import { ScrollUp } from '@/components/Elements'
 import { Footer, Header } from '@/components/SiteLayout'
 
 const pageVariants = {

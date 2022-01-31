@@ -1,7 +1,5 @@
-import Image from 'next/image'
-
-import { BasicLink } from '@/components/Essentials'
-import Layout from '@/components/PlainLayout'
+import Layout from '@/components/BaseLayout'
+import { Anchor, Image } from '@/components/Elements'
 
 export default function ErrorPage() {
   return (
@@ -21,38 +19,38 @@ export default function ErrorPage() {
                 We appreciate your interest, but be patient we are fixing everything.
               </p>
               <div className='mt-6'>
-                <BasicLink
+                <Anchor
                   href='https://aris.web.id'
                   className='text-base font-medium text-primary-600 hover:text-primary-400'
                   newTab
                 >
                   Meanwhile, you can subscribe to the latest updates <span aria-hidden='true'> &rarr;</span>
-                </BasicLink>
+                </Anchor>
               </div>
             </div>
           </div>
         </main>
         <footer className='flex-shrink-0 w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
           <nav className='flex justify-center space-x-4'>
-            <BasicLink href='https://aris.web.id' className='text-sm font-medium text-gray-500 hover:text-gray-600' newTab>
+            <Anchor href='https://aris.web.id' className='text-sm font-medium text-gray-500 hover:text-gray-600' newTab>
               Homepage
-            </BasicLink>
+            </Anchor>
             <span className='inline-block border-l border-gray-300' aria-hidden='true' />
-            <BasicLink
+            <Anchor
               href='https://github.com/riipandi'
               className='text-sm font-medium text-gray-500 hover:text-gray-600'
               newTab
             >
               Github
-            </BasicLink>
+            </Anchor>
             <span className='inline-block border-l border-gray-300' aria-hidden='true' />
-            <BasicLink
+            <Anchor
               href='https://twitter.com/riipandi'
               className='text-sm font-medium text-gray-500 hover:text-gray-600'
               newTab
             >
               Twitter
-            </BasicLink>
+            </Anchor>
           </nav>
         </footer>
       </div>

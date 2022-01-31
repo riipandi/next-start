@@ -1,9 +1,9 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { CaretDoubleLeft } from 'phosphor-react'
 import * as React from 'react'
 
-import Layout from '@/components/PlainLayout'
+import Layout from '@/components/BaseLayout'
+import { Image } from '@/components/Elements'
 
 export default function Error404() {
   return (
