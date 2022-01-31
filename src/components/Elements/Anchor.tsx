@@ -1,6 +1,6 @@
 import Link, { LinkProps } from 'next/link'
 
-export type AnchorProps = {
+type AnchorProps = {
   children: React.ReactNode
   className?: string
   href: string
@@ -8,7 +8,7 @@ export type AnchorProps = {
 } & React.ComponentPropsWithoutRef<'a'> &
   LinkProps
 
-const Anchor = ({ children, href, newTab = false, className, ...props }: AnchorProps) => {
+const Anchor = ({ children, href, newTab = false, className, ...props }: AnchorProps): JSX.Element => {
   const isNewTab = newTab === undefined || href.startsWith('/') || href.valueOf() == '#' ? false : true
 
   return href.startsWith('/') || href === '' ? (
