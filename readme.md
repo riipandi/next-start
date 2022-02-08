@@ -46,7 +46,7 @@ npx create-next-app myapp-name --use-npm -e "https://github.com/riipandi/next-ta
 
 Application will run at `http://localhost:3000`
 
-For detailed explanation on how things work, check out [Next.js docs](https://nextjs.org).
+For detailed explanation on how things work, check out [Next.js docs](https://nextjs.org/docs/getting-started).
 
 ## Deploy your own
 
