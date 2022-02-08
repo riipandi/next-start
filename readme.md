@@ -1,17 +1,29 @@
-![Github Cover](https://banners.beyondco.de/Next.js%20Tailwind%20Starter.png?theme=light&packageManager=&packageName=&pattern=pieFactory&style=style_1&description=A+starter+for+Next.js+with+Tailwind+CSS+and+Typescript.&md=1&showWatermark=1&fontSize=100px&images=template)
+<p align="center"><img src="./public/images/project-logo.svg" width="400" height="120" alt="Project Logo"></p>
 
-<div align="center">
-    <strong>The Next.js Tailwind Starter</strong>
-</div>
+<p align="center">
+    <a href="https://github.com/riipandi/next-tailwind-starter">
+        <img src="https://img.shields.io/github/languages/top/riipandi/next-tailwind-starter?style=flat-square" alt="Top language">
+    </a>
+    <a href="https://github.com/riipandi/next-tailwind-starter">
+        <img src="https://img.shields.io/github/package-json/v/riipandi/next-tailwind-starter/main?label=latest&style=flat-square" alt="Latest Stable Version">
+    </a>
+    <a href="https://aris.mit-license.org">
+        <img src="https://img.shields.io/github/license/riipandi/next-tailwind-starter?style=flat-square" alt="License">
+    </a>
+</p>
 
-![separator](public/images/separator.jpg)
+## Introduction
 
-A starter for [Next.js](https://nextjs.org/) with [Tailwind CSS](https://tailwindcss.com) 
-and [Typescript](https://www.typescriptlang.org/). Pre-configured with absolute import, 
+A starter project for [Next.js](https://nextjs.org/) with [Tailwind CSS](https://tailwindcss.com) 
+and [Typescript](https://www.typescriptlang.org/). This starter kit already pre-configured 
+with [absolute import](https://jsdev.org/env/nodejs/absolute-path-imports/), 
 [TailwindUI](https://tailwindui.com), [Framer Motion](https://www.framer.com/motion/), 
-and some goodies.
+and some [other goodies](./package.json). This starter also provides [Dockerfile](./Dockerfile), just in case you want to 
+deploy using containerization or even Kubernetes.
 
-## Quick Installation
+## Quick Start
+
+### Installation
 
 ```bash
 # Using Yarn is recomended
@@ -23,38 +35,34 @@ npx create-next-app myapp-name --use-npm -e "https://github.com/riipandi/next-ta
 
 > Don't forget to change `myapp-name` with your real application name.
 
-## Quick Start
+### Up and Running
 
-### Using NPM
+| NPM               | Yarn             | Description
+|-------------------|------------------|------------------------------|
+| `npm install`     | `yarn`           | install the dependencies
+| `npm run dev`     | `yarn dev`       | serve with hot reload
+| `npm run build`   | `yarn build`     | build for production
+| `npm run start`   | `yarn start`     | launch generated build
 
-```bash
-npm install     # install dependencies
-npm run dev     # serve with hot reload at localhost:3000
-npm run build   # build for production
-npm run start   # launch generated build
-```
+Application will run at `http://localhost:3000`
 
-### Using Yarn
-
-```bash
-yarn         # install dependencies
-yarn dev     # serve with hot reload at localhost:3000
-yarn build   # build for production
-yarn start   # launch generated build
-```
-
-> For detailed explanation on how things work, check out [Next.js docs](https://nextjs.org).
+For detailed explanation on how things work, check out [Next.js docs](https://nextjs.org).
 
 ## Deploy your own
 
-You'll want to fork this repository and deploy your own Next.js website. 
-You can do a one-click deploy with the button below.
+You'll want to fork this repository and deploy your own Next.js website. Once you have an 
+image generator that sparks joy, you can setup [automatic GitHub](https://vercel.com/github) 
+deployments so that pushing to master will deploy to production! 🚀
 
 [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Friipandi%2Fnext-tailwind-starter)
 
-Once you have an image generator that sparks joy, you can setup [automatic GitHub](https://vercel.com/github) 
-deployments so that pushing to master will deploy to production! 🚀
+
+## Thanks to...
+
+In general, I'd like to thank every single one who open-sources their
+source code for their effort to contribute something to the open-source
+community. Your work means the world! 🌍 ❤️
 
 ## License
 
-MIT: [https://aris.mit-license.org/](https://aris.mit-license.org/)
+This project is open-sourced software licensed under the [MIT license](./license.txt).
