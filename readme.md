@@ -1,11 +1,10 @@
 <p align="center"><img src="./public/images/project-logo.svg" width="500" height="150" alt="Project Logo"></p>
-
 <p align="center">
-    <a href="https://github.com/riipandi/next-tailwind-starter">
-        <img src="https://img.shields.io/github/languages/top/riipandi/next-tailwind-starter?style=flat-square" alt="Top language">
+    <a href="https://github.com/riipandi/next-tailwind-starter/pulse">
+        <img src="https://img.shields.io/badge/Contributions-welcome-blue.svg?style=flat-square" alt="Contribution welcome">
     </a>
     <a href="https://github.com/riipandi/next-tailwind-starter">
-        <img src="https://img.shields.io/github/package-json/v/riipandi/next-tailwind-starter/main?label=latest&style=flat-square" alt="Latest Stable Version">
+        <img src="https://img.shields.io/github/languages/top/riipandi/next-tailwind-starter?style=flat-square" alt="Top language">
     </a>
     <a href="https://aris.mit-license.org">
         <img src="https://img.shields.io/github/license/riipandi/next-tailwind-starter?style=flat-square" alt="License">
