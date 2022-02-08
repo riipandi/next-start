@@ -1,4 +1,4 @@
-<p align="center"><img src="./public/images/project-logo.svg" width="600" height="180" alt="Project Logo"></p>
+<p align="center"><img src="./public/images/project-logo.svg" width="500" height="150" alt="Project Logo"></p>
 
 <p align="center">
     <a href="https://github.com/riipandi/next-tailwind-starter">
