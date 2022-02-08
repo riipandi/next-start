@@ -66,3 +66,4 @@ community. Your work means the world! 🌍 ❤️
 ## License
 
 This project is open-sourced software licensed under the [MIT license](./license.txt).
+Copyrights in this project are retained by their contributors.
