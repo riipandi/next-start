@@ -64,5 +64,6 @@ community. Your work means the world! 🌍 ❤️
 
 ## License
 
-This project is open-sourced software licensed under the [MIT license](./license.txt).
+This project is open-sourced software licensed under the [MIT license](https://aris.mit-license.org).
 Copyrights in this project are retained by their contributors.
+See the [license file](./license.txt) for more information.
