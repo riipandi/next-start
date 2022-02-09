@@ -1,8 +1,10 @@
+.vscode/
 .cache/
+.next/
 out/
 dist/
 package-lock.json
-# package.json
+package.json
 public/
 yarn.lock
 .vercel/
