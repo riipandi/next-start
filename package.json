@@ -143,9 +143,6 @@
   "eslintIgnore": [
     "build"
   ],
-  "engines": {
-    "node": "^14.15 || ^16.13"
-  },
   "prettier": {
     "arrowParens": "always",
     "bracketSpacing": true,
