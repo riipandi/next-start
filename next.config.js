@@ -4,21 +4,7 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     loader: 'imgix',
     path: '',
-    domains: [
-      'localhost',
-      'doodleipsum.com',
-      'error404.fun',
-      'images.unsplash.com',
-      'pbs.twimg.com',
-      'res.cloudinary.com',
-      's.gravatar.com',
-      'shuffle.dev',
-      'tailwindui.com',
-      'via.placeholder.com'
-    ]
-  },
-  eslint: {
-    dirs: ['src']
+    domains: ['*']
   },
   reactStrictMode: true,
   poweredByHeader: false
