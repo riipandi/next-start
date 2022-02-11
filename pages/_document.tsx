@@ -28,10 +28,6 @@ export default class MyDocument extends Document {
           <meta name='msapplication-TileColor' content='#ffffff' />
           <meta name='msapplication-TileImage' content='/favicon/ms-icon-144x144.png' />
           <meta name='theme-color' content='#ffffff' />
-          {/* Load fonts from CDN */}
-          {/* <link rel='stylesheet' href='https://gfont.barrista.workers.dev/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap' /> */}
-          {/* <link rel='stylesheet' href='https://fonts.cdnfonts.com/css/inter-ui' /> */}
-          {/* <link rel='stylesheet' href='https://fonts.cdnfonts.com/css/jetbrains-mono' /> */}
         </Head>
         <body>
           <Main />

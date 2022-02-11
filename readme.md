@@ -1,4 +1,4 @@
-<p align="center"><img src="./public/images/project-logo.svg" width="500" height="150" alt="Project Logo"></p>
+<p align="center"><img src="./banner.svg" width="500" height="150" alt="Project Logo"></p>
 <p align="center">
     <a href="https://github.com/riipandi/next-tailwind-starter/pulse">
         <img src="https://img.shields.io/badge/Contributions-welcome-blue.svg?style=flat-square" alt="Contribution welcome">
