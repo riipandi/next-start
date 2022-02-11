@@ -24,7 +24,7 @@ const Maintenance = () => {
               </p>
               <div className='mt-6'>
                 <Anchor
-                  href='https://aris.web.id'
+                  href='https://ripandis.com'
                   className='text-base font-medium text-primary-600 hover:text-primary-400'
                   newTab
                 >
@@ -37,7 +37,7 @@ const Maintenance = () => {
         <footer className='flex-shrink-0 w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
           <nav className='flex justify-center space-x-4'>
             <Anchor
-              href='https://aris.web.id'
+              href='https://ripandis.com'
               className='text-sm font-medium text-gray-500 hover:text-gray-600'
               newTab
             >

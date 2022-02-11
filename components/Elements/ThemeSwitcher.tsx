@@ -1,6 +1,6 @@
 import { Switch } from '@headlessui/react'
+import { MoonFill, Sun } from 'akar-icons'
 import { useTheme } from 'next-themes'
-import { CloudMoon, MoonStars, Sun, SunDim } from 'phosphor-react'
 import React, { useEffect, useState } from 'react'
 
 import { classNames } from '@/libraries/utils'
@@ -49,7 +49,7 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
             )}
             aria-hidden='true'
           >
-            <Sun weight='bold' className='w-3 h-3 text-gray-300' />
+            <Sun strokeWidth={2} className='w-3 h-3 text-gray-300' />
           </span>
           <span
             className={classNames(
@@ -58,7 +58,7 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
             )}
             aria-hidden='true'
           >
-            <MoonStars weight='regular' className='w-3 h-3 text-secondary-600' />
+            <MoonFill strokeWidth={2} className='w-3 h-3 text-secondary-600' />
           </span>
         </span>
       </Switch>
@@ -69,16 +69,16 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
     <button type='button' onClick={handleChange} {...props}>
       <span className='sr-only'>Toggle Dark Mode</span>
       {isDark ? (
-        <CloudMoon
-          weight='duotone'
+        <MoonFill
+          strokeWidth={2}
           className={classNames(
             iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
             'dark:text-primary-50 dark:hover:text-primary-200'
           )}
         />
       ) : (
-        <SunDim
-          weight='duotone'
+        <Sun
+          strokeWidth={2}
           className={classNames(
             iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
             'text-gray-700 hover:text-primary-400'

@@ -1,4 +1,4 @@
-import { ArrowBendRightUp } from 'phosphor-react'
+import { ArrowUp } from 'akar-icons'
 import React, { useEffect, useState } from 'react'
 
 const ScrollUp = () => {
@@ -16,7 +16,7 @@ const ScrollUp = () => {
   useEffect(() => {
     // Button is displayed after scrolling for 500 pixels
     const toggleVisibility = () => {
-      if (window.pageYOffset > 500) {
+      if (window.pageYOffset > 480) {
         setIsVisible(true)
       } else {
         setIsVisible(false)
@@ -33,10 +33,10 @@ const ScrollUp = () => {
       {isVisible && (
         <div
           onClick={scrollToTop}
-          className='fixed inline-flex items-center px-3 py-2 text-xs text-white transition duration-500 ease-in-out transform bg-black rounded cursor-pointer lg:bottom-7 lg:right-8 hover:bg-opacity-90 hover:-translate-y-1 hover:scale-110'
+          className='fixed inline-flex items-center px-3 py-2 text-xs text-white transition duration-500 ease-in-out transform bg-black rounded cursor-pointer lg:bottom-5 lg:right-6 hover:bg-opacity-90 hover:-translate-y-1 hover:scale-110'
         >
           Back to top
-          <ArrowBendRightUp size={12} weight='bold' className='ml-1 -mr-1' />
+          <ArrowUp strokeWidth={2} className='w-4 h-4 ml-1 -mr-1' />
         </div>
       )}
     </div>
