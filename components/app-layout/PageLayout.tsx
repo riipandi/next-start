@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 import { siteMeta } from '@/libraries/config'
 
-import { Sidebar, Topbar } from '@/components/AppLayout'
+import { Sidebar, Topbar } from '@/components/app-layout'
 
 interface Props {
   children: React.ReactNode
@@ -12,7 +12,7 @@ interface Props {
   fullTitle?: string
 }
 
-const Layout = ({ children, title, fullTitle, ...props }: Props) => {
+const PageLayout = ({ children, title, fullTitle, ...props }: Props) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const defaultTitle = fullTitle || title ? `${title} - ${siteMeta.defaultTitle}` : `${siteMeta.defaultTitle}`
   const pageTitle = fullTitle ? fullTitle : defaultTitle
@@ -37,4 +37,4 @@ const Layout = ({ children, title, fullTitle, ...props }: Props) => {
   )
 }
 
-export default Layout
+export default PageLayout

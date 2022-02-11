@@ -4,8 +4,8 @@ import { Fragment } from 'react'
 
 import { classNames } from '@/libraries/utils'
 
-import { Breadcrumbs } from '@/components/AppLayout'
-import { Anchor } from '@/components/Elements'
+import { Breadcrumbs } from '@/components/app-layout'
+import { Anchor } from '@/components/elements'
 
 type TopbarProps = {
   setSidebarOpen: (value: boolean) => void
@@ -36,7 +36,7 @@ const Topbar = ({ setSidebarOpen }: TopbarProps) => {
         <div className='flex items-center ml-4 md:ml-6'>
           <button
             type='button'
-            className='p-1 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none'
+            className='p-1 text-gray-300 bg-white rounded-full hover:text-gray-500 focus:outline-none'
           >
             <span className='sr-only'>View notifications</span>
             <BellIcon className='w-6 h-6' aria-hidden='true' />

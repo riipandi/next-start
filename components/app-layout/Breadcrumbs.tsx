@@ -1,6 +1,6 @@
 import { HomeIcon } from '@heroicons/react/solid'
 
-import { Anchor } from '@/components/Elements'
+import { Anchor } from '@/components/elements'
 
 const pages = [
   { name: 'Projects', href: '#', current: false },
@@ -13,7 +13,7 @@ const Breadcrumbs = () => {
       <ol role='list' className='flex items-center space-x-2'>
         <li>
           <div>
-            <Anchor href='/dashboard' className='text-gray-400 hover:text-gray-500'>
+            <Anchor href='/dashboard' className='text-gray-300 hover:text-gray-500'>
               <HomeIcon className='flex-shrink-0 w-5 h-5' aria-hidden='true' />
               <span className='sr-only'>Dashboard</span>
             </Anchor>

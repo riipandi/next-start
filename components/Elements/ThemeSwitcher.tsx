@@ -49,7 +49,7 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
             )}
             aria-hidden='true'
           >
-            <Sun weight='bold' className='w-3 h-3 text-gray-400' />
+            <Sun weight='bold' className='w-3 h-3 text-gray-300' />
           </span>
           <span
             className={classNames(

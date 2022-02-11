@@ -1,7 +1,7 @@
 import Breadcrumbs from './Breadcrumbs'
-import Container from './Container'
+import PageLayout from './PageLayout'
 import SearchBox from './SearchBox'
 import Sidebar from './Sidebar'
 import Topbar from './Topbar'
 
-export { Breadcrumbs, Container, SearchBox, Sidebar, Topbar }
+export { Breadcrumbs, PageLayout, SearchBox, Sidebar, Topbar }

@@ -13,7 +13,7 @@ import { Fragment } from 'react'
 
 import { classNames } from '@/libraries/utils'
 
-import { Anchor } from '@/components/Elements'
+import { Anchor } from '@/components/elements'
 
 type SidebarProps = {
   sidebarOpen: boolean
