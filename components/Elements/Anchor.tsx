@@ -16,7 +16,13 @@ const Anchor = ({ children, href, newTab = false, className, ...props }: AnchorP
       <a className={className}>{children}</a>
     </Link>
   ) : (
-    <a href={href} target={isNewTab ? '_blank' : '_self'} rel='noopener noreferrer' className={className} {...props}>
+    <a
+      href={href}
+      target={isNewTab ? '_blank' : '_self'}
+      rel='noopener noreferrer'
+      className={className}
+      {...props}
+    >
       {children}
     </a>
   )

@@ -19,8 +19,8 @@ import '@fontsource/be-vietnam-pro/600.css'
 import '@fontsource/be-vietnam-pro/700.css'
 import '@fontsource/be-vietnam-pro/800.css'
 import '@fontsource/be-vietnam-pro/900.css'
-import '@/styles/global.css'
-import '@/styles/styles.css'
+import '@/styles/tailwind.css'
+import '@/styles/custom.css'
 
 import { initSplitBee } from '@/libraries/splitbee'
 
@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     process.env.NODE_ENV !== 'development' && initSplitBee()
   }, [])
 
-  // Page when maintenance mode is enabled.
+  // Display this page when maintenance mode is enabled.
   if (process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true') {
     return <Maintenance />
   }

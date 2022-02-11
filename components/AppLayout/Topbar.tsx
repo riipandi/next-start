@@ -34,7 +34,10 @@ const Topbar = ({ setSidebarOpen }: TopbarProps) => {
           {/* <SearchBox /> */}
         </div>
         <div className='flex items-center ml-4 md:ml-6'>
-          <button type='button' className='p-1 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none'>
+          <button
+            type='button'
+            className='p-1 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none'
+          >
             <span className='sr-only'>View notifications</span>
             <BellIcon className='w-6 h-6' aria-hidden='true' />
           </button>
@@ -44,7 +47,11 @@ const Topbar = ({ setSidebarOpen }: TopbarProps) => {
             <div>
               <Menu.Button className='z-40 flex items-center max-w-xs text-sm bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
                 <span className='sr-only'>Open user menu</span>
-                <img className='w-8 h-8 rounded-full' src='https://doodleipsum.com/700x700/avatar-2' alt='User Avatar' />
+                <img
+                  className='w-8 h-8 rounded-full'
+                  src='https://doodleipsum.com/700x700/avatar-2'
+                  alt='User Avatar'
+                />
               </Menu.Button>
             </div>
             <Transition
@@ -66,7 +73,10 @@ const Topbar = ({ setSidebarOpen }: TopbarProps) => {
                         'inline-flex w-full items-center px-5 py-3 text-sm text-gray-700 hover:bg-gray-100'
                       )}
                     >
-                      <item.icon className='flex-shrink-0 w-5 h-5 mr-2 -ml-1 text-gray-500' aria-hidden='true' />
+                      <item.icon
+                        className='flex-shrink-0 w-5 h-5 mr-2 -ml-1 text-gray-500'
+                        aria-hidden='true'
+                      />
                       <span>{item.name}</span>
                     </Anchor>
                   </Menu.Item>

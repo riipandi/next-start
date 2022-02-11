@@ -1,5 +1,13 @@
 import { Dialog, Transition } from '@headlessui/react'
-import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon, XIcon } from '@heroicons/react/outline'
+import {
+  CalendarIcon,
+  ChartBarIcon,
+  FolderIcon,
+  HomeIcon,
+  InboxIcon,
+  UsersIcon,
+  XIcon
+} from '@heroicons/react/outline'
 import { useRouter } from 'next/router'
 import { Fragment } from 'react'
 
@@ -91,7 +99,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          router.pathname === item.href ? 'bg-blue-800 text-white' : 'text-blue-100 hover:bg-blue-600',
+                          router.pathname === item.href
+                            ? 'bg-blue-800 text-white'
+                            : 'text-blue-100 hover:bg-blue-600',
                           'group flex items-center px-2 py-2 text-base font-medium rounded-md'
                         )}
                       >
@@ -102,7 +112,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   </div>
                   <div className='mx-2 border-t border-opacity-50 border-blue-80'></div>
                   <div className='space-y-4'>
-                    <h3 className='px-3 text-xs font-semibold tracking-wider text-gray-100 uppercase' id='projects-headline'>
+                    <h3
+                      className='px-3 text-xs font-semibold tracking-wider text-gray-100 uppercase'
+                      id='projects-headline'
+                    >
                       Projects
                     </h3>
                     <div className='space-y-1' role='group' aria-labelledby='projects-headline'>
@@ -111,7 +124,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            router.pathname === item.href ? 'bg-blue-800 text-white' : 'text-blue-100 hover:bg-blue-600',
+                            router.pathname === item.href
+                              ? 'bg-blue-800 text-white'
+                              : 'text-blue-100 hover:bg-blue-600',
                             'group flex items-center px-3 py-2 text-base font-medium rounded-md'
                           )}
                         >
@@ -149,7 +164,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     key={item.name}
                     href={item.href}
                     className={classNames(
-                      router.pathname === item.href ? 'bg-blue-800 text-white' : 'text-blue-100 hover:bg-blue-600',
+                      router.pathname === item.href
+                        ? 'bg-blue-800 text-white'
+                        : 'text-blue-100 hover:bg-blue-600',
                       'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
                     )}
                   >
@@ -160,7 +177,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               </div>
               <div className='mx-2 border-t border-opacity-50 border-blue-80'></div>
               <div className='space-y-4'>
-                <h3 className='px-3 text-xs font-semibold tracking-wider text-gray-100 uppercase' id='projects-headline'>
+                <h3
+                  className='px-3 text-xs font-semibold tracking-wider text-gray-100 uppercase'
+                  id='projects-headline'
+                >
                   Projects
                 </h3>
                 <div className='space-y-1' role='group' aria-labelledby='projects-headline'>
@@ -169,7 +189,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       key={item.name}
                       href={item.href}
                       className={classNames(
-                        router.pathname === item.href ? 'bg-blue-800 text-white' : 'text-blue-100 hover:bg-blue-600',
+                        router.pathname === item.href
+                          ? 'bg-blue-800 text-white'
+                          : 'text-blue-100 hover:bg-blue-600',
                         'group flex items-center px-3 py-2 text-sm font-medium rounded-md'
                       )}
                     >

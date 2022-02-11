@@ -12,7 +12,12 @@ export default function Home() {
     <Container fullTitle='This is Next.js Tailwind Starter' withHeader withFooter animate>
       <div className='flex flex-col items-center justify-center min-h-screen py-20 lg:py-30'>
         <div className='top-0 left-0 hidden mt-32 lg:block lg:absolute'>
-          <Image src='https://shuffle.dev/zeus-assets/icons/dots/blue-dot-left-bars.svg' width={300} height={300} alt='' />
+          <Image
+            src='https://shuffle.dev/zeus-assets/icons/dots/blue-dot-left-bars.svg'
+            width={300}
+            height={300}
+            alt=''
+          />
         </div>
         <div className='hidden h-16 mt-4 ml-auto lg:absolute'>
           <Image
@@ -32,13 +37,15 @@ export default function Home() {
         </div>
         <div className='container relative px-4 mx-auto'>
           <div className='max-w-3xl mx-auto text-center'>
-            <h2 className='text-xl font-medium dark:text-primary-50 text-secondary-500'>{siteMeta.defaultTitle}</h2>
+            <h2 className='text-xl font-medium dark:text-primary-50 text-secondary-500'>
+              {siteMeta.defaultTitle}
+            </h2>
             <h1 className='mt-6 mb-6 text-4xl font-bold lg:text-5xl text--gradient text--shadow lg:mb-10'>
               Welcome to your Next site!
             </h1>
             <p className='mb-4 text-xl leading-8 text-gray-900 lg:mb-6 dark:text-gray-400'>
-              This is a starter for Next.js with Tailwind CSS and Typescript, already pre-configured with TailwindUI and some
-              additional components.
+              This is a starter for Next.js with Tailwind CSS and Typescript, already pre-configured with
+              TailwindUI and some additional components.
             </p>
             <div className='flex justify-center py-8 mx-auto space-x-4'>
               <Anchor href='/about' className='inline-block px-5 text-sm btn btn--primary btn--md'>

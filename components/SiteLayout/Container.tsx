@@ -42,7 +42,17 @@ interface Props {
   withFooter?: boolean
 }
 
-const Layout = ({ children, title, fullTitle, description, ogImage, animate, withHeader, withFooter, ...props }: Props) => {
+const Layout = ({
+  children,
+  title,
+  fullTitle,
+  description,
+  ogImage,
+  animate,
+  withHeader,
+  withFooter,
+  ...props
+}: Props) => {
   const defaultTitle = fullTitle || title ? `${title} - ${siteMeta.defaultTitle}` : `${siteMeta.defaultTitle}`
   const pageTitle = fullTitle ? fullTitle : defaultTitle
   const pageDescription = description || siteMeta.description

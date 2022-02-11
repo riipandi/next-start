@@ -3,13 +3,12 @@
   "version": "12.12.1",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "next dev --port ${PORT:=3000}",
     "build": "NEXT_TELEMETRY_DISABLED=1 next build",
     "start": "next start --port ${PORT:=3000}",
     "export": "next export",
     "lint": "next lint",
-    "lint:fix": "eslint src --fix && yarn format",
-    "format": "prettier --write src",
+    "format": "prettier --write .",
     "build:docker": "docker build -t $npm_package_name:latest -t $npm_package_name:v$npm_package_version .",
     "run:docker": "docker run -p 3000:3000 $npm_package_name:latest"
   },
@@ -44,28 +43,12 @@
     "eslint-config-next": "12.0.10",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "lint-staged": "^12.3.3",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
     "sharp": "^0.30.0",
     "tailwindcss": "^3.0.19",
     "typescript": "^4.5.5"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,}": [
-      "eslint --max-warnings=0",
-      "prettier -w"
-    ],
-    "src/**/*.{json,css,scss,md}": [
-      "prettier -w"
-    ]
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "eslintConfig": {
     "env": {
       "browser": true,
@@ -103,14 +86,12 @@
               "^.+\\.s?css$"
             ],
             [
-              "^@/lib",
+              "^@/libraries",
               "^@/hooks"
             ],
             [
+              "^@/components",
               "^@/styles"
-            ],
-            [
-              "^@/components"
             ],
             [
               "^@/"
@@ -141,13 +122,13 @@
     }
   },
   "eslintIgnore": [
-    "build"
+    ".next", ".cache", "build", "dist", "out"
   ],
   "prettier": {
     "arrowParens": "always",
     "bracketSpacing": true,
     "jsxSingleQuote": true,
-    "printWidth": 125,
+    "printWidth": 110,
     "semi": false,
     "singleQuote": true,
     "tabWidth": 2,

@@ -60,7 +60,14 @@ const Layout = ({ children, title, fullTitle, description, ogImage, animate, ...
       </Head>
 
       {(animate && (
-        <motion.div initial='initial' animate='in' exit='out' variants={pageVariants} transition={pageTransition} {...props}>
+        <motion.div
+          initial='initial'
+          animate='in'
+          exit='out'
+          variants={pageVariants}
+          transition={pageTransition}
+          {...props}
+        >
           {children}
         </motion.div>
       )) || <div {...props}>{children}</div>}
