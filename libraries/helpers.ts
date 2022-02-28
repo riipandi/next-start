@@ -5,3 +5,7 @@ export function throwError(code: number, message: string) {
 
   return JSON.parse(state)
 }
+
+export function classNames(...classes: string[]): string {
+  return classes.filter(Boolean).join(' ')
+}

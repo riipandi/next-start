@@ -3,7 +3,7 @@ import { MoonFill, Sun } from 'akar-icons'
 import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
 
-import { classNames } from '@/libraries/utils'
+import { classNames } from '@/libraries/helpers'
 
 interface Props {
   className?: string

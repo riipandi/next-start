@@ -14,7 +14,9 @@ const cfImageLoader = ({ src, width, quality }: { src: any; width: number; quali
 export default function Image(props: any) {
   if (process.env.NODE_ENV === 'development') {
     return <NextImage unoptimized={true} {...props} />
-  } else {
+  } else if (process.env.NODE_ENV === 'production' && process.env.VERCEL !== '1') {
     return <NextImage {...props} loader={cfImageLoader} />
+  } else {
+    return <NextImage {...props} />
   }
 }

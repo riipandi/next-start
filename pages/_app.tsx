@@ -3,12 +3,11 @@ import { ThemeProvider } from 'next-themes'
 import { useEffect } from 'react'
 import '@/libraries/fontloader'
 
+import { initSplitBee } from '@/libraries/splitbee'
+import { Maintenance } from '@/components/partials'
+
 import '@/styles/tailwind.css'
 import '@/styles/custom.css'
-
-import { initSplitBee } from '@/libraries/splitbee'
-
-import { Maintenance } from '@/components/partials'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {

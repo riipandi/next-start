@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Anchor, Image, Spinner } from '@/components/elements'
+import { Anchor, Image, LogoIpsum } from '@/components/elements'
 import { PageLayout } from '@/components/layouts'
 
 export default function ErrorPage() {
@@ -13,7 +13,7 @@ export default function ErrorPage() {
               <div className='flex-shrink-0 pt-10 sm:pt-16'>
                 <Anchor href='/' className='inline-flex'>
                   <span className='sr-only'>Workflow</span>
-                  <Spinner className='w-auto h-6' />
+                  <LogoIpsum className='w-auto h-6' />
                 </Anchor>
               </div>
               <div className='flex-shrink-0 py-16 my-auto sm:py-32'>
