@@ -9,21 +9,17 @@ import { Maintenance } from '@/components/partials'
 import '@/styles/tailwind.css'
 import '@/styles/custom.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     process.env.NODE_ENV !== 'development' && initSplitBee()
   }, [])
 
   // Display this page when maintenance mode is enabled.
-  if (process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true') {
-    return <Maintenance />
-  }
-
-  return (
+  return process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true' ? (
+    <Maintenance />
+  ) : (
     <ThemeProvider attribute='class' defaultTheme='light' enableSystem={false}>
       <Component {...pageProps} />
     </ThemeProvider>
   )
 }
-
-export default MyApp

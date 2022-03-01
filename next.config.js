@@ -14,11 +14,19 @@ module.exports = {
     domains: ['*']
   },
   reactStrictMode: true,
-  poweredByHeader: false
+  poweredByHeader: false,
   // async rewrites() {
   //   return [
   //     { source: '/bee.js', destination: 'https://cdn.splitbee.io/sb.js' },
   //     { source: '/_hive/:slug', destination: 'https://hive.splitbee.io/:slug' }
   //   ]
   // }
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ['@svgr/webpack']
+    })
+    return config
+  }
 }

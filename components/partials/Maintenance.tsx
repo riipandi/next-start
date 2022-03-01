@@ -4,7 +4,7 @@ import { PageLayout } from '@/components/layouts'
 
 const Maintenance = () => {
   return (
-    <PageLayout fullTitle={siteMeta.defaultTitle}>
+    <PageLayout fullTitle={siteMeta.siteTitle}>
       <div className='flex flex-col min-h-screen pb-12 bg-white'>
         <main className='flex flex-col justify-center flex-grow w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
           <div className='flex justify-center flex-shrink-0'>

@@ -1,8 +1,8 @@
 import { siteMeta } from '@/libraries/config'
-import { Anchor, Image } from '@/components/elements'
+import { Anchor } from '@/components/elements'
 import { PageLayout } from '@/components/layouts'
 
-import imgSiteIcon from '~/favicon.png'
+import Banner from '~/images/banner.svg'
 
 export default function Home() {
   return (
@@ -11,17 +11,14 @@ export default function Home() {
       className='flex flex-col items-center justify-center min-h-screen content-wrapper'
     >
       <div className='mx-auto mb-10'>
-        <Image src={imgSiteIcon} width={110} height={110} alt='Site icon' />
+        <Banner className='border-b' />
       </div>
       <div className='container relative px-4 mx-auto'>
-        <div className='max-w-3xl mx-auto text-center'>
-          <h2 className='text-xl font-medium dark:text-primary-50 text-secondary-500'>
-            {siteMeta.defaultTitle}
-          </h2>
-          <h1 className='mt-6 mb-6 text-4xl font-bold lg:text-5xl text--gradient text--shadow lg:mb-10'>
-            Welcome to your Next site!
+        <div className='max-w-2xl mx-auto text-center'>
+          <h1 className='text-4xl font-bold lg:text-5xl text--gradient text--shadow lg:mb-10'>
+            {siteMeta.siteTitle}
           </h1>
-          <p className='mb-4 text-xl leading-8 text-gray-900 lg:mb-6 dark:text-gray-300'>
+          <p className='my-4 text-xl leading-8 text-gray-900 lg:mb-6 dark:text-gray-300'>
             This is a starter for Next.js with Tailwind CSS and Typescript, already pre-configured with
             TailwindUI and some additional components.
           </p>

@@ -33,8 +33,8 @@ const PageLayout = ({
   variant = 'default',
   ...props
 }: Props) => {
-  const defaultTitle = fullTitle || title ? `${title} - ${siteMeta.defaultTitle}` : `${siteMeta.defaultTitle}`
-  const pageTitle = fullTitle ? fullTitle : defaultTitle
+  const siteTitle = fullTitle || title ? `${title} - ${siteMeta.siteTitle}` : `${siteMeta.siteTitle}`
+  const pageTitle = fullTitle ? fullTitle : siteTitle
   const pageDescription = description || siteMeta.description
 
   if (variant === 'plain') {
@@ -69,7 +69,7 @@ const MetaHeader = ({ pageTitle, pageDescription, ogImage }: IMetaHeader) => (
     <meta property='og:title' content={pageTitle} />
     <meta property='og:description' content={pageDescription} />
     <meta property='og:url' content={siteMeta.siteUrl} />
-    <meta property='og:site_name' content={siteMeta.defaultTitle} />
+    <meta property='og:site_name' content={siteMeta.siteTitle} />
     <meta name='twitter:card' content='summary_large_image' />
     <meta name='twitter:description' content={pageDescription} />
     <meta name='twitter:title' content={pageTitle} />

@@ -25,6 +25,7 @@
     "@fontsource/jetbrains-mono": "^4.5.3",
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.5",
+    "@svgr/webpack": "^6.2.1",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
@@ -36,10 +37,10 @@
     "akar-icons": "^1.9.8",
     "autoprefixer": "^10.4.2",
     "clsx": "^1.1.1",
+    "eslint": "~8.9.0",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint": "~8.9.0",
     "framer-motion": "^6.2.6",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
@@ -86,8 +87,8 @@
               "^@/components"
             ],
             [
-                "^@/styles",
-                "^.+\\.s?css$",
+              "^@/styles",
+              "^.+\\.s?css$",
               "^@/"
             ],
             [
@@ -116,7 +117,11 @@
     }
   },
   "eslintIgnore": [
-    ".next", ".cache", "build", "dist", "out"
+    ".next",
+    ".cache",
+    "build",
+    "dist",
+    "out"
   ],
   "prettier": {
     "arrowParens": "always",
