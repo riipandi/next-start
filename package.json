@@ -36,6 +36,7 @@
     "@typescript-eslint/parser": "^5.12.0",
     "akar-icons": "^1.9.8",
     "autoprefixer": "^10.4.2",
+    "cal-sans": "^1.0.1",
     "clsx": "^1.1.1",
     "eslint": "~8.9.0",
     "eslint-config-next": "12.1.0",

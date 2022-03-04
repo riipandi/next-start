@@ -1,11 +1,11 @@
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 import { useEffect } from 'react'
-import '@/libraries/fontloader'
+// import '@/libraries/fontloader'
 
 import { initSplitBee } from '@/libraries/splitbee'
 import { Maintenance } from '@/components/partials'
-
+import 'cal-sans'
 import '@/styles/tailwind.css'
 import '@/styles/custom.css'
 
