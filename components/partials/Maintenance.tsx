@@ -1,4 +1,4 @@
-import { siteMeta } from '@/libraries/config'
+import { siteMeta } from '@/config/general'
 import { Anchor, Image } from '@/components/elements'
 import { PageLayout } from '@/components/layouts'
 

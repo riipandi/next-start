@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { siteMeta } from '@/libraries/config'
+import { siteMeta } from '@/config/general'
 import { ScrollUp } from '@/components/elements'
 import { Footer, Header } from '@/components/layouts'
 

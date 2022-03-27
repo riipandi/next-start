@@ -1,25 +1,28 @@
 import type { AppProps } from 'next/app'
+import PlausibleProvider from 'next-plausible'
 import { ThemeProvider } from 'next-themes'
-import { useEffect } from 'react'
-// import '@/libraries/fontloader'
+import '@/libraries/fontloader'
 
-import { initSplitBee } from '@/libraries/splitbee'
 import { Maintenance } from '@/components/partials'
-import 'cal-sans'
+
 import '@/styles/tailwind.css'
 import '@/styles/custom.css'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    process.env.NODE_ENV !== 'development' && initSplitBee()
-  }, [])
-
   // Display this page when maintenance mode is enabled.
   return process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true' ? (
     <Maintenance />
   ) : (
-    <ThemeProvider attribute='class' defaultTheme='light' enableSystem={false}>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <PlausibleProvider
+      enabled={process.env.NODE_ENV === 'production'}
+      customDomain='https://stats.web.id'
+      domain='next-start.vercel.app'
+      trackOutboundLinks
+      selfHosted
+    >
+      <ThemeProvider attribute='class' defaultTheme='light' enableSystem={false}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </PlausibleProvider>
   )
 }

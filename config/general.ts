@@ -1,7 +1,7 @@
 export const siteMeta = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
   siteTitle: 'Next.js Tailwind Starter',
-  description: `A starter for Next.js with Tailwind CSS and Typescript`,
+  description: `A Next.js starter configured with Tailwind CSS and Typescript`,
   imageUrl: '/images/og-image.png',
   twitterUsername: '@riipandi',
 
