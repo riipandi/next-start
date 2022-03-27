@@ -15,6 +15,16 @@ module.exports = {
   },
   reactStrictMode: true,
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: '/stats',
+        destination:
+          'https://stats.web.id/share/next-start.vercel.app?auth=q3zlAZW9CKxMP8HFOKce6&embed=true&theme=light',
+        permanent: true
+      }
+    ]
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
