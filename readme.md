@@ -57,6 +57,8 @@ deployments so that pushing to master will deploy to production! 🚀
 
 #### Vercel Configuration (optional)
 
+If you are using monorepo you will need to configure a few things:
+
 - Settings -> General -> Root Directory : `apps/web/`
 - Settings -> Git -> Ignored Build Step : `git diff --quiet HEAD^ HEAD ./`
 
