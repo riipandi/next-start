@@ -6,9 +6,9 @@
     "dev": "next dev --port ${PORT:=3000}",
     "build": "NEXT_TELEMETRY_DISABLED=1 next build",
     "start": "next start --port ${PORT:=3000}",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "export": "next export",
     "lint": "next lint",
-    "format": "prettier --write .",
     "build:docker": "docker build -t $npm_package_name:latest -t $npm_package_name:v$npm_package_version .",
     "run:docker": "docker run -p 3000:3000 $npm_package_name:latest"
   },
