@@ -55,6 +55,15 @@ deployments so that pushing to master will deploy to production! 🚀
 
 [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Friipandi%2Fnext-tailwind-starter)
 
+#### Vercel Configuration (optional)
+
+- Settings -> General -> Root Directory : `apps/web/`
+- Settings -> Git -> Ignored Build Step : `git diff --quiet HEAD^ HEAD ./`
+
+#### Cloudflare Deployment
+
+You need to add `NODE_VERSION` with value `14.19.0` on the environment variables setting.
+
 ## Thanks to...
 
 In general, I'd like to thank every single one who open-sources their
