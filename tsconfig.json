@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -9,7 +9,7 @@
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true, // set to true (requirement for SWC / babel)
-    "module": "esnext", // set to esnext (for dynamic import() support)
+    "module": "commonjs", // set to esnext (for dynamic import() support)
     "moduleResolution": "node", // set to node (to match webpack resolution)
     "resolveJsonModule": true, // set to true (to match webpack resolution)
     "isolatedModules": true, // set to true (requirement for SWC / babel)
@@ -18,13 +18,17 @@
     "paths": {
       "@/config/*": ["config/*"],
       "@/components/*": ["components/*"],
+      "@/data/*": ["data/*"],
+      "@/layouts/*": ["layouts/*"],
       "@/libraries/*": ["libraries/*"],
       "@/hooks/*": ["hooks/*"],
       "@/styles/*": ["styles/*"],
+      "@/types": ["types/index"],
+      "@/types/*": ["types/*"],
       "~/*": ["public/*"]
     }
   },
   "moduleResolution": ["node_modules", ".next", "node"],
-  "include": ["next-env.d.ts", "next-modules.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

@@ -1,6 +1,6 @@
 {
   "name": "next-tailwind-starter",
-  "version": "12.15.0",
+  "version": "12.16.0",
   "private": true,
   "scripts": {
     "dev": "next dev --port ${PORT:=3000}",
@@ -15,17 +15,18 @@
   "dependencies": {
     "next-plausible": "^3.1.6",
     "next-themes": "^0.1.1",
-    "next": "12.1.1",
+    "next": "12.1.2",
     "react-dom": "17.0.2",
     "react": "17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
-    "@fontsource/epilogue": "^4.5.6",
+    "@fontsource/epilogue": "^4.5.7",
     "@fontsource/jetbrains-mono": "^4.5.5",
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
     "@svgr/webpack": "^6.2.1",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
@@ -79,12 +80,13 @@
           "groups": [
             [
               "^@?\\w",
-              "^\\u0000"
+              "^\\u0000",
+              "^@/config"
             ],
             [
-              "^@/config",
               "^@/libraries",
               "^@/hooks",
+              "^@/layouts",
               "^@/components"
             ],
             [

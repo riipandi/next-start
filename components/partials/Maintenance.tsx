@@ -1,6 +1,7 @@
 import { siteMeta } from '@/config/general'
+
+import { PageLayout } from '@/layouts/site-layout'
 import { Anchor, Image } from '@/components/elements'
-import { PageLayout } from '@/components/layouts'
 
 const Maintenance = () => {
   return (

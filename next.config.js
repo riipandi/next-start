@@ -11,7 +11,7 @@ module.exports = {
     formats: ['image/avif', 'image/webp'],
     disableStaticImages: false,
     minimumCacheTTL: 60,
-    domains: ['doodleipsum.com', 'error404.fun']
+    domains: ['doodleipsum.com', 'error404.fun', 'play.tailwindcss.com']
   },
   reactStrictMode: true,
   poweredByHeader: false,
