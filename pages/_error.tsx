@@ -36,7 +36,8 @@ export default function Error404() {
             <div className='divide-y divide-gray-300/50'>
               <div className='py-8 space-y-6 text-base leading-7 text-gray-600'>
                 <p>
-                  Please contact our support team about this issue. Meanwhile, you can get latest updates via:
+                  An unexpected error has occured. Our team has been notified and will resolve this error as
+                  soon as possible. Meanwhile, you can get latest updates via:
                 </p>
                 <ul className='space-y-4'>
                   <li className='flex items-center'>
