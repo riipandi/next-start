@@ -28,7 +28,7 @@ export default function Home() {
               Empty page
             </Anchor>
             <Anchor
-              href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Friipandi%2Fnext-tailwind-starter'
+              href='https://vercel.com/new/clone?repository-url=https://github.com/riipandi/next-tailwind-starter&project-name=next-tailwind-starter&repo-name=next-tailwind-starter&env=NEXT_PUBLIC_SITE_URL,NEXT_PUBLIC_MAINTENANCE_MODE'
               className='inline-block w-full px-5 text-sm btn btn--outline btn--md'
               onClick={() => plausible('Deploy to Vercel')}
             >
