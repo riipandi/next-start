@@ -15,7 +15,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   ) : (
     <PlausibleProvider
       enabled={process.env.NODE_ENV === 'production'}
-      customDomain='https://stats.web.id'
       domain='next-start.vercel.app'
       trackOutboundLinks
       selfHosted
