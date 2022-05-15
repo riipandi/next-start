@@ -10,6 +10,6 @@ export const siteMeta = {
     twitter: 'https://twitter.com/riipandi',
     linkedin: 'https://www.linkedin.com/in/aris-ripandi',
     instagram: 'https://www.instagram.com/riipandi',
-    polywork: 'https://poly.work/aris'
-  }
+    polywork: 'https://poly.work/aris',
+  },
 }

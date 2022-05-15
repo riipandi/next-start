@@ -1,132 +1,53 @@
 {
   "name": "next-tailwind-starter",
-  "version": "12.16.0",
+  "version": "12.17.0",
   "private": true,
   "scripts": {
     "dev": "next dev --port ${PORT:=3000}",
     "build": "NEXT_TELEMETRY_DISABLED=1 next build",
     "start": "next start --port ${PORT:=3000}",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "TIMING=1 next lint",
     "export": "next export",
-    "lint": "next lint",
     "build:docker": "docker build -t $npm_package_name:latest -t $npm_package_name:v$npm_package_version .",
     "run:docker": "docker run -p 3000:3000 $npm_package_name:latest"
   },
   "dependencies": {
-    "next-plausible": "^3.1.6",
-    "next-themes": "^0.1.1",
-    "next": "12.1.2",
+    "next-plausible": "^3.1.9",
+    "next-themes": "^0.2.0",
+    "next": "12.1.6",
     "react-dom": "17.0.2",
     "react": "17.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
-    "@fontsource/epilogue": "^4.5.7",
-    "@fontsource/jetbrains-mono": "^4.5.5",
-    "@headlessui/react": "^1.5.0",
+    "@babel/core": "^7.17.10",
+    "@fontsource/epilogue": "^4.5.8",
+    "@fontsource/jetbrains-mono": "^4.5.8",
+    "@headlessui/react": "^1.6.1",
     "@heroicons/react": "^1.0.6",
-    "@svgr/webpack": "^6.2.1",
-    "@tabler/icons": "^1.66.0",
+    "@tabler/icons": "^1.68.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/forms": "^0.5.0",
-    "@tailwindcss/line-clamp": "^0.3.1",
+    "@tailwindcss/forms": "^0.5.1",
+    "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
-    "@types/node": "^17.0.23",
+    "@types/node": "^17.0.33",
     "@types/react": "^17.0.43",
-    "@types/tailwindcss": "^3.0.9",
-    "@typescript-eslint/eslint-plugin": "^5.16.0",
-    "@typescript-eslint/parser": "^5.16.0",
-    "akar-icons": "^1.9.14",
-    "autoprefixer": "^10.4.4",
+    "@types/tailwindcss": "^3.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "autoprefixer": "^10.4.7",
     "clsx": "^1.1.1",
-    "eslint": "~8.12.0",
-    "eslint-config-next": "12.1.1",
+    "eslint": "~8.15.0",
+    "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "framer-motion": "^6.2.8",
-    "postcss": "^8.4.12",
-    "prettier": "^2.6.1",
+    "framer-motion": "^6.3.3",
+    "postcss": "^8.4.13",
+    "prettier": "^2.6.2",
     "sharp": "^0.30.3",
-    "tailwindcss": "^3.0.23",
-    "typescript": "^4.6.3"
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.6.4"
   },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "es2021": true,
-      "node": true
-    },
-    "plugins": [
-      "@typescript-eslint",
-      "simple-import-sort"
-    ],
-    "extends": [
-      "eslint:recommended",
-      "next",
-      "next/core-web-vitals",
-      "plugin:@typescript-eslint/recommended",
-      "prettier"
-    ],
-    "rules": {
-      "no-unused-vars": "off",
-      "no-console": "warn",
-      "@typescript-eslint/explicit-module-boundary-types": "off",
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-var-requires": "off",
-      "@next/next/no-img-element": "off",
-      "simple-import-sort/exports": "warn",
-      "simple-import-sort/imports": [
-        "warn",
-        {
-          "groups": [
-            [
-              "^@?\\w",
-              "^\\u0000",
-              "^@/config"
-            ],
-            [
-              "^@/libraries",
-              "^@/hooks",
-              "^@/layouts",
-              "^@/components"
-            ],
-            [
-              "^@/styles",
-              "^.+\\.s?css$",
-              "^@/"
-            ],
-            [
-              "^\\./?$",
-              "^\\.(?!/?$)",
-              "^\\.\\./?$",
-              "^\\.\\.(?!/?$)",
-              "^\\.\\./\\.\\./?$",
-              "^\\.\\./\\.\\.(?!/?$)",
-              "^\\.\\./\\.\\./\\.\\./?$",
-              "^\\.\\./\\.\\./\\.\\.(?!/?$)"
-            ],
-            [
-              "^@/types"
-            ],
-            [
-              "^"
-            ]
-          ]
-        }
-      ]
-    },
-    "globals": {
-      "React": true,
-      "JSX": true
-    }
-  },
-  "eslintIgnore": [
-    ".next",
-    ".cache",
-    "build",
-    "dist",
-    "out"
-  ],
   "prettier": {
     "arrowParens": "always",
     "bracketSpacing": true,
@@ -135,7 +56,7 @@
     "semi": false,
     "singleQuote": true,
     "tabWidth": 2,
-    "trailingComma": "none",
+    "trailingComma": "es5",
     "useTabs": false
   }
 }

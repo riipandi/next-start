@@ -1,5 +1,5 @@
 import { Switch } from '@headlessui/react'
-import { MoonFill, Sun } from 'akar-icons'
+import { IconBrightnessHalf, IconMoonStars } from '@tabler/icons'
 import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
 
@@ -49,7 +49,7 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
             )}
             aria-hidden='true'
           >
-            <Sun strokeWidth={2} className='w-3 h-3 text-gray-300' />
+            <IconBrightnessHalf strokeWidth={2} className='w-3 h-3 text-gray-300' />
           </span>
           <span
             className={classNames(
@@ -58,7 +58,7 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
             )}
             aria-hidden='true'
           >
-            <MoonFill strokeWidth={2} className='w-3 h-3 text-secondary-600' />
+            <IconMoonStars strokeWidth={2} className='w-3 h-3 text-secondary-600' />
           </span>
         </span>
       </Switch>
@@ -69,7 +69,7 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
     <button type='button' onClick={handleChange} {...props}>
       <span className='sr-only'>Toggle Dark Mode</span>
       {isDark ? (
-        <MoonFill
+        <IconMoonStars
           strokeWidth={2}
           className={classNames(
             iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
@@ -77,7 +77,7 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
           )}
         />
       ) : (
-        <Sun
+        <IconBrightnessHalf
           strokeWidth={2}
           className={classNames(
             iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',

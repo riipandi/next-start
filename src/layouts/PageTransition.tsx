@@ -5,27 +5,15 @@ type Props = {
 }
 
 const pageVariants = {
-  initial: {
-    opacity: 0,
-    x: 0,
-    scale: 0.8
-  },
-  in: {
-    opacity: 1,
-    x: 0,
-    scale: 1
-  },
-  out: {
-    opacity: 0,
-    x: '100vw',
-    scale: 1.2
-  }
+  initial: { opacity: 0, x: 0, y: 0, scale: 1 },
+  in: { opacity: 1, x: 0, y: 0, scale: 1 },
+  out: { opacity: 0, x: '100vw', scale: 1.2 },
 }
 
 const transisitionStyle = {
   type: 'tween',
   ease: 'anticipate',
-  duration: 0.8
+  duration: 0.8,
 }
 
 const PageTransition = ({ children, ...props }: Props): JSX.Element => {

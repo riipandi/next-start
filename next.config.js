@@ -13,26 +13,8 @@ module.exports = withPlausibleProxy({ customDomain: 'https://stats.web.id' })({
     formats: ['image/avif', 'image/webp'],
     disableStaticImages: false,
     minimumCacheTTL: 60,
-    domains: ['doodleipsum.com', 'error404.fun', 'play.tailwindcss.com']
+    domains: ['doodleipsum.com', 'error404.fun', 'play.tailwindcss.com'],
   },
   reactStrictMode: true,
   poweredByHeader: false,
-  async redirects() {
-    return [
-      {
-        source: '/stats',
-        destination:
-          'https://stats.web.id/share/next-start.vercel.app?auth=q3zlAZW9CKxMP8HFOKce6&embed=true&theme=light',
-        permanent: true
-      }
-    ]
-  },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack']
-    })
-    return config
-  }
 })

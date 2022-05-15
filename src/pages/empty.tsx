@@ -1,4 +1,4 @@
-import { TriangleLeft } from 'akar-icons'
+import { IconArrowBigLeftLine } from '@tabler/icons'
 
 import { PageLayout } from '@/layouts/site-layout'
 import { Anchor } from '@/components/elements'
@@ -13,7 +13,7 @@ export default function About() {
         </p>
         <div className='mt-8'>
           <Anchor href='/' className='inline-flex items-center btn btn--primary btn--sm'>
-            <TriangleLeft strokeWidth={1.8} className='w-4 h-4 -ml-1' />
+            <IconArrowBigLeftLine strokeWidth={1.8} className='w-4 h-4 -ml-1' />
             <span>Back to homepage</span>
           </Anchor>
         </div>

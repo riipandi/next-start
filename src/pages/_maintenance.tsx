@@ -1,15 +1,14 @@
-import { siteMeta } from '@/config/general'
-
-import { PageLayout } from '@/layouts/site-layout'
-import { Anchor, Image } from '@/components/elements'
+import { Anchor, MetaHead } from '@/components/elements'
+import { LogoIpsum } from '@/components/elements'
 
 const Maintenance = () => {
   return (
-    <PageLayout fullTitle={siteMeta.siteTitle}>
-      <div className='flex flex-col min-h-screen pb-12 bg-white'>
-        <main className='flex flex-col justify-center flex-grow w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
+    <>
+      <MetaHead title={`>We are under maintenance`} noindex />
+      <div className='flex flex-col min-h-screen pb-12'>
+        <main className='flex flex-col justify-center flex-grow w-full max-w-6xl px-4 mx-auto sm:px-6 lg:px-8'>
           <div className='flex justify-center flex-shrink-0'>
-            <Image src='https://doodleipsum.com/700/avatar-5' width={180} height={180} alt='Site logo' />
+            <LogoIpsum className='w-auto h-8' />
           </div>
           <div className='py-12'>
             <div className='text-center'>
@@ -24,7 +23,7 @@ const Maintenance = () => {
               </p>
               <div className='mt-6'>
                 <Anchor
-                  href='https://ripandis.com'
+                  href='https://twitter.com/riipandi'
                   className='text-base font-medium text-primary-600 hover:text-primary-400'
                   newTab
                 >
@@ -34,14 +33,14 @@ const Maintenance = () => {
             </div>
           </div>
         </main>
-        <footer className='flex-shrink-0 w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
+        <footer className='flex-shrink-0 w-full max-w-6xl px-4 mx-auto sm:px-6 lg:px-8'>
           <nav className='flex justify-center space-x-4'>
             <Anchor
               href='https://ripandis.com'
               className='text-sm font-medium text-gray-500 hover:text-gray-600'
               newTab
             >
-              Homepage
+              Aris Ripandi
             </Anchor>
             <span className='inline-block border-l border-gray-300' aria-hidden='true' />
             <Anchor
@@ -62,7 +61,7 @@ const Maintenance = () => {
           </nav>
         </footer>
       </div>
-    </PageLayout>
+    </>
   )
 }
 

@@ -1,8 +1,9 @@
 import { usePlausible } from 'next-plausible'
+
 import { siteMeta } from '@/config/general'
 
 import { PageLayout } from '@/layouts/site-layout'
-import { Anchor } from '@/components/elements'
+import { Anchor, Image } from '@/components/elements'
 
 import Banner from '~/images/banner.svg'
 
@@ -11,11 +12,11 @@ export default function Home() {
 
   return (
     <PageLayout
-      fullTitle='Welcome to your Next site!'
+      title='>Welcome to your Next site!'
       className='flex flex-col items-center justify-center min-h-screen content-wrapper'
     >
       <div className='mx-auto mb-6'>
-        <Banner className='border-b' />
+        <Image src={Banner} width={400} height={120} alt='Banner' />
       </div>
       <div className='container relative px-4 mx-auto'>
         <div className='max-w-2xl mx-auto text-center'>
