@@ -17,4 +17,8 @@ module.exports = withPlausibleProxy({ customDomain: 'https://stats.web.id' })({
   },
   reactStrictMode: true,
   poweredByHeader: false,
+  swcMinify: true,
+  experimental: {
+    outputStandalone: true,
+  },
 })
