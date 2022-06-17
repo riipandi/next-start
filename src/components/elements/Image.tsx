@@ -1,18 +1,29 @@
-/* eslint-disable jsx-a11y/alt-text */
+import getConfig from 'next/config'
 import { default as NextImage } from 'next/image'
 
-const cfImageLoader = ({ src, width, quality }: { src: any; width: number; quality?: number }) => {
-  const workersUrl = 'https://images.webtools.id'
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  const pattern = new RegExp('^(https?|ftp)://')
-  const imgUrl = !pattern.test(src) ? `${siteUrl}${src}` : src
-  const imgQuality = quality || 75
-
-  return `${workersUrl}?width=${width}&quality=${imgQuality}&image=${imgUrl}`
+type Props = {
+  src: string
+  width?: number
+  quality?: number
 }
 
-export default function Image(props: any) {
-  // Use custom image loader when building for production outside Vercel.
-  const outsideVercel = process.env.ENV === 'production' && process.env.VERCEL !== '1'
-  return outsideVercel ? <NextImage {...props} loader={cfImageLoader} /> : <NextImage {...props} />
+const normalizeSrc = (src: string) => (src.startsWith('/') ? src.slice(1) : src)
+
+const cloudflareLoader = ({ src, width, quality }: Props) => {
+  const params = [`width=${width ?? 500}`, `quality=${quality ?? 80}`]
+  const imgUrl = `/cdn-cgi/image/${params}/${normalizeSrc(src)}`
+  return process.env.CF_PAGES === '1' ? imgUrl : src
 }
+
+const Image = (props: any) => {
+  const { publicRuntimeConfig } = getConfig()
+  const { src, ...rest } = props
+
+  if (publicRuntimeConfig.imageLoader === 'cloudflare') {
+    return <NextImage loader={cloudflareLoader} src={src.src} {...rest} />
+  }
+
+  return <NextImage {...props} />
+}
+
+export default Image

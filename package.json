@@ -1,15 +1,12 @@
 {
   "name": "next-tailwind-starter",
-  "version": "12.17.1",
+  "version": "12.17.2",
   "private": true,
   "scripts": {
     "dev": "next dev --port ${PORT:=3000}",
     "build": "NEXT_TELEMETRY_DISABLED=1 next build",
     "start": "next start --port ${PORT:=3000}",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md}\"",
-    "docker:build": "docker build -t $npm_package_config_container:latest -t $npm_package_config_container:v$npm_package_version .",
-    "docker:push": "docker push $npm_package_config_container:latest && docker push $npm_package_config_container:v$npm_package_version",
-    "docker:run": "docker run -it --rm -p 3000:3000 $npm_package_config_container:latest",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "clean": "rimraf node_modules && rimraf .next",
     "lint": "TIMING=1 next lint",
     "export": "next export"
@@ -49,9 +46,6 @@
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.7.2"
-  },
-  "config": {
-    "container": "riipandi/next-tailwind"
   },
   "prettier": {
     "arrowParens": "always",
