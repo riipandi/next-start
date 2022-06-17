@@ -30,7 +30,7 @@ docker.push:
 	docker image push $(CONTAINER_NAME):$(PACKAGE_VERSION)
 
 docker.run: docker.network
-	docker run --rm -d -p 3001:3001\
+	docker run --rm -d -p 3001:3000\
 		--network intranet \
 		--name $(APP_NAME) \
 		--env-file $(PWD)/.env.docker \
