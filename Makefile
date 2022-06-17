@@ -33,7 +33,7 @@ docker.run: docker.network
 	docker run --rm -d -p 3001:3000\
 		--network intranet \
 		--name $(APP_NAME) \
-		--env-file $(PWD)/.env.docker \
+		--env-file $(PWD)/.env \
 		 $(CONTAINER_NAME):latest
 
 docker.stop:
