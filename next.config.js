@@ -2,7 +2,7 @@
 
 const { withPlausibleProxy } = require('next-plausible')
 
-module.exports = withPlausibleProxy({ customDomain: 'https://stats.web.id' })({
+module.exports = withPlausibleProxy()({
   publicRutimeConfig: { imageLoader: 'cloudflare' },
   images: {
     loader: 'custom',

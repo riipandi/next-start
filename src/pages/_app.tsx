@@ -2,14 +2,13 @@ import PlausibleProvider from 'next-plausible'
 import { ThemeProvider } from 'next-themes'
 import '@/libraries/fontloader'
 
-import '@/styles/tailwind.css'
-import '@/styles/custom.css'
+import plausibleConfig from '@/config/analytics'
 
-const isProduction = process.env.NODE_ENV === 'production'
+import '@/styles/global.css'
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <PlausibleProvider enabled={isProduction} domain='next-start.vercel.app' trackOutboundLinks selfHosted>
+    <PlausibleProvider {...plausibleConfig}>
       <ThemeProvider attribute='class' defaultTheme='light' enableSystem={false}>
         <Component {...pageProps} />
       </ThemeProvider>

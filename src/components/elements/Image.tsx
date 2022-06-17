@@ -19,7 +19,7 @@ const Image = (props: any) => {
   const { publicRuntimeConfig } = getConfig()
   const { src, ...rest } = props
 
-  if (publicRuntimeConfig.imageLoader === 'cloudflare') {
+  if (publicRuntimeConfig.imageLoader !== 'default') {
     return <NextImage loader={cloudflareLoader} src={src.src} {...rest} />
   }
 

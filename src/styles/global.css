@@ -1,3 +1,21 @@
+@tailwind base;
+
+/* Start purging... */
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+/* Stop purging. */
+
+html,
+body {
+  @apply font-sans antialiased h-full;
+}
+
+/* Page content wrapper */
+.content-wrapper {
+  @apply max-w-6xl mx-auto px-6 lg:px-8 py-12 lg:pb-14 h-full;
+}
+
 /* Styles for text */
 .text--gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-tr from-purple-400 to-primary-500;
