@@ -20,7 +20,7 @@ const Image = (props: any) => {
   const { src, ...rest } = props
 
   if (publicRuntimeConfig.imageLoader !== 'default') {
-    return <NextImage loader={cloudflareLoader} src={src.src} {...rest} />
+    return <NextImage loader={cloudflareLoader} src={src.src} {...rest} unoptimized />
   }
 
   return <NextImage {...props} />

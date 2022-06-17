@@ -2,7 +2,11 @@
 
 const { withPlausibleProxy } = require('next-plausible')
 
-module.exports = withPlausibleProxy()({
+const experimental = process.env.DOCKER_BUILDKIT === '1' ?? {
+  outputStandalone: true,
+}
+
+const nextConfig = {
   publicRutimeConfig: { imageLoader: 'cloudflare' },
   images: {
     loader: 'custom',
@@ -10,8 +14,7 @@ module.exports = withPlausibleProxy()({
   },
   reactStrictMode: true,
   poweredByHeader: false,
-  swcMinify: true,
-  experimental: {
-    outputStandalone: true,
-  },
-})
+  ...experimental,
+}
+
+module.exports = withPlausibleProxy()(nextConfig)

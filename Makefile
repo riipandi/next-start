@@ -1,4 +1,4 @@
-.PHONY: clean inspect
+SHELL=/bin/sh
 
 APP_NAME = next-tailwind-starter
 # CONTAINER_NAME = registry.fly.io/next-tailwind-starter
@@ -6,11 +6,13 @@ APP_NAME = next-tailwind-starter
 CONTAINER_NAME = riipandi/next-tailwind-starter
 PACKAGE_VERSION = 0.1.0
 
+.PHONY: clean inspect
+
 clean:
-	rm -rf ./node_modules
+	rm -rf ./node_modules ./.next ./out
 
 inspect:
-	du -sh ./node_modules/* | sort -nr | grep '\dM.*'
+	if [ -d "./node_modules" ]; then du -sh ./node_modules/* | sort -nr | grep '\dM.*' ; fi
 
 # ------------------------------------------------------------------------------
 # Docker container scripts
@@ -31,7 +33,7 @@ docker.run: docker.network
 	docker run --rm -d -p 3000:3000\
 		--network intranet \
 		--name $(APP_NAME) \
-		--env-file $(PWD)/.env \
+		--env-file $(PWD)/.env.docker \
 		 $(CONTAINER_NAME):latest
 
 docker.stop:
