@@ -1,6 +1,6 @@
 {
   "name": "next-tailwind-starter",
-  "version": "12.18.0",
+  "version": "12.14.0",
   "private": true,
   "scripts": {
     "dev": "next dev --port ${PORT:=3000}",
