@@ -1,5 +1,3 @@
-SHELL=/bin/sh
-
 APP_NAME = next-tailwind-starter
 CONTAINER_NAME = riipandi/next-tailwind-starter
 PACKAGE_VERSION = 0.1.0
