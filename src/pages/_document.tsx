@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
       <Html lang='en'>
         <Head>
           <link rel='manifest' href='/manifest.json' />
-          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+          <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
           <meta name='msapplication-TileImage' content='/favicon.svg' />
           <meta name='msapplication-TileColor' content='#41D1FF' />
           <meta name='theme-color' content='#41D1FF' />

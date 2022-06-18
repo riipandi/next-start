@@ -5,38 +5,35 @@ module.exports = {
     'eslint:recommended',
     'next',
     'next/core-web-vitals',
+    'plugin:tailwindcss/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
+  ignorePatterns: ['.eslintrc.js', '.next', '.cache', 'build', 'dist', 'out'],
   settings: {
-    next: {
-      rootDir: ['apps/*/', 'packages/*/'],
+    tailwindcss: {
+      officialSorting: true,
     },
   },
-  root: true,
-  env: {
-    node: true,
-    jest: true,
-  },
-  ignorePatterns: ['.eslintrc.js', '.next', '.cache', 'build', 'dist', 'out'],
   rules: {
     'react/jsx-key': 'off',
     'no-unused-vars': 'off',
     'no-console': 'warn',
+    "tailwindcss/no-custom-classname": "off",
     '@next/next/no-html-link-for-pages': 'off',
+    '@next/next/no-img-element': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-var-requires': 'off',
-    '@next/next/no-img-element': 'off',
     'simple-import-sort/exports': 'warn',
     'simple-import-sort/imports': [
       'warn',
       {
         groups: [
           ['^@?\\w', '^\\u0000'],
-          ['^@/config', '^@/hooks', '^@/stores'],
-          ['^@/libraries', '^@/layouts', '^@/components'],
-          ['^@/styles', '^~/types', '^.+\\.s?css$', '^@/'],
+          ['^@/components', '^@/hooks', '^@/stores'],
+          ['^@/config', '^@/utils', '^@/content', '^@/styles'],
+          ['^~/types', '^.+\\.s?css$', '^@/', '^~/'],
           [
             '^\\./?$',
             '^\\.(?!/?$)',
@@ -47,7 +44,6 @@ module.exports = {
             '^\\.\\./\\.\\./\\.\\./?$',
             '^\\.\\./\\.\\./\\.\\.(?!/?$)',
           ],
-          ['^@/types'],
           ['^'],
         ],
       },
@@ -57,4 +53,4 @@ module.exports = {
     React: true,
     JSX: true,
   },
-};
+}

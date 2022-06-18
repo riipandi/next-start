@@ -5,14 +5,14 @@ const Maintenance = () => {
   return (
     <>
       <MetaHead title={`>We are under maintenance`} noindex />
-      <div className='flex flex-col min-h-screen pb-12'>
-        <main className='flex flex-col justify-center flex-grow w-full max-w-6xl px-4 mx-auto sm:px-6 lg:px-8'>
-          <div className='flex justify-center flex-shrink-0'>
-            <LogoIpsum className='w-auto h-8' />
+      <div className='flex min-h-screen flex-col pb-12'>
+        <main className='mx-auto flex w-full max-w-6xl grow flex-col justify-center px-4 sm:px-6 lg:px-8'>
+          <div className='flex shrink-0 justify-center'>
+            <LogoIpsum className='h-8 w-auto' />
           </div>
           <div className='py-12'>
             <div className='text-center'>
-              <p className='text-sm font-semibold tracking-wide uppercase text-primary-600'>
+              <p className='text-sm font-semibold uppercase tracking-wide text-primary-600'>
                 Hey, we are here
               </p>
               <h1 className='mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl'>
@@ -33,7 +33,7 @@ const Maintenance = () => {
             </div>
           </div>
         </main>
-        <footer className='flex-shrink-0 w-full max-w-6xl px-4 mx-auto sm:px-6 lg:px-8'>
+        <footer className='mx-auto w-full max-w-6xl shrink-0 px-4 sm:px-6 lg:px-8'>
           <nav className='flex justify-center space-x-4'>
             <Anchor
               href='https://ripandis.com'

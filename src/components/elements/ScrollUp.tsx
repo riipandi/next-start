@@ -7,14 +7,14 @@ const ScrollUp = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
   return (
-    <div className='fixed z-30 bg-black opacity-75 cursor-pointer'>
+    <div className='fixed z-30 cursor-pointer bg-black opacity-75'>
       {isScrolled && (
         <div
           onClick={scrollToTop}
-          className='fixed inline-flex items-center px-3 py-2 text-xs text-white transition duration-500 ease-in-out transform bg-black rounded cursor-pointer bottom-5 right-6 hover:bg-opacity-90 hover:-translate-y-1 hover:scale-110'
+          className='fixed bottom-5 right-6 inline-flex cursor-pointer items-center rounded bg-black px-3 py-2 text-xs text-white transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-black/90'
         >
           Back to top
-          <IconArrowUp strokeWidth={2} className='w-4 h-4 ml-1 -mr-1' />
+          <IconArrowUp strokeWidth={2} className='ml-1 -mr-1 h-4 w-4' />
         </div>
       )}
     </div>

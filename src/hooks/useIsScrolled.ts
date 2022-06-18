@@ -6,11 +6,7 @@ export default function useIsScrolled(rowHeight?: number) {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > row) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+      setIsScrolled(window.pageYOffset > row ?? false)
     }
     window.addEventListener('scroll', toggleVisibility)
     return () => window.removeEventListener('scroll', toggleVisibility)

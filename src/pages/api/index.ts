@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { throwError } from '@/libraries/helpers'
+import { throwError } from '@/utils/helpers'
 
 interface IResponse {
   message: string

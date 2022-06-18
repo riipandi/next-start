@@ -1,10 +1,7 @@
 @tailwind base;
-
-/* Start purging... */
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
-/* Stop purging. */
 
 html,
 body {

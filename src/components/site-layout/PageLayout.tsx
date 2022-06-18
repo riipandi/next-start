@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
-import { Footer, Header } from '@/layouts/site-layout'
 import { MetaHead, ScrollUp } from '@/components/elements'
+import { Footer, Header } from '@/components/site-layout'
 
 import PageTransition from '../PageTransition'
 
@@ -18,10 +18,10 @@ const PageLayout: FC<Props> = ({ children, ...props }) => {
   const { title, description, ogImage, noindex } = props
 
   return (
-    <div className='flex flex-col min-h-screen bg-white dark:bg-gray-900'>
+    <div className='flex min-h-screen flex-col bg-white dark:bg-gray-900'>
       <MetaHead title={title} description={description} ogImage={ogImage} noindex={noindex} />
-      <Header className='absolute top-0 w-full' />
-      <main className='flex-grow'>
+      <Header />
+      <main className='grow'>
         <PageTransition {...props}>{children}</PageTransition>
       </main>
       <Footer />

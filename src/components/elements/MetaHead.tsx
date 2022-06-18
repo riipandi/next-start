@@ -29,12 +29,8 @@ const MetaHead: FC<IMetaHeader> = ({ title, description, ogImage, noindex }) => 
       <meta name='twitter:description' content={pageDescription} />
       <meta name='twitter:title' content={pageTitle} />
       <meta name='twitter:image' content={ogImage || siteMeta.imageUrl} />
-      {isPrivate && (
-        <>
-          <meta name='googlebot' content='noimageindex, nofollow, nosnippet' />
-          <meta name='robots' content='noimageindex, nofollow, nosnippet' />
-        </>
-      )}
+      {isPrivate && <meta name='googlebot' content='noimageindex, nofollow, nosnippet' />}
+      {isPrivate && <meta name='robots' content='noimageindex, nofollow, nosnippet' />}
       <title>{pageTitle}</title>
     </Head>
   )

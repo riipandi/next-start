@@ -3,7 +3,7 @@ import { IconBrightnessHalf, IconMoonStars } from '@tabler/icons'
 import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
 
-import { classNames } from '@/libraries/helpers'
+import { classNames } from '@/utils/helpers'
 
 interface Props {
   className?: string
@@ -49,7 +49,7 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
             )}
             aria-hidden='true'
           >
-            <IconBrightnessHalf strokeWidth={2} className='w-3 h-3 text-gray-300' />
+            <IconBrightnessHalf strokeWidth={2} className='h-3 w-3 text-gray-300' />
           </span>
           <span
             className={classNames(
@@ -58,7 +58,7 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
             )}
             aria-hidden='true'
           >
-            <IconMoonStars strokeWidth={2} className='w-3 h-3 text-secondary-600' />
+            <IconMoonStars strokeWidth={2} className='h-3 w-3 text-secondary-600' />
           </span>
         </span>
       </Switch>
