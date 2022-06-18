@@ -59,14 +59,20 @@ deployments so that pushing to master will deploy to production! 🚀
 
 If you are using monorepo you will need to configure a few things:
 
-- Settings -> General -> Root Directory : `apps/web/`
-- Settings -> Git -> Ignored Build Step : `git diff --quiet HEAD^ HEAD ./`
+-   Settings -> General -> Root Directory : `apps/web/`
+-   Settings -> Git -> Ignored Build Step : `git diff --quiet HEAD^ HEAD ./`
 
 #### Cloudflare Deployment
 
 You need to add `NODE_VERSION` with value `14.19.0` or `16.15.0` on the environment variables setting.
 Visit [Cloudflare pages docs](https://developers.cloudflare.com/pages/platform/build-configuration/)
 for more information.
+
+For the preview branch:
+
+```env
+NEXT_PUBLIC_SITE_URL=${CF_PAGES_URL}
+```
 
 ## Thanks to...
 
