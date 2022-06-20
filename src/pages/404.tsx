@@ -5,7 +5,7 @@ import { Anchor, LogoIpsum, MetaHead } from '@/components/elements'
 export default function Error404() {
   return (
     <>
-      <MetaHead fullTitle='404 - Page not found' />
+      <MetaHead title='>404 - Page not found' />
       <div className='content-wrapper flex min-h-screen flex-col items-center justify-center'>
         <div className='mx-auto max-w-xl'>
           <div className='inline-flex items-center space-x-3'>
