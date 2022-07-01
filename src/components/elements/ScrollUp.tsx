@@ -1,4 +1,4 @@
-import { IconArrowUp } from '@tabler/icons'
+import { ArrowUpIcon } from '@heroicons/react/outline'
 
 import useIsScrolled from '@/hooks/useIsScrolled'
 
@@ -14,7 +14,7 @@ const ScrollUp = () => {
           className='fixed bottom-5 right-6 inline-flex cursor-pointer items-center rounded bg-black px-3 py-2 text-xs text-white transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-black/90'
         >
           Back to top
-          <IconArrowUp strokeWidth={2} className='ml-1 -mr-1 h-4 w-4' />
+          <ArrowUpIcon strokeWidth={2} className='ml-1 -mr-1 h-4 w-4' />
         </div>
       )}
     </div>

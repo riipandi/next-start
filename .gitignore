@@ -1,5 +1,6 @@
 # essentials
 /node_modules
+/.fleet
 /.pnp
 .pnp.js
 .DS_Store

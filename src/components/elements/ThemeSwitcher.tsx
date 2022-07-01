@@ -1,5 +1,5 @@
 import { Switch } from '@headlessui/react'
-import { IconBrightnessHalf, IconMoonStars } from '@tabler/icons'
+import { MoonIcon, SunIcon } from '@heroicons/react/outline'
 import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
 
@@ -44,21 +44,25 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
         >
           <span
             className={classNames(
-              theme === 'dark' ? 'opacity-0 ease-out duration-100' : 'opacity-100 ease-in duration-200',
+              theme === 'dark'
+                ? 'opacity-0 ease-out duration-100'
+                : 'opacity-100 ease-in duration-200',
               'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity'
             )}
             aria-hidden='true'
           >
-            <IconBrightnessHalf strokeWidth={2} className='h-3 w-3 text-gray-300' />
+            <SunIcon strokeWidth={2} className='h-3 w-3 text-gray-300' />
           </span>
           <span
             className={classNames(
-              theme === 'dark' ? 'opacity-100 ease-in duration-200' : 'opacity-0 ease-out duration-100',
+              theme === 'dark'
+                ? 'opacity-100 ease-in duration-200'
+                : 'opacity-0 ease-out duration-100',
               'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity'
             )}
             aria-hidden='true'
           >
-            <IconMoonStars strokeWidth={2} className='h-3 w-3 text-secondary-600' />
+            <MoonIcon strokeWidth={2} className='h-3 w-3 text-secondary-600' />
           </span>
         </span>
       </Switch>
@@ -69,7 +73,7 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
     <button type='button' onClick={handleChange} {...props}>
       <span className='sr-only'>Toggle Dark Mode</span>
       {isDark ? (
-        <IconMoonStars
+        <MoonIcon
           strokeWidth={2}
           className={classNames(
             iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
@@ -77,7 +81,7 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
           )}
         />
       ) : (
-        <IconBrightnessHalf
+        <SunIcon
           strokeWidth={2}
           className={classNames(
             iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
