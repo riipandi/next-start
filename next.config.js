@@ -10,9 +10,7 @@ const nextConfig = {
   },
   reactStrictMode: true,
   poweredByHeader: false,
-  experimental: {
-    outputStandalone: true,
-  },
+  output: 'standalone',
 }
 
 module.exports = withPlausibleProxy()(nextConfig)
