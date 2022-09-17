@@ -8,8 +8,15 @@ type AnchorProps = {
 } & React.ComponentPropsWithoutRef<'a'> &
   LinkProps
 
-const Anchor = ({ children, href, newTab = false, className, ...props }: AnchorProps): JSX.Element => {
-  const isNewTab = newTab === undefined || href.startsWith('/') || href.valueOf() == '#' ? false : true
+const Anchor = ({
+  children,
+  href,
+  newTab = false,
+  className,
+  ...props
+}: AnchorProps): JSX.Element => {
+  const isNewTab =
+    newTab === undefined || href.startsWith('/') || href.valueOf() == '#' ? false : true
 
   return href.startsWith('/') || href === '' ? (
     <Link href={href} {...props}>

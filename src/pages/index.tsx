@@ -23,10 +23,7 @@ export default function Home() {
               Pre-configured with TailwindUI and some additional components.
             </p>
             <div className='mx-auto flex justify-center space-x-4 py-8'>
-              <Anchor
-                href='/empty'
-                className='btn btn--primary btn--md inline-block px-5 text-sm'
-              >
+              <Anchor href='/empty' className='btn btn--primary btn--md inline-block px-5 text-sm'>
                 Empty page
               </Anchor>
               <Anchor

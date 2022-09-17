@@ -1,5 +1,5 @@
 import { Switch } from '@headlessui/react'
-import { MoonIcon, SunIcon } from '@heroicons/react/outline'
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
 

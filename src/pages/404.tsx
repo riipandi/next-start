@@ -17,8 +17,8 @@ export default function Error404() {
           <div className='divide-y divide-gray-300/50'>
             <div className='space-y-6 py-8 text-base leading-7 text-gray-600 dark:text-gray-100'>
               <p>
-                Sorry, we can’t find that page. Check that you typed the address correctly, or try using our
-                site search to find something specific.
+                Sorry, we can’t find that page. Check that you typed the address correctly, or try
+                using our site search to find something specific.
               </p>
             </div>
             <div className='pt-6 leading-7'>

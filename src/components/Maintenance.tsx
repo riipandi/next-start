@@ -27,7 +27,8 @@ const Maintenance = () => {
                   className='text-base font-medium text-primary-600 hover:text-primary-400'
                   newTab
                 >
-                  Meanwhile, you can subscribe to the latest updates <span aria-hidden='true'> &rarr;</span>
+                  Meanwhile, you can subscribe to the latest updates{' '}
+                  <span aria-hidden='true'> &rarr;</span>
                 </Anchor>
               </div>
             </div>

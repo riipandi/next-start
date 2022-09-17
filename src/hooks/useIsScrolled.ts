@@ -10,7 +10,7 @@ export default function useIsScrolled(rowHeight?: number) {
     }
     window.addEventListener('scroll', toggleVisibility)
     return () => window.removeEventListener('scroll', toggleVisibility)
-  }, [])
+  }, [row])
 
   return isScrolled
 }

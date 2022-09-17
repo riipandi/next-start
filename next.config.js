@@ -1,9 +1,10 @@
-/** @type {import('next').NextConfig} */
-
 const { withPlausibleProxy } = require('next-plausible')
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  publicRutimeConfig: { imageLoader: 'cloudflare' },
+  env: {
+    IMAGE_LOADER: 'custom',
+  },
   images: {
     loader: 'custom',
     domains: ['doodleipsum.com', 'error404.fun', 'play.tailwindcss.com'],

@@ -1,4 +1,3 @@
-import getConfig from 'next/config'
 import { default as NextImage } from 'next/image'
 
 type Props = {
@@ -16,10 +15,9 @@ const cloudflareLoader = ({ src, width, quality }: Props) => {
 }
 
 const Image = (props: any) => {
-  const { publicRuntimeConfig } = getConfig()
   const { src, ...rest } = props
 
-  if (publicRuntimeConfig.imageLoader !== 'default') {
+  if (process.env.IMAGE_LOADER === 'custom') {
     return <NextImage loader={cloudflareLoader} src={src.src} {...rest} unoptimized />
   }
 

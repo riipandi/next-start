@@ -11,43 +11,56 @@
     "export": "next export"
   },
   "dependencies": {
-    "@fontsource/epilogue": "^4.5.8",
-    "@fontsource/jetbrains-mono": "^4.5.9",
-    "@headlessui/react": "^1.6.5",
-    "@heroicons/react": "^1.0.6",
-    "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/forms": "^0.5.2",
-    "@tailwindcss/line-clamp": "^0.4.0",
-    "@tailwindcss/typography": "^0.5.2",
-    "date-fns": "^2.28.0",
-    "framer-motion": "^6.3.16",
-    "next": "12.2.0",
-    "next-plausible": "^3.2.0",
-    "next-themes": "^0.2.0",
+    "@fontsource/epilogue": "^4.5.9",
+    "@fontsource/jetbrains-mono": "^4.5.10",
+    "@headlessui/react": "^1.7.2",
+    "@heroicons/react": "^2.0.11",
+    "date-fns": "^2.29.3",
+    "framer-motion": "^7.3.5",
+    "next": "12.3.0",
+    "next-plausible": "^3.6.2",
+    "next-themes": "^0.2.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "^3.1.4"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^18.0.0",
-    "@types/react": "^18.0.14",
-    "@types/react-dom": "18.0.5",
-    "@types/tailwindcss": "^3.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.30.0",
-    "@typescript-eslint/parser": "^5.30.0",
-    "autoprefixer": "^10.4.7",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.7",
+    "@types/node": "^18.7.18",
+    "@types/react-dom": "18.0.6",
+    "@types/react": "^18.0.20",
+    "@types/tailwindcss": "^3.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "autoprefixer": "^10.4.11",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "eslint": "~8.18.0",
-    "eslint-config-next": "12.2.0",
+    "eslint-config-next": "12.3.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint-plugin-tailwindcss": "^3.6.0",
-    "postcss": "^8.4.14",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-tailwindcss": "^3.6.2",
+    "eslint": "~8.23.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.16",
     "prettier": "^2.7.1",
-    "typescript": "^4.7.4"
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css,scss,md,ts,tsx,html,graphql}": [
+      "npm run format --uncommitted"
+    ]
   },
   "prettier": {
     "jsxSingleQuote": true,
+    "printWidth": 100,
     "semi": false,
     "singleQuote": true,
     "trailingComma": "es5",
