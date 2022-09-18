@@ -10,9 +10,7 @@ export default function Error404() {
         <div className='mx-auto max-w-xl'>
           <div className='inline-flex items-center space-x-3'>
             <LogoIpsum className='h-8 w-auto' />
-            <h1>
-              <h1 className='text-2xl font-bold '>404 - Page not found</h1>
-            </h1>
+            <h1 className='text-2xl font-bold '>404 - Page not found</h1>
           </div>
           <div className='divide-y divide-gray-300/50'>
             <div className='space-y-6 py-8 text-base leading-7 text-gray-600 dark:text-gray-100'>
