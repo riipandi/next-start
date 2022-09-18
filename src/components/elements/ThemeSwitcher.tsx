@@ -30,13 +30,13 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
         checked={isDark}
         onChange={handleChange}
         className={classNames(
-          theme === 'dark' ? 'bg-primary-600' : 'bg-gray-200',
+          theme === 'dark' ? 'bg-sky-600' : 'bg-gray-200',
           'relative inline-flex flex-shrink-0 h-5 w-10 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500'
         )}
         {...props}
       >
         <span className='sr-only'>Dark Mode</span>
-        <span
+        <div
           className={classNames(
             theme === 'dark' ? 'translate-x-5' : 'translate-x-0',
             'pointer-events-none relative inline-block h-4 w-4 rounded-full bg-gray-50 shadow transform ring-0 transition ease-in-out duration-200'
@@ -62,33 +62,38 @@ const ThemeSwitcher = ({ asToggle = false, iconSize = 5, ...props }: Props) => {
             )}
             aria-hidden='true'
           >
-            <MoonIcon strokeWidth={2} className='h-3 w-3 text-secondary-600' />
+            <MoonIcon strokeWidth={2} className='text-secondary-600 h-3 w-3' />
           </span>
-        </span>
+        </div>
       </Switch>
+    )
+  }
+
+  if (isDark) {
+    return (
+      <button type='button' onClick={handleChange} {...props}>
+        <span className='sr-only'>Toggle Theme</span>
+        <MoonIcon
+          strokeWidth={2}
+          className={classNames(
+            iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
+            'dark:text-sky-50 dark:hover:text-sky-200'
+          )}
+        />
+      </button>
     )
   }
 
   return (
     <button type='button' onClick={handleChange} {...props}>
-      <span className='sr-only'>Toggle Dark Mode</span>
-      {isDark ? (
-        <MoonIcon
-          strokeWidth={2}
-          className={classNames(
-            iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
-            'dark:text-primary-50 dark:hover:text-primary-200'
-          )}
-        />
-      ) : (
-        <SunIcon
-          strokeWidth={2}
-          className={classNames(
-            iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
-            'text-gray-700 hover:text-primary-400'
-          )}
-        />
-      )}
+      <span className='sr-only'>Toggle Theme</span>
+      <SunIcon
+        strokeWidth={2}
+        className={classNames(
+          iconSize ? `w-${iconSize} h-${iconSize}` : 'w-5 h-5',
+          'text-gray-700 hover:text-sky-500'
+        )}
+      />
     </button>
   )
 }
