@@ -12,7 +12,6 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # next.js
-/.vercel/
 /.next/
 /out/
 
@@ -30,6 +29,13 @@ yarn-error.log*
 # env files
 .env.*
 !.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
 
 # next-sitemap
 public/sitemap.xml

@@ -36,12 +36,12 @@ npx create-next-app myapp-name --use-npm -e "https://github.com/riipandi/next-ta
 
 ### Up and Running
 
-| NPM             | Yarn         | Description              |
-| --------------- | ------------ | ------------------------ |
-| `npm install`   | `yarn`       | install the dependencies |
-| `npm run dev`   | `yarn dev`   | serve with hot reload    |
-| `npm run build` | `yarn build` | build for production     |
-| `npm run start` | `yarn start` | launch generated build   |
+| NPM             | Yarn         | PNPM           | Description              |
+| --------------- | ------------ | -------------- | ------------------------ |
+| `npm install`   | `yarn`       | `pnpm install` | install the dependencies |
+| `npm run dev`   | `yarn dev`   | `pnpm dev`     | serve with hot reload    |
+| `npm run build` | `yarn build` | `pnpm build`   | build for production     |
+| `npm run start` | `yarn start` | `pnpm start`   | launch generated build   |
 
 Application will run at `http://localhost:3000`
 
@@ -86,3 +86,7 @@ This project is open-sourced software licensed under the [MIT license](https://a
 
 Copyrights in this project are retained by their contributors.
 See the [license file](./LICENSE) for more information.
+
+---
+
+<sub>🤫 Psst! If you like my work you can support me via [GitHub sponsors](https://github.com/sponsors/riipandi).</sub>
