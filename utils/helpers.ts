@@ -1,3 +1,4 @@
+import { cache } from 'react'
 import type { NextRequest } from 'next/server'
 import { ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
@@ -17,9 +18,7 @@ export function getBaseUrlFromServer(req: NextRequest): string {
   return `${protocol}://${host}`
 }
 
-export function getBaseUrlFromClient(): string {
-  return location.protocol + '//' + location.host
-}
+export const getBaseUrlFromClient = cache(() => location.protocol + '//' + location.host)
 
 export function getBaseUrl(req?: NextRequest): string {
   if (req) {
