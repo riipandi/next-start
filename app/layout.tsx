@@ -9,9 +9,6 @@ import '@/assets/styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-/**
- * Ref: https://nextjs.org/blog/next-13-2#built-in-seo-support-with-new-metadata-api
- */
 export const metadata: Metadata = {
   title: 'Next.js Tailwind Starter',
   description: 'A starter project for Next.js with Tailwind CSS and Typescript.',
