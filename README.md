@@ -80,9 +80,9 @@ If you are using monorepo you will need to configure a few things:
 
 #### Cloudflare Deployment
 
-You need to add `NODE_VERSION` with value `14.19.0` or `16.15.0` on the environment variables setting.
-Visit [Cloudflare pages docs](https://developers.cloudflare.com/pages/platform/build-configuration/)
-for more information.
+You need to add `NODE_VERSION` with value `18.16.0` or greater than `Node v18` on the environment variables setting.
+
+Visit [Cloudflare pages docs](https://developers.cloudflare.com/pages/platform/build-configuration/) for more information.
 
 For the preview branch:
 
