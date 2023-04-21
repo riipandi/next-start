@@ -1,48 +1,45 @@
-# -----------------------------------------------------------------------------
-# Build dependencies
-# -----------------------------------------------------------------------------
-FROM node:16-alpine AS deps
-RUN apk add --no-cache libc6-compat
-WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+# syntax=docker/dockerfile:1
 
-# -----------------------------------------------------------------------------
-# Rebuild the source code only when needed
-# -----------------------------------------------------------------------------
-FROM node:16-alpine AS builder
-WORKDIR /app
-COPY . .
-COPY --from=deps /app/node_modules ./node_modules
-# COPY .env.production .env.production
-RUN yarn build
-
-# -----------------------------------------------------------------------------
-# Production image, copy all the files and run next
-# -----------------------------------------------------------------------------
-FROM node:16-alpine AS runner
-LABEL org.opencontainers.image.source="https://github.com/riipandi/next-tailwind-starter"
-
+FROM cgr.dev/chainguard/node:18 AS base
+LABEL org.opencontainers.image.source="https://github.com/riipandi/next-start"
 ENV NEXT_TELEMETRY_DISABLED 1
+RUN npm config set update-notifier false && npm config set fund false &&\
+ npm config set progress true && npm config set loglevel error
+
+# -----------------------------------------------------------------------------
+# Build the application
+# -----------------------------------------------------------------------------
+FROM base AS builder
+COPY --chown=node:node . .
+RUN npm install --no-audit && npm run build
+
+# -----------------------------------------------------------------------------
+# Production dependencies
+# -----------------------------------------------------------------------------
+FROM base AS deps
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/package-lock.json ./package-lock.json
+RUN npm install --no-audit --omit=dev
+
+# -----------------------------------------------------------------------------
+# Production image, copy all the files and run the application
+# -----------------------------------------------------------------------------
+FROM base AS runner
+
+ARG DATABASE_URL
+ENV DATABASE_URL $DATABASE_URL
 ENV NODE_ENV production
 ENV PORT 3000
 
-WORKDIR /app
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
+# Copy dependencies from deps stage
+COPY --from=deps --chown=node:node /app/package.json ./package.json
+COPY --from=deps --chown=node:node /app/package-lock.json ./package-lock.json
+COPY --from=deps --chown=node:node /app/node_modules ./node_modules
+# Automatically leverage output traces to reduce image size (https://s.id/1Gplb)
+COPY --from=builder --chown=node:node /app/next.config.js ./next.config.js
+COPY --from=builder --chown=node:node /app/public ./public
+COPY --from=builder --chown=node:node /app/.next ./.next
 
-# You only need to copy next.config.js if you are NOT using the default configuration
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/next.config.js ./next.config.js
-COPY --from=builder /app/public ./public
+EXPOSE $PORT
 
-# Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
-
-EXPOSE 3000
-
-CMD ["node", "server.js"]
+CMD ["/usr/bin/npm", "run", "start"]

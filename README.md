@@ -1,13 +1,16 @@
 <p align="center"><img src="./public/images/banner.svg" width="500" height="150" alt="Project Logo"></p>
 <p align="center">
-    <a href="https://github.com/riipandi/next-tailwind-starter/pulse">
+    <a href="https://github.com/riipandi/next-start/pulse">
         <img src="https://img.shields.io/badge/Contributions-welcome-blue.svg?style=flat-square" alt="Contribution welcome">
     </a>
-    <a href="https://github.com/riipandi/next-tailwind-starter">
-        <img src="https://img.shields.io/github/languages/top/riipandi/next-tailwind-starter?style=flat-square" alt="Top language">
+    <a href="https://github.com/riipandi/next-start">
+        <img src="https://img.shields.io/github/languages/top/riipandi/next-start?style=flat-square" alt="Top language">
     </a>
     <a href="https://aris.mit-license.org">
-        <img src="https://img.shields.io/github/license/riipandi/next-tailwind-starter?style=flat-square" alt="License">
+        <img src="https://img.shields.io/github/license/riipandi/next-start?style=flat-square" alt="License">
+    </a>
+    <a href="https://github.com/sponsors/riipandi">
+        <img src="https://badgen.net/badge/icon/sponsors?icon=github&label&color=green&labelColor=black&style=flat-square" alt="Sponsor" />
     </a>
 </p>
 
@@ -26,10 +29,10 @@ deploy using containerization or even Kubernetes.
 
 ```bash
 # Using Yarn is recomended
-npx create-next-app myapp-name -e "https://github.com/riipandi/next-tailwind-starter"
+npx create-next-app myapp-name -e "https://github.com/riipandi/next-start"
 
 # If you want to use npm instead
-npx create-next-app myapp-name --use-npm -e "https://github.com/riipandi/next-tailwind-starter"
+npx create-next-app myapp-name --use-npm -e "https://github.com/riipandi/next-start"
 ```
 
 > Don't forget to change `myapp-name` with your real application name.
@@ -47,13 +50,26 @@ Application will run at `http://localhost:3000`
 
 For detailed explanation on how things work, check out [Next.js docs](https://nextjs.org/docs/getting-started).
 
+### Build Docker Container
+
+```sh
+# Build Docker image
+docker build -t next-start:$(cat package.json | jq -r .version) -t next-start:latest .
+
+# Run Docker container in background
+docker run --rm -d -p 3000:3000 --name next-start next-start:latest
+
+# Access container shell
+docker run --rm -it --entrypoint sh next-start:latest
+```
+
 ## Deploy your own
 
 You'll want to fork this repository and deploy your own Next.js website. Once you have an
 image generator that sparks joy, you can setup [automatic GitHub](https://vercel.com/github)
 deployments so that pushing to master will deploy to production! 🚀
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/riipandi/next-tailwind-starter&project-name=next-tailwind-starter&repo-name=next-tailwind-starter&env=NEXT_PUBLIC_SITE_URL,NEXT_PUBLIC_MAINTENANCE_MODE)
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/riipandi/next-start&project-name=next-start&repo-name=next-start&env=NEXT_PUBLIC_SITE_URL,NEXT_PUBLIC_MAINTENANCE_MODE)
 
 #### Vercel Configuration (optional)
 
@@ -82,7 +98,7 @@ community. Your work means the world! 🌍 ❤️
 
 ## License
 
-This project is open-sourced software licensed under the [MIT license](https://aris.mit-license.org).
+This project is open-sourced software licensed under the [MIT license](./LICENSE).
 
 Copyrights in this project are retained by their contributors.
 See the [license file](./LICENSE) for more information.

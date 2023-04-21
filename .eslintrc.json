@@ -1,86 +1,65 @@
 {
-  "extends": [
-    "next",
-    "next/core-web-vitals",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended",
-    "plugin:tailwindcss/recommended",
-    "prettier"
-  ],
-  "ignorePatterns": [
-    ".next",
-    ".cache",
-    "build",
-    "dist",
-    "out"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "settings": {
-    "tailwindcss": {
-      "officialSorting": true
-    }
-  },
-  "plugins": ["@typescript-eslint", "simple-import-sort", "jsx-a11y", "react-hooks", "prettier"],
-  "rules": {
-    "react/jsx-key": "off",
-    "no-console": "warn",
-    "import/no-anonymous-default-export": "off",
-    "tailwindcss/no-custom-classname": "off",
-    "@next/next/no-html-link-for-pages": "off",
-    "@next/next/no-img-element": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-var-requires": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_",
-        "caughtErrorsIgnorePattern": "^_"
-      }
+    "extends": [
+        "next/core-web-vitals",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:tailwindcss/recommended"
     ],
-    "jsx-a11y/img-redundant-alt": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "prettier/prettier": [
-      "warn",
-      {
-        "endOfLine": "auto",
-        "singleQuote": true
-      }
-    ]
-  },
-  "overrides": [
-    {
-      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
-      "rules": {
-        "simple-import-sort/exports": "warn",
-        "simple-import-sort/imports": [
-          "error",
-          {
-            "groups": [
-              // Packages `react` related packages come first.
-              ["^react", "^@?\\w"],
-              // Internal packages.
-              ["^(@|components)(/.*|$)"],
-              // Side effect imports.
-              ["^\\u0000"],
-              // Parent imports. Put `..` last.
-              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-              // Other relative imports. Put same-folder imports and `.` last.
-              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-              // Style imports.
-              ["^.+\\.?(css)$"]
-            ]
-          }
-        ]
-      }
+    "ignorePatterns": ["node_modules", ".next", ".cache", "build", "dist", "out"],
+    "settings": {
+        "tailwindcss": {
+            "officialSorting": true
+        }
+    },
+    "plugins": ["@typescript-eslint", "simple-import-sort", "react-hooks"],
+    "rules": {
+        "no-console": "warn",
+        "react/jsx-key": "off",
+        "import/no-anonymous-default-export": "off",
+        "tailwindcss/no-custom-classname": "off",
+        "@next/next/no-html-link-for-pages": "off",
+        "@next/next/no-img-element": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "argsIgnorePattern": "^_",
+                "varsIgnorePattern": "^_",
+                "caughtErrorsIgnorePattern": "^_"
+            }
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+    },
+    "overrides": [
+        {
+            "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+            "rules": {
+                "simple-import-sort/exports": "warn",
+                "simple-import-sort/imports": [
+                    "error",
+                    {
+                        "groups": [
+                            // Packages `react` related packages come first.
+                            ["^react", "^next(?!/?$)", "^@?\\w"],
+                            // Internal packages.
+                            ["^(@|components)(/.*|$)"],
+                            // Side effect imports.
+                            ["^\\u0000"],
+                            // Parent imports. Put `..` last.
+                            ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+                            // Other relative imports. Put same-folder imports and `.` last.
+                            ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+                            // Style imports.
+                            ["^.+\\.?(css)$"]
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "globals": {
+        "React": true,
+        "JSX": true
     }
-  ],
-  "globals": {
-    "React": true,
-    "JSX": true
-  }
 }

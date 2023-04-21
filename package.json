@@ -1,63 +1,55 @@
 {
-  "name": "ripandis",
-  "version": "13.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --port ${PORT:=3000}",
-    "build": "NEXT_TELEMETRY_DISABLED=1 next build",
-    "start": "next start --port ${PORT:=3000}",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
-    "lint:fix": "next lint --fix",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@heroicons/react": "^2.0.13",
-    "@next/font": "13.1.1",
-    "@types/node": "18.11.18",
-    "@types/react-dom": "18.0.10",
-    "@types/react": "18.0.26",
-    "clsx": "^1.2.1",
-    "date-fns": "^2.29.3",
-    "framer-motion": "^8.1.6",
-    "next-plausible": "^3.6.5",
-    "next-themes": "^0.2.1",
-    "next": "13.1.1",
-    "react-aria": "^3.22.0",
-    "react-dom": "18.2.0",
-    "react": "18.2.0",
-    "typescript": "4.9.4"
-  },
-  "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/line-clamp": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.8",
-    "@typescript-eslint/eslint-plugin": "^5.48.0",
-    "@typescript-eslint/parser": "^5.48.0",
-    "autoprefixer": "^10.4.13",
-    "eslint-config-next": "13.1.1",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-simple-import-sort": "^8.0.0",
-    "eslint-plugin-tailwindcss": "^3.8.0",
-    "eslint": "8.31.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.1.0",
-    "postcss": "^8.4.20",
-    "prettier-plugin-tailwindcss": "^0.2.1",
-    "prettier": "^2.8.1",
-    "tailwindcss": "^3.2.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+    "name": "next-start",
+    "version": "13.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "lint:fix": "next lint --fix",
+        "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
+        "docker:build": "docker build --compress -t $npm_package_name:$npm_package_version -t $npm_package_name:latest .",
+        "docker:run": "docker run --rm --interactive -p 3000:3000 --name $npm_package_name $npm_package_name:latest",
+        "docker:shell": "docker exec -it $npm_package_name /bin/sh",
+        "docker:logs": "docker logs -f $npm_package_name",
+        "docker:stop": "docker stop $npm_package_name"
+    },
+    "dependencies": {
+        "@tailwindcss/aspect-ratio": "^0.4.2",
+        "@tailwindcss/forms": "^0.5.3",
+        "@tailwindcss/typography": "^0.5.9",
+        "@twistail/icons": "^0.1.0",
+        "clsx": "^1.2.1",
+        "next": "13.3.0",
+        "next-plausible": "^3.7.2",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "tailwind-merge": "^1.12.0",
+        "tailwind-scrollbar-hide": "^1.1.7",
+        "tailwindcss": "3.3.1"
+    },
+    "devDependencies": {
+        "@types/node": "18.15.13",
+        "@types/react": "18.0.37",
+        "@types/react-dom": "18.0.11",
+        "@typescript-eslint/eslint-plugin": "^5.59.0",
+        "autoprefixer": "10.4.14",
+        "eslint": "8.38.0",
+        "eslint-config-next": "13.3.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-simple-import-sort": "^10.0.0",
+        "eslint-plugin-tailwindcss": "^3.11.0",
+        "postcss": "8.4.23",
+        "prettier": "^2.8.7",
+        "typescript": "5.0.4"
+    },
+    "prettier": {
+        "jsxSingleQuote": true,
+        "printWidth": 100,
+        "semi": false,
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "useTabs": false
     }
-  },
-  "lint-staged": {
-    "*.{js,jsx,json,css,scss,md,ts,tsx,html,graphql}": [
-      "pnpm format --uncommitted"
-    ]
-  }
 }

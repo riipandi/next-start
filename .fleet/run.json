@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "command",
+            "name": "Run Development",
+            "program": "doppler",
+            "args": ["run", "--" , "pnpm dev"]
+        }
+    ]
+}
