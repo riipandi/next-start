@@ -10,15 +10,11 @@ export default {
         mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
       },
       colors: ({ colors }) => ({
-        black: '#1B1C1E',
+        black: '#121314',
         gray: colors.gray,
         primary: colors.blue,
         secondary: colors.indigo,
       }),
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
     },
   },
   plugins: [
