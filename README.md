@@ -50,7 +50,8 @@ Application will run at `http://localhost:3000`
 
 For detailed explanation on how things work, check out [Next.js docs](https://nextjs.org/docs/getting-started).
 
-Learn about Dynamic Metadata [here](https://nextjs.org/blog/next-13-2#built-in-seo-support-with-new-metadata-api).
+-   [Next.js app router playground](https://github.com/vercel/app-playground) - learn more about Next.js app directory.
+-   [Dynamic Metadata](https://nextjs.org/blog/next-13-2#built-in-seo-support-with-new-metadata-api) - learn more about SEO using dynamic metadata.
 
 ### Build Docker Container
 
