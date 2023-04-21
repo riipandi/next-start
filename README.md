@@ -28,8 +28,8 @@ deploy using containerization or even Kubernetes.
 ### Installation
 
 ```bash
-# Using Yarn is recomended
-npx create-next-app myapp-name -e "https://github.com/riipandi/next-start"
+# Using pnpm is recomended
+pnpm create next-app@latest myapp-name --use-pnpm -e "https://github.com/riipandi/next-start"
 
 # If you want to use npm instead
 npx create-next-app myapp-name --use-npm -e "https://github.com/riipandi/next-start"
