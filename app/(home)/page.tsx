@@ -1,8 +1,25 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { EvaOutlineExternalLinkOutline } from '@twistail/icons'
 
 import { ExternalLink } from '@/components/external-link'
+import VercelLogo from '@/public/images/vercel.svg'
+
+export const metadata: Metadata = {
+  title: 'Next.js Tailwind Starter',
+  description: 'A starter project for Next.js with Tailwind CSS and Typescript.',
+  openGraph: {
+    type: 'website',
+    images: [
+      {
+        url: 'http://next-start.vercel.app/images/og-image.png',
+        width: 2048,
+        height: 1170,
+      },
+    ],
+  },
+}
 
 export default function Page() {
   return (
@@ -11,11 +28,11 @@ export default function Page() {
         <div className='py-16'>
           <div className='text-center'>
             <p className='text-primary-600 text-lg font-semibold sm:text-2xl'>Howdy, developer!</p>
-            <h1 className='mt-4 text-3xl font-bold tracking-tight text-gray-900 dark:invert sm:text-4xl lg:text-5xl'>
+            <h1 className='mt-4 text-3xl font-bold tracking-tight text-gray-900 dark:invert sm:text-4xl lg:text-6xl'>
               Welcome to your new app
             </h1>
             <div className='mx-auto mt-8 max-w-4xl'>
-              <p className='text-lg leading-8 text-gray-500 dark:text-gray-200'>
+              <p className='font-mono text-lg leading-8 text-gray-500 dark:text-gray-200'>
                 This is a starter for Next.js with Tailwind CSS and Typescript. This starter also
                 provides Dockerfile, just in case you want to deploy using containerization or even
                 Kubernetes.
@@ -43,14 +60,7 @@ export default function Page() {
             className='pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0'
           >
             <span className='font-medium dark:invert'>Hosted at</span>
-            <Image
-              src='/vercel.svg'
-              alt='Vercel Logo'
-              className='dark:invert'
-              width={100}
-              height={24}
-              priority
-            />
+            <Image src={VercelLogo} alt='Vercel Logo' className='h-5 w-auto dark:invert' priority />
           </ExternalLink>
         </div>
       </main>

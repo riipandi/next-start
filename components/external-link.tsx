@@ -1,17 +1,24 @@
 import { FC } from 'react'
+import Link, { LinkProps } from 'next/link'
 
 import { cn } from '@/utils/helpers'
 
-interface ExternalLinkProps {
+interface ExternalLinkProps extends LinkProps {
   children: React.ReactNode
   href: string
   className?: string
 }
 
-export const ExternalLink: FC<ExternalLinkProps> = ({ children, href, className }) => {
+export const ExternalLink: FC<ExternalLinkProps> = ({ children, href, className, ...props }) => {
   return (
-    <a href={href} className={cn(className)} rel='noopener noreferrer' target='_blank'>
+    <Link
+      href={href}
+      className={cn(className)}
+      rel='noopener noreferrer'
+      target='_blank'
+      {...props}
+    >
       {children}
-    </a>
+    </Link>
   )
 }

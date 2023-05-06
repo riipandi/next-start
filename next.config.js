@@ -1,5 +1,6 @@
 const { withPlausibleProxy } = require('next-plausible')
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -14,9 +15,8 @@ const nextConfig = {
   },
 }
 
-/** @type {import('next').NextConfig} */
 module.exports = withPlausibleProxy({
-  customDomain: 'https://stats.ghcr.dev',
+  customDomain: 'https://stats.fltr.dev',
   subdirectory: undefined,
   scriptName: undefined,
 })(nextConfig)

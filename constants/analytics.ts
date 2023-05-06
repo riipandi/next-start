@@ -2,6 +2,6 @@ export default {
   selfHosted: true,
   enabled: process.env.NODE_ENV === 'production',
   domain: 'next-start.vercel.app',
-  customDomain: 'https://stats.ghcr.dev',
+  customDomain: 'https://stats.fltr.dev',
   trackOutboundLinks: true,
 }

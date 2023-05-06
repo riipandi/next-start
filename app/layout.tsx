@@ -1,33 +1,19 @@
-import type { Metadata } from 'next'
+import { PropsWithChildren } from 'react'
 import { Inter } from 'next/font/google'
 import PlausibleProvider from 'next-plausible'
 
 import plausibleConfig from '@/constants/analytics'
+import { fontMono } from '@/utils/fontloader'
 import { cn } from '@/utils/helpers'
 
 import '@/assets/styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'Next.js Tailwind Starter',
-  description: 'A starter project for Next.js with Tailwind CSS and Typescript.',
-  openGraph: {
-    type: 'website',
-    images: [
-      {
-        url: 'http://next-start.vercel.app/images/og-image.png',
-        width: 2048,
-        height: 1170,
-      },
-    ],
-  },
-}
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <PlausibleProvider {...plausibleConfig}>
-      <html lang='en' className={cn(inter.className)}>
+      <html lang='en' className={cn(inter.className, fontMono.variable)}>
         <head>
           <meta name='viewport' content='width=device-width,initial-scale=1' />
           <meta name='msapplication-TileImage' content='/favicon.svg' />
