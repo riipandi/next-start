@@ -27,7 +27,7 @@ export default function Page() {
       <main className='mx-auto flex w-full max-w-4xl grow flex-col justify-center px-4 sm:px-6 lg:px-8'>
         <div className='py-16'>
           <div className='text-center'>
-            <p className='text-primary-600 text-lg font-semibold sm:text-2xl'>Howdy, developer!</p>
+            <p className='text-lg font-semibold text-primary-600 sm:text-2xl'>Howdy, developer!</p>
             <h1 className='mt-4 text-3xl font-bold tracking-tight text-gray-900 dark:invert sm:text-4xl lg:text-6xl'>
               Welcome to your new app
             </h1>
@@ -41,13 +41,13 @@ export default function Page() {
             <div className='mt-12 flex items-center justify-center space-x-3'>
               <Link
                 href='/about'
-                className='bg-primary-600 hover:bg-primary-700 focus:ring-primary-400 inline-flex items-center rounded-md border border-transparent px-6 py-4 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2'
+                className='inline-flex items-center rounded-md border border-transparent bg-primary-600 px-6 py-4 text-base font-medium text-white shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2'
               >
                 Example about page
               </Link>
               <ExternalLink
                 href='https://beta.nextjs.org/docs'
-                className='bg-primary-100 text-primary-600 hover:bg-primary-200 focus:ring-primary-500 inline-flex items-center rounded-md border border-transparent px-6 py-4 text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2'
+                className='inline-flex items-center rounded-md border border-transparent bg-primary-100 px-6 py-4 text-base font-medium text-primary-600 hover:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'
               >
                 Learn about Next.js
               </ExternalLink>
@@ -69,7 +69,7 @@ export default function Page() {
           <span className='mr-1 text-gray-600 dark:text-gray-200'>Brought to you by</span>
           <ExternalLink
             href='https://twitter.com/riipandi'
-            className='text-primary-800 dark:text-primary-500 dark:hover:text-primary-700 group inline-flex items-center space-x-0.5 hover:text-gray-600'
+            className='group inline-flex items-center space-x-0.5 text-primary-800 hover:text-gray-600 dark:text-primary-500 dark:hover:text-primary-700'
           >
             <span>Aris Ripandi</span>
             <span className='dark:invert'>

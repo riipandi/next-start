@@ -1,45 +1,48 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1.4
 
-FROM cgr.dev/chainguard/node:18 AS base
-LABEL org.opencontainers.image.source="https://github.com/riipandi/next-start"
+FROM node:20-alpine3.18 as base
 ENV NEXT_TELEMETRY_DISABLED 1
-RUN npm config set update-notifier false && npm config set fund false &&\
- npm config set progress true && npm config set loglevel error
+RUN apk update && apk add --no-cache jq
+RUN corepack enable && corepack prepare pnpm@latest --activate
+WORKDIR /app
 
 # -----------------------------------------------------------------------------
 # Build the application
 # -----------------------------------------------------------------------------
 FROM base AS builder
 COPY --chown=node:node . .
-RUN npm install --no-audit && npm run build
+RUN pnpm install --no-optional && pnpm build
+RUN pnpm prune --no-optional --prod
 
 # -----------------------------------------------------------------------------
 # Production dependencies
 # -----------------------------------------------------------------------------
-FROM base AS deps
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/package-lock.json ./package-lock.json
-RUN npm install --no-audit --omit=dev
+FROM base AS pruned
+COPY --from=builder /app/package.json /app/package.json
+COPY --from=builder /app/pnpm-lock.yaml /app/pnpm-lock.yaml
+RUN pnpm install --no-optional --frozen-lockfile --prod
 
 # -----------------------------------------------------------------------------
 # Production image, copy all the files and run the application
 # -----------------------------------------------------------------------------
 FROM base AS runner
+LABEL org.opencontainers.image.source="https://github.com/riipandi/next-start"
 
+ARG NODE_ENV production
 ARG DATABASE_URL
+
+ENV NODE_ENV $NODE_ENV
 ENV DATABASE_URL $DATABASE_URL
-ENV NODE_ENV production
-ENV PORT 3000
 
-# Copy dependencies from deps stage
-COPY --from=deps --chown=node:node /app/package.json ./package.json
-COPY --from=deps --chown=node:node /app/package-lock.json ./package-lock.json
-COPY --from=deps --chown=node:node /app/node_modules ./node_modules
+# Copy dependencies from pruned stage
+COPY --from=pruned /app/package.json /app/package.json
+COPY --from=pruned /app/pnpm-lock.yaml /app/pnpm-lock.yaml
+COPY --from=pruned /app/node_modules /app/node_modules
 # Automatically leverage output traces to reduce image size (https://s.id/1Gplb)
-COPY --from=builder --chown=node:node /app/next.config.js ./next.config.js
-COPY --from=builder --chown=node:node /app/public ./public
-COPY --from=builder --chown=node:node /app/.next ./.next
+COPY --from=builder /app/next.config.js /app/next.config.js
+COPY --from=builder /app/public /app/public
+COPY --from=builder /app/.next /app/.next
 
-EXPOSE $PORT
+EXPOSE 3000
 
-CMD ["/usr/bin/npm", "run", "start"]
+CMD ["pnpm", "start"]
