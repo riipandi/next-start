@@ -10,9 +10,6 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  experimental: {
-    appDir: true,
-  },
 }
 
 module.exports = withPlausibleProxy({
