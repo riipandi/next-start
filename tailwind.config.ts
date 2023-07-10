@@ -3,6 +3,7 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
   content: ['src/**/*!(*.stories|*.spec).{ts,tsx}'],
+  // darkMode: ['class'],
   theme: {
     extend: {
       fontFamily: {
@@ -16,11 +17,16 @@ export default {
         secondary: colors.indigo,
       }),
     },
+    debugScreens: {
+      position: ['bottom', 'left'],
+      ignore: ['dark'],
+    },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('tailwind-scrollbar-hide'),
+    require('tailwindcss-debug-screens'),
   ],
 } satisfies Config
