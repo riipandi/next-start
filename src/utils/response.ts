@@ -10,7 +10,7 @@
 export function jsonResponse<T>(
   message: string | undefined = undefined,
   payload: T[] | T | undefined = undefined,
-  status = 200
+  status = 200,
 ): Response {
   // let result: any = { message }
   const result = Array.isArray(payload) ? { message, data: [...payload] } : { message, ...payload }

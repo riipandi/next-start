@@ -1,4 +1,10 @@
-const { withPlausibleProxy } = require('next-plausible')
+import { withPlausibleProxy } from 'next-plausible'
+
+const plausibleConfig = {
+  customDomain: 'https://stats.fltr.dev',
+  subdirectory: undefined,
+  scriptName: undefined,
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -12,8 +18,4 @@ const nextConfig = {
   },
 }
 
-module.exports = withPlausibleProxy({
-  customDomain: 'https://stats.fltr.dev',
-  subdirectory: undefined,
-  scriptName: undefined,
-})(nextConfig)
+export default withPlausibleProxy(plausibleConfig)(nextConfig)

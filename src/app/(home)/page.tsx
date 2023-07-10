@@ -4,21 +4,12 @@ import Link from 'next/link'
 import { EvaOutlineExternalLinkOutline } from '@twistail/icons'
 
 import { ExternalLink } from '@/components/external-link'
-import VercelLogo from '@/public/images/vercel.svg'
+
+import VercelLogo from '~/images/vercel.svg'
 
 export const metadata: Metadata = {
   title: 'Next.js Tailwind Starter',
   description: 'A starter project for Next.js with Tailwind CSS and Typescript.',
-  openGraph: {
-    type: 'website',
-    images: [
-      {
-        url: 'http://next-start.vercel.app/images/og-image.png',
-        width: 2048,
-        height: 1170,
-      },
-    ],
-  },
 }
 
 export default function Page() {

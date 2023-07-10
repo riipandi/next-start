@@ -18,7 +18,7 @@
             "officialSorting": true
         }
     },
-    "plugins": ["@typescript-eslint", "simple-import-sort", "react-hooks"],
+    "plugins": ["@typescript-eslint", "simple-import-sort"],
     "rules": {
         "no-console": "warn",
         "react/jsx-key": "off",
@@ -35,9 +35,7 @@
                 "varsIgnorePattern": "^_",
                 "caughtErrorsIgnorePattern": "^_"
             }
-        ],
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn"
+        ]
     },
     "overrides": [
         {

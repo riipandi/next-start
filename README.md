@@ -50,8 +50,8 @@ Application will run at `http://localhost:3000`
 
 For detailed explanation on how things work, check out [Next.js docs](https://nextjs.org/docs/getting-started).
 
--   [Next.js app router playground](https://github.com/vercel/app-playground) - learn more about Next.js app directory.
--   [Dynamic Metadata](https://nextjs.org/blog/next-13-2#built-in-seo-support-with-new-metadata-api) - learn more about SEO using dynamic metadata.
+- [Next.js app router playground](https://github.com/vercel/app-playground) - learn more about Next.js app directory.
+- [Dynamic Metadata](https://nextjs.org/blog/next-13-2#built-in-seo-support-with-new-metadata-api) - learn more about SEO using dynamic metadata.
 
 ### Build Docker Container
 
@@ -78,8 +78,8 @@ deployments so that pushing to master will deploy to production! 🚀
 
 If you are using monorepo you will need to configure a few things:
 
--   Settings -> General -> Root Directory : `apps/web/`
--   Settings -> Git -> Ignored Build Step : `git diff --quiet HEAD^ HEAD ./`
+- Settings -> General -> Root Directory : `apps/web/`
+- Settings -> Git -> Ignored Build Step : `git diff --quiet HEAD^ HEAD ./`
 
 #### Cloudflare Deployment
 
