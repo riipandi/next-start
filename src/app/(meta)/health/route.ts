@@ -1,6 +1,8 @@
+import { type NextRequest } from 'next/server'
+
 import { throwResponse } from '@/utils/response'
 
-export async function GET(_req: Request) {
+export async function GET(_req: NextRequest) {
   try {
     return new Response('All is well')
   } catch (error: any) {

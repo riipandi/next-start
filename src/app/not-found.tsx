@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import { HeroSolidChevronDoubleLeft } from '@twistail/react-icons'
-import { Metadata } from 'next'
+import { Metadata } from 'next/types'
 
 export const metadata: Metadata = { title: '404 - Page not found' }
 
@@ -22,7 +21,7 @@ export default function NotFound() {
                 href='/'
                 className='inline-flex items-center rounded-lg border border-gray-200 bg-gray-900 px-6 py-3 text-center text-sm font-medium text-white hover:bg-gray-700 hover:text-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600'
               >
-                <HeroSolidChevronDoubleLeft className='-ml-1 mr-1 h-4 w-4' />
+                <span className='i-heroicons-chevron-double-left -ml-1 mr-1 h-4 w-4' />
                 Back to homepage
               </Link>
             </div>

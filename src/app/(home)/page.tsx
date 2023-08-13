@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { EvaOutlineExternalLinkOutline } from '@twistail/react-icons'
 
 import { ExternalLink } from '@/components/external-link'
 
@@ -60,12 +59,10 @@ export default function Page() {
           <span className='mr-1 text-gray-600 dark:text-gray-200'>Brought to you by</span>
           <ExternalLink
             href='https://twitter.com/riipandi'
-            className='group inline-flex items-center space-x-0.5 text-primary-800 hover:text-gray-600 dark:text-primary-500 dark:hover:text-primary-700'
+            className='group inline-flex items-center space-x-1 text-primary-800 hover:text-red-600 dark:text-primary-500 dark:hover:text-primary-700'
           >
             <span>Aris Ripandi</span>
-            <span className='dark:invert'>
-              <EvaOutlineExternalLinkOutline />
-            </span>
+            <span className='i-heroicons-arrow-top-right-on-square dark:invert' />
           </ExternalLink>
         </p>
       </footer>

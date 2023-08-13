@@ -1,3 +1,4 @@
+import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons'
 import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
@@ -26,7 +27,7 @@ export default {
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    require('tailwind-scrollbar-hide'),
     require('tailwindcss-debug-screens'),
+    iconsPlugin({ collections: getIconCollections(['heroicons', 'ph']) }),
   ],
 } satisfies Config
