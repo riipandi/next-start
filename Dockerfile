@@ -1,48 +1,59 @@
 # syntax=docker/dockerfile:1.4
 
-FROM node:20-alpine3.18 as base
-ENV NEXT_TELEMETRY_DISABLED 1
-RUN apk update && apk add --no-cache jq
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# -----------------------------------------------------------------------------
+# This is base image with `pnpm` package manager
+# -----------------------------------------------------------------------------
+FROM node:20-alpine AS base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN apk update && apk add --no-cache jq libc6-compat
+RUN corepack enable && corepack prepare pnpm@latest-8 --activate
 WORKDIR /app
 
 # -----------------------------------------------------------------------------
 # Build the application
 # -----------------------------------------------------------------------------
 FROM base AS builder
+ENV NEXT_TELEMETRY_DISABLED 1
 COPY --chown=node:node . .
-RUN pnpm install --no-optional && pnpm build
-RUN pnpm prune --no-optional --prod
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm add sharp
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --no-optional
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm build
+
+# Install dependencies for production
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
 # -----------------------------------------------------------------------------
-# Production dependencies
+# Production image, copy build output files and run the application
 # -----------------------------------------------------------------------------
-FROM base AS pruned
-COPY --from=builder /app/package.json /app/package.json
-COPY --from=builder /app/pnpm-lock.yaml /app/pnpm-lock.yaml
-RUN pnpm install --no-optional --frozen-lockfile --prod
-
-# -----------------------------------------------------------------------------
-# Production image, copy all the files and run the application
-# -----------------------------------------------------------------------------
-FROM base AS runner
+FROM node:20-alpine AS runner
 LABEL org.opencontainers.image.source="https://github.com/riipandi/next-start"
 
-ARG NODE_ENV production
 ARG DATABASE_URL
+ARG HOSTNAME localhost
 
-ENV NODE_ENV $NODE_ENV
+# Envars value from args
 ENV DATABASE_URL $DATABASE_URL
 
-# Copy dependencies from pruned stage
-COPY --from=pruned /app/package.json /app/package.json
-COPY --from=pruned /app/pnpm-lock.yaml /app/pnpm-lock.yaml
-COPY --from=pruned /app/node_modules /app/node_modules
-# Automatically leverage output traces to reduce image size (https://s.id/1Gplb)
-COPY --from=builder /app/next.config.js /app/next.config.js
-COPY --from=builder /app/public /app/public
-COPY --from=builder /app/.next /app/.next
+# Fixed envars
+ENV NODE_ENV production
+ENV HOSTNAME $HOSTNAME
+ENV PORT 3000
+WORKDIR /app
+
+# Don't run production as root, spawns command as a child process.
+RUN addgroup --system --gid 1001 nonroot && adduser --system --uid 1001 nonroot
+RUN apk update && apk add --no-cache tini
+USER nonroot:nonroot
+
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=builder --chown=nonroot:nonroot /app/.next/standalone ./
+COPY --from=builder --chown=nonroot:nonroot /app/.next/static ./.next/static
+COPY --from=builder --chown=nonroot:nonroot /app/public ./public
+COPY --from=builder --chown=nonroot:nonroot /app/next.config.mjs .
 
 EXPOSE 3000
 
-CMD ["pnpm", "start"]
+ENTRYPOINT ["/sbin/tini", "--"]
+CMD ["node", "server.js"]

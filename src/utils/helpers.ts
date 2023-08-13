@@ -29,5 +29,5 @@ export function getBaseUrl(req?: NextRequest): string {
     return getBaseUrlFromClient()
   }
 
-  return 'http://localhost:3000'
+  return process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 }
