@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { HeroSolidChevronDoubleLeft } from '@twistail/icons'
+import { HeroSolidChevronDoubleLeft } from '@twistail/react-icons'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = { title: '404 - Page not found' }

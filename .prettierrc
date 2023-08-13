@@ -8,11 +8,11 @@
     "semi": false,
     "singleQuote": true,
     "tabWidth": 2,
-    "trailingComma": "all",
+    "trailingComma": "es5",
     "useTabs": false,
     "overrides": [
         {
-            "files": ["*.html", "*.edge", "*.css", ".sass"],
+            "files": ["*.html", "*.css", ".sass"],
             "options": {
                 "singleQuote": false
             }

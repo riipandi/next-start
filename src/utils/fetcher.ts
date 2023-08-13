@@ -18,7 +18,7 @@ interface ApiResponse<T> {
 export async function fetcher<T>(
   url: string,
   options?: RequestInit,
-  accessToken?: string,
+  accessToken?: string
 ): Promise<ApiResponse<T>> {
   const headers: HeadersInit = new Headers(options?.headers)
   const existingAuthHeader = headers.has('Authorization')

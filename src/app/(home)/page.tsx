@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { EvaOutlineExternalLinkOutline } from '@twistail/icons'
+import { EvaOutlineExternalLinkOutline } from '@twistail/react-icons'
 
 import { ExternalLink } from '@/components/external-link'
 

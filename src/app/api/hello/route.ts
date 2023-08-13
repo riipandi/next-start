@@ -1,11 +1,14 @@
-import { jsonResponse, throwResponse } from '@/utils/response'
+import { type NextRequest, NextResponse } from 'next/server'
+import { ServerRuntime } from 'next/types'
 
+import { throwResponse } from '@/utils/response'
+
+export const runtime: ServerRuntime = 'edge'
 export const revalidate = 3600
-export const runtime = 'edge'
 
-export async function GET(_req: Request) {
+export async function GET(_req: NextRequest) {
   try {
-    return jsonResponse('Hello, Next.js!', undefined, 200)
+    return NextResponse.json({ message: 'Hello, Next.js!' }, { status: 200 })
   } catch (error: any) {
     return error instanceof Response
       ? throwResponse(error.status, error.statusText)

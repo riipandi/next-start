@@ -1,6 +1,6 @@
 'use client'
 
-import { Toaster } from '@twistail/toast'
+import { Toaster } from '@twistail/react-toast'
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (

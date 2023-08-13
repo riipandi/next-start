@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { HeroOutlineExclamationTriangle, HeroSolidChevronDoubleLeft } from '@twistail/icons'
-import { toast } from '@twistail/toast'
+import { HeroOutlineExclamationTriangle, HeroSolidChevronDoubleLeft } from '@twistail/react-icons'
+import { toast } from '@twistail/react-toast'
 
 export default function AboutPage() {
   return (
