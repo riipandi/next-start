@@ -1,31 +1,30 @@
 {
     "extends": [
         "next/core-web-vitals",
+        "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:tailwindcss/recommended"
     ],
-    "ignorePatterns": [
-        "node_modules",
-        ".next",
-        ".cache",
-        "build",
-        "dist",
-        "out",
-        "database/migration/schema.ts"
-    ],
+    "plugins": ["@typescript-eslint", "simple-import-sort"],
+    "ignorePatterns": ["node_modules", ".next", ".cache", "build", "dist", "out"],
     "settings": {
         "tailwindcss": {
             "officialSorting": true
         }
     },
-    "plugins": ["@typescript-eslint", "simple-import-sort"],
     "rules": {
-        "no-console": "warn",
         "react/jsx-key": "off",
         "import/no-anonymous-default-export": "off",
+        "no-console": [
+            "warn",
+            {
+                "allow": ["error", "info"]
+            }
+        ],
         "tailwindcss/no-custom-classname": "off",
         "@next/next/no-html-link-for-pages": "off",
         "@next/next/no-img-element": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/no-unused-vars": [

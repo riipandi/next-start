@@ -4,6 +4,8 @@
         "dbaeumer.vscode-eslint",
         "EditorConfig.EditorConfig",
         "esbenp.prettier-vscode",
+        "foxundermoon.shell-format",
+        "tamasfe.even-better-toml",
         "unifiedjs.vscode-mdx"
     ]
 }

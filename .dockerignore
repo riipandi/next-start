@@ -12,7 +12,6 @@
 Dockerfile
 node_modules
 npm-debug.log
-pnpm-lock.yaml
 README.md
 *.log
 .env*
