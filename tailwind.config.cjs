@@ -1,8 +1,9 @@
-import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons'
-import type { Config } from 'tailwindcss'
-import defaultTheme from 'tailwindcss/defaultTheme'
+const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
+const { iconsPlugin, getIconCollections } = require('@egoist/tailwindcss-icons')
 
-export default {
+/** @type {import('tailwindcss').Config} */
+const tailwindConfig = {
   content: ['src/**/*!(*.stories|*.spec).{ts,tsx}'],
   // darkMode: ['class'],
   theme: {
@@ -11,12 +12,12 @@ export default {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
         mono: ['var(--jetbrains-mono-font)', ...defaultTheme.fontFamily.mono],
       },
-      colors: ({ colors }) => ({
+      colors: {
         black: '#121314',
         gray: colors.gray,
         primary: colors.blue,
         secondary: colors.indigo,
-      }),
+      },
     },
     debugScreens: {
       position: ['bottom', 'left'],
@@ -30,4 +31,6 @@ export default {
     require('tailwindcss-debug-screens'),
     iconsPlugin({ collections: getIconCollections(['heroicons', 'ph']) }),
   ],
-} satisfies Config
+}
+
+module.exports = tailwindConfig
