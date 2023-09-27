@@ -9,6 +9,7 @@ import '@/assets/styles/globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }: PropsWithChildren) {
+  const isDevelopment = process.env.NODE_ENV === 'development'
   return (
     <html lang='en' className={cn(inter.className, fontMono.variable)}>
       <head>
@@ -20,7 +21,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
         <link rel='icon' type='image/png' href='/favicon.png' />
       </head>
-      <body className={cn(process.env.NODE_ENV === 'development' ? 'debug-screens' : '')}>
+      <body
+        className={cn(isDevelopment && 'debug-screens', 'antialiased')}
+        suppressHydrationWarning={true}
+      >
         {children}
       </body>
     </html>
