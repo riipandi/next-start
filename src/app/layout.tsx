@@ -1,17 +1,22 @@
-import { PropsWithChildren } from 'react'
-import { Inter } from 'next/font/google'
+import { Metadata } from 'next/types'
 
-import { fontMono } from '@/utils/fontloader'
+import { fontInter, fontMono } from '@/utils/fontloader'
 import { cn } from '@/utils/helpers'
 
 import '@/assets/styles/globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+export const metadata: Metadata = {
+  title: {
+    default: 'Next Start',
+    template: '%s - Next Start',
+  },
+  description: 'A starter project for Next.js with Tailwind CSS and Typescript.',
+}
 
-export default function RootLayout({ children }: PropsWithChildren) {
+export default function RootLayout({ children }: React.PropsWithChildren) {
   const isDevelopment = process.env.NODE_ENV === 'development'
   return (
-    <html lang='en' className={cn(inter.className, fontMono.variable)}>
+    <html lang='en' className={cn(fontInter.className, fontMono.variable)}>
       <head>
         <meta name='viewport' content='width=device-width,initial-scale=1' />
         <meta name='msapplication-TileImage' content='/favicon.svg' />

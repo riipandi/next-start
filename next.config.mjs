@@ -4,19 +4,16 @@ const isProduction = process.env.NODE_ENV === 'production' || process.env.IS_VER
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['avatars.githubusercontent.com'],
+    remotePatterns: [{ protocol: 'https', hostname: '**' }],
   },
   reactStrictMode: true,
   poweredByHeader: false,
   output: 'standalone',
-  compiler: {
-    removeConsole: isProduction,
-  },
-  eslint: {
-    ignoreDuringBuilds: isProduction,
-  },
-  typescript: {
-    ignoreBuildErrors: isProduction,
+  compiler: { removeConsole: isProduction },
+  eslint: { ignoreDuringBuilds: isProduction },
+  typescript: { ignoreBuildErrors: isProduction },
+  rewrites() {
+    return [{ source: '/health', destination: '/api/health' }]
   },
 }
 

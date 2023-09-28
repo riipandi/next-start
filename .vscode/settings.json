@@ -20,8 +20,5 @@
         "javascriptreact": "javascriptreact",
         "typescriptreact": "javascriptreact"
     },
-    "tailwindCSS.files.exclude": ["**/.github/**", "**/*.{md,js,ts,json}"],
-    "[toml]": {
-        "editor.defaultFormatter": "tamasfe.even-better-toml"
-    }
+    "tailwindCSS.files.exclude": ["**/.github/**", "**/*.{md,js,ts,json}"]
 }

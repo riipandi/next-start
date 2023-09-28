@@ -1,4 +1,7 @@
+import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
+
+export const fontInter = Inter({ subsets: ['latin'] })
 
 export const fontMono = localFont({
   variable: '--jetbrains-mono-font',

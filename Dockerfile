@@ -1,5 +1,9 @@
 # syntax=docker/dockerfile:1.4
 
+ARG DATABASE_URL
+ARG NEXT_PUBLIC_SITE_URL
+ARG HOSTNAME localhost
+
 # -----------------------------------------------------------------------------
 # This is base image with `pnpm` package manager
 # -----------------------------------------------------------------------------
@@ -15,6 +19,10 @@ WORKDIR /app
 # -----------------------------------------------------------------------------
 FROM base AS builder
 ENV NEXT_TELEMETRY_DISABLED 1
+
+ENV DATABASE_URL $DATABASE_URL
+ENV NEXT_PUBLIC_SITE_URL $NEXT_PUBLIC_SITE_URL
+
 COPY --chown=node:node . .
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm add sharp
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --no-optional
@@ -29,16 +37,13 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-l
 FROM node:20-alpine AS runner
 LABEL org.opencontainers.image.source="https://github.com/riipandi/next-start"
 
-ARG DATABASE_URL
-ARG HOSTNAME localhost
-
-# Envars value from args
 ENV DATABASE_URL $DATABASE_URL
+ENV NEXT_PUBLIC_SITE_URL $NEXT_PUBLIC_SITE_URL
 
-# Fixed envars
-ENV NODE_ENV production
 ENV HOSTNAME $HOSTNAME
+ENV NODE_ENV production
 ENV PORT 3000
+
 WORKDIR /app
 
 # Don't run production as root, spawns command as a child process.

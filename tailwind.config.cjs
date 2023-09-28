@@ -20,8 +20,14 @@ const tailwindConfig = {
       },
     },
     debugScreens: {
-      position: ['bottom', 'left'],
+      position: ['bottom', 'right'],
       ignore: ['dark'],
+      prefix: '',
+      style: {
+        backgroundColor: '#f9fafb',
+        borderTopLeftRadius: '4px',
+        color: 'black',
+      },
     },
   },
   plugins: [

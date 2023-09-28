@@ -1,20 +1,43 @@
-const pageRoutes = ['', '/about', '/blog']
-const baseUrl = 'https://next-start.vercel.app'
+import { MetadataRoute } from 'next/types'
 
-export default async function sitemap() {
-  // const res = await fetch('https://.../posts')
-  // const allPosts = await res.json()
+import { env } from '@/config'
 
-  // const posts = allPosts.map((post) => ({
-  //   url: `${baseUrl}/blog/${post.slug}`,
-  //   lastModified: post.publishedAt,
-  // }))
+// @reference: https://github.com/vercel/next.js/issues/49373
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
-  const routes = pageRoutes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const now = new Date()
+  const baseUrl = env.NEXT_PUBLIC_SITE_URL
+
+  const rootPath = {
+    url: baseUrl,
+    lastModified: now,
+    changeFrequency: 'yearly',
+    priority: 1,
+  }
+
+  const pages = ['/about']
+
+  const routes = pages.map((path) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: now,
+    priority: 0.8,
   }))
 
-  // return [...routes, ...posts]
-  return [...routes]
+  const pageRoutes = [rootPath, ...routes]
+
+  // const allPosts = await fetch('https://.../posts')
+
+  // if (!allPosts) return [...pageRoutes]
+
+  // const postsRoutes = allPosts.map((post) => ({
+  //   url: `${baseUrl}/blog/${post.slug}`,
+  //   lastModified: post.created_at,
+  //   priority: 0.5,
+  // }))
+
+  // return [...pageRoutes, ...postsRoutes]
+
+  return [...pageRoutes]
 }

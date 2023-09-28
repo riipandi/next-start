@@ -7,8 +7,9 @@ import { ExternalLink } from '@/components/external-link'
 import VercelLogo from '~/images/vercel.svg'
 
 export const metadata: Metadata = {
-  title: 'Next.js Tailwind Starter',
-  description: 'A starter project for Next.js with Tailwind CSS and Typescript.',
+  title: {
+    absolute: 'Next.js Tailwind Starter',
+  },
 }
 
 export default function Page() {

@@ -2,7 +2,7 @@
 
 import { Toaster } from '@twistail/react-toast'
 
-export default function Template({ children }: { children: React.ReactNode }) {
+export default function Template({ children }: React.PropsWithChildren) {
   return (
     <>
       <div>{children}</div>

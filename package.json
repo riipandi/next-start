@@ -1,26 +1,28 @@
 {
     "name": "next-start",
-    "version": "13.5.0",
+    "version": "13.5.1",
     "private": true,
     "scripts": {
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
+        "lint": "TIMING=1 next lint",
         "lint:fix": "next lint --fix",
         "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx}\"",
         "deps": "pnpm dlx npm-check-updates -x typescript --deep --interactive",
         "docker:build": "docker build . --no-cache -t $npm_package_name:$npm_package_version -t $npm_package_name:latest",
-        "docker:run": "docker run --rm -it -p 3000:3000 --name $npm_package_name $npm_package_name:latest",
+        "docker:run": "docker run --rm -it --env-file .env -p 3000:3000 --name $npm_package_name $npm_package_name:latest",
         "docker:shell": "docker exec -it $npm_package_name /bin/sh",
         "docker:logs": "docker logs -f $npm_package_name",
         "docker:stop": "docker stop $npm_package_name"
     },
     "dependencies": {
+        "@t3-oss/env-nextjs": "^0.6.1",
         "@twistail/react-toast": "^0.1.2",
         "next": "13.5.3",
+        "react": "18.2.0",
         "react-dom": "18.2.0",
-        "react": "18.2.0"
+        "zod": "^3.22.2"
     },
     "devDependencies": {
         "@egoist/tailwindcss-icons": "^1.2.0",
@@ -30,20 +32,20 @@
         "@tailwindcss/forms": "^0.5.6",
         "@tailwindcss/typography": "^0.5.10",
         "@types/node": "20.7.0",
-        "@types/react-dom": "18.2.8",
         "@types/react": "18.2.23",
+        "@types/react-dom": "18.2.8",
         "@typescript-eslint/eslint-plugin": "^6.7.3",
         "autoprefixer": "10.4.16",
         "clsx": "^2.0.0",
+        "eslint": "8.50.0",
         "eslint-config-next": "^13.5.3",
         "eslint-plugin-simple-import-sort": "^10.0.0",
-        "eslint": "8.50.0",
         "postcss": "8.4.30",
-        "prettier-plugin-tailwindcss": "^0.5.4",
         "prettier": "^3.0.3",
+        "prettier-plugin-tailwindcss": "^0.5.4",
         "tailwind-merge": "^1.14.0",
-        "tailwindcss-debug-screens": "^2.2.1",
         "tailwindcss": "3.3.3",
+        "tailwindcss-debug-screens": "^2.2.1",
         "typescript": "5.0.4"
     }
 }
