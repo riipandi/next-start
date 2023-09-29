@@ -1,13 +1,21 @@
 # syntax=docker/dockerfile:1.4
 
+# Arguments with default value (for build).
+ARG NODE_VERSION=20
+ARG NODE_ENV=production
+
+# @reference: https://nextjs.org/docs/pages/api-reference/next-config-js/output
+ARG HOSTNAME=localhost
+ARG PORT=3000
+
+# Arguments for envars in runner step.
 ARG DATABASE_URL
 ARG NEXT_PUBLIC_SITE_URL
-ARG HOSTNAME localhost
 
 # -----------------------------------------------------------------------------
 # This is base image with `pnpm` package manager
 # -----------------------------------------------------------------------------
-FROM node:20-alpine AS base
+FROM node:${NODE_VERSION}-alpine AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN apk update && apk add --no-cache jq libc6-compat
@@ -34,15 +42,15 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-l
 # -----------------------------------------------------------------------------
 # Production image, copy build output files and run the application
 # -----------------------------------------------------------------------------
-FROM node:20-alpine AS runner
+FROM node:${NODE_VERSION}-alpine AS runner
 LABEL org.opencontainers.image.source="https://github.com/riipandi/next-start"
 
 ENV DATABASE_URL $DATABASE_URL
 ENV NEXT_PUBLIC_SITE_URL $NEXT_PUBLIC_SITE_URL
 
 ENV HOSTNAME $HOSTNAME
-ENV NODE_ENV production
-ENV PORT 3000
+ENV NODE_ENV $NODE_ENV
+ENV PORT $PORT
 
 WORKDIR /app
 
@@ -58,7 +66,7 @@ COPY --from=builder --chown=nonroot:nonroot /app/.next/static ./.next/static
 COPY --from=builder --chown=nonroot:nonroot /app/public ./public
 COPY --from=builder --chown=nonroot:nonroot /app/next.config.mjs .
 
-EXPOSE 3000
+EXPOSE $PORT
 
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["node", "server.js"]
