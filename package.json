@@ -1,6 +1,6 @@
 {
     "name": "next-start",
-    "version": "13.5.2",
+    "version": "13.5.3",
     "license": "MIT",
     "private": true,
     "scripts": {
@@ -18,35 +18,36 @@
         "docker:stop": "docker stop $npm_package_name"
     },
     "dependencies": {
-        "@t3-oss/env-nextjs": "^0.6.1",
+        "@t3-oss/env-nextjs": "^0.7.0",
         "@twistail/react-toast": "^0.1.2",
-        "next": "13.5.3",
+        "next": "13.5.4",
         "react-dom": "18.2.0",
         "react": "18.2.0",
-        "zod": "^3.22.2"
+        "zod": "^3.22.4"
     },
     "devDependencies": {
-        "@egoist/tailwindcss-icons": "^1.2.0",
+        "@egoist/tailwindcss-icons": "^1.3.3",
         "@iconify-json/heroicons": "^1.1.12",
-        "@iconify-json/ph": "^1.1.6",
+        "@iconify-json/lucide": "^1.1.132",
         "@tailwindcss/aspect-ratio": "^0.4.2",
         "@tailwindcss/forms": "^0.5.6",
         "@tailwindcss/typography": "^0.5.10",
-        "@types/node": "20.7.0",
-        "@types/react-dom": "18.2.8",
-        "@types/react": "18.2.23",
-        "@typescript-eslint/eslint-plugin": "^6.7.3",
+        "@types/node": "20.8.2",
+        "@types/react-dom": "18.2.10",
+        "@types/react": "18.2.25",
+        "@typescript-eslint/eslint-plugin": "^6.7.4",
         "autoprefixer": "10.4.16",
         "clsx": "^2.0.0",
-        "eslint-config-next": "^13.5.3",
+        "eslint-config-next": "^13.5.4",
         "eslint-plugin-simple-import-sort": "^10.0.0",
         "eslint": "8.50.0",
-        "postcss": "8.4.30",
-        "prettier-plugin-tailwindcss": "^0.5.4",
+        "postcss-load-config": "^4.0.1",
+        "postcss": "8.4.31",
+        "prettier-plugin-tailwindcss": "^0.5.5",
         "prettier": "^3.0.3",
         "tailwind-merge": "^1.14.0",
         "tailwindcss-debug-screens": "^2.2.1",
         "tailwindcss": "3.3.3",
-        "typescript": "5.0.4"
+        "typescript": "~5.1.6"
     }
 }

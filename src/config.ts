@@ -4,7 +4,6 @@ import { z } from 'zod'
 export const env = createEnv({
   server: {
     NODE_ENV: z.enum(['development', 'test', 'staging', 'production']).default('development'),
-    DATABASE_URL: z.string(),
   },
   client: {
     NEXT_PUBLIC_SITE_URL: z.string().default('http://localhost:3000'),
@@ -13,3 +12,9 @@ export const env = createEnv({
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
   },
 })
+
+export const siteMeta = {
+  title: 'Next Start',
+  description: 'A starter project for Next.js with Tailwind CSS and Typescript.',
+  baseUrl: env.NEXT_PUBLIC_SITE_URL,
+}

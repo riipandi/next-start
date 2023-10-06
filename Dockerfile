@@ -9,7 +9,6 @@ ARG HOSTNAME=localhost
 ARG PORT=3000
 
 # Arguments for envars in runner step.
-ARG DATABASE_URL
 ARG NEXT_PUBLIC_SITE_URL
 
 # -----------------------------------------------------------------------------
@@ -28,7 +27,6 @@ WORKDIR /app
 FROM base AS builder
 ENV NEXT_TELEMETRY_DISABLED 1
 
-ENV DATABASE_URL $DATABASE_URL
 ENV NEXT_PUBLIC_SITE_URL $NEXT_PUBLIC_SITE_URL
 
 COPY --chown=node:node . .
@@ -45,7 +43,6 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-l
 FROM node:${NODE_VERSION}-alpine AS runner
 LABEL org.opencontainers.image.source="https://github.com/riipandi/next-start"
 
-ENV DATABASE_URL $DATABASE_URL
 ENV NEXT_PUBLIC_SITE_URL $NEXT_PUBLIC_SITE_URL
 
 ENV HOSTNAME $HOSTNAME
@@ -57,7 +54,6 @@ WORKDIR /app
 # Don't run production as root, spawns command as a child process.
 RUN addgroup --system --gid 1001 nonroot && adduser --system --uid 1001 nonroot
 RUN apk update && apk add --no-cache tini
-USER nonroot:nonroot
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
@@ -66,6 +62,7 @@ COPY --from=builder --chown=nonroot:nonroot /app/.next/static ./.next/static
 COPY --from=builder --chown=nonroot:nonroot /app/public ./public
 COPY --from=builder --chown=nonroot:nonroot /app/next.config.mjs .
 
+USER nonroot:nonroot
 EXPOSE $PORT
 
 ENTRYPOINT ["/sbin/tini", "--"]

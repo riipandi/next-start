@@ -35,7 +35,7 @@ const tailwindConfig = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('tailwindcss-debug-screens'),
-    iconsPlugin({ collections: getIconCollections(['heroicons', 'ph']) }),
+    iconsPlugin({ collections: getIconCollections(['heroicons', 'lucide']) }),
   ],
 }
 
