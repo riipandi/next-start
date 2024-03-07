@@ -9,9 +9,14 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   output: 'standalone',
-  compiler: { removeConsole: isProduction },
+  // @ref: https://nextjs.org/blog/next-14-1#improved-self-hosting
+  // cacheHandler: require.resolve('./cache-handler.js'),
+  // cacheMaxMemorySize: 0, // disable default in-memory caching
   eslint: { ignoreDuringBuilds: isProduction },
   typescript: { ignoreBuildErrors: isProduction },
+  logging: {
+    fetches: { fullUrl: true },
+  },
   rewrites() {
     return [{ source: '/health', destination: '/api/health' }]
   },

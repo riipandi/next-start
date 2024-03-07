@@ -14,11 +14,6 @@ export const metadata: Metadata = {
   applicationName: siteMeta.title,
   description: siteMeta.description,
   keywords: ['nextjs', 'react', 'starter', 'boilerplate'],
-  viewport: { width: 'device-width', initialScale: 1 },
-  themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#121314' },
-    { media: '(prefers-color-scheme: light)', color: '#004AAD' },
-  ],
   robots: { index: true, follow: true },
   manifest: '/manifest.json',
   icons: [
