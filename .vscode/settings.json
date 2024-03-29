@@ -5,20 +5,24 @@
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
         "source.fixAll": "explicit",
-        "source.fixAll.eslint": "explicit"
+        "source.fixAll.eslint": "always"
     },
+    "eslint.workingDirectories": [{ "mode": "auto" }],
     "eslint.format.enable": true,
     "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+    "files.associations": {
+        "*.mdx": "markdown"
+    },
     "tailwindCSS.emmetCompletions": true,
     "tailwindCSS.experimental.classRegex": [
         "tw`([^`]*)", // tw`...`
         "tw\\.[^`]+`([^`]*)`", // tw.xxx<xxx>`...`
         "tw\\(.*?\\).*?`([^`]*)", // tw(Component)<xxx>`...`
+        "cn\\(([^)]*)\\)",
+        "clx\\(([^)]*)\\)",
         "cva\\(([^)]*)\\)"
     ],
-    "tailwindCSS.includeLanguages": {
-        "javascriptreact": "javascriptreact",
-        "typescriptreact": "javascriptreact"
-    },
-    "tailwindCSS.files.exclude": ["**/.github/**", "**/*.{md,js,ts,json}"]
+    "[toml]": {
+        "editor.formatOnSave": false
+    }
 }
