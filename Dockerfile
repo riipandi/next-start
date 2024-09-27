@@ -28,7 +28,7 @@ COPY --chown=node:node . .
 
 RUN apt update && apt -yqq install tini jq
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install \
-  --ignore-scripts && pnpm add sharp && pnpm build
+  --ignore-scripts && pnpm add sharp && pnpm build --verbose
 
 # -----------------------------------------------------------------------------
 # Compile the application and install production only dependencies.
@@ -38,12 +38,10 @@ FROM base AS pruner
 # Required generated files
 COPY --from=builder /srv/.next/standalone /srv/.next/standalone
 COPY --from=builder /srv/.next/static /srv/.next/standalone/.next/static
-COPY --from=builder /srv/public /srv/.next/standalone/public
 
 # Required metadata files
 COPY --from=builder /srv/package.json /srv/package.json
 COPY --from=builder /srv/pnpm-lock.yaml /srv/pnpm-lock.yaml
-COPY --from=builder /srv/next.config.mjs /srv/next.config.mjs
 COPY --from=builder /srv/.npmrc /srv/.npmrc
 
 # Install production dependencies and cleanup node_modules.
@@ -68,8 +66,10 @@ ENV APP_BASE_URL=$APP_BASE_URL
 # Copy the build output files from the pruner stage.
 # Automatically leverage output traces to reduce image size
 # @ref: https://nextjs.org/docs/app/api-reference/next-config-js/output
-COPY --from=pruner --chown=nonroot:nonroot /srv/.next/standalone /srv
-COPY --from=pruner --chown=nonroot:nonroot /srv/next.config.mjs /srv/next.config.mjs
+COPY --from=pruner /srv/.next/standalone /srv
+COPY --from=builder /srv/public /srv/public
+COPY --from=builder /srv/next.config.mjs /srv/next.config.mjs
+COPY --from=builder /srv/scripts/cache-handler.mjs /srv/scripts/cache-handler.mjs
 
 # Copy some utilities from builder image.
 COPY --from=builder /usr/bin/tini /usr/bin/tini

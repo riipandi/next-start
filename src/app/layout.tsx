@@ -15,12 +15,14 @@ export const metadata: Metadata = {
   applicationName: 'Next Start',
   description: 'A starter project for Next.js with Tailwind CSS and Typescript.',
   keywords: ['nextjs', 'react', 'starter', 'boilerplate'],
-  robots: { index: true, follow: true },
-  manifest: '/site.webmanifest',
+  robots: {
+    index: ENV.ALLOW_SEARCH_ENGINE_INDEXING,
+    follow: ENV.ALLOW_SEARCH_ENGINE_INDEXING,
+  },
+  manifest: '/manifest.webmanifest',
   icons: [
     { rel: 'icon', type: 'image/x-icon', url: '/favicon.ico' },
     { rel: 'icon', type: 'image/svg+xml', url: '/favicon.svg' },
-    { rel: 'icon', type: 'image/png', url: '/favicon.png' },
     { rel: 'apple-touch-icon', url: '/favicon.png' },
   ],
   metadataBase: new URL(ENV.APP_BASE_URL),

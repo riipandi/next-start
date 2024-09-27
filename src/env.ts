@@ -9,8 +9,9 @@ export default createEnv({
   client: {},
 
   shared: {
-    NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
+    ALLOW_SEARCH_ENGINE_INDEXING: z.coerce.boolean().default(false),
     APP_BASE_URL: z.string().url().optional().default('http://localhost:3000'),
+    NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
   },
 
   /**

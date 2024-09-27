@@ -1,6 +1,6 @@
 {
     "name": "next-start",
-    "version": "14.0.0",
+    "version": "14.1.0",
     "license": "MIT",
     "private": true,
     "scripts": {
@@ -24,6 +24,7 @@
         "pre-dev": "docker compose up -d --remove-orphans"
     },
     "dependencies": {
+        "@neshca/cache-handler": "^1.7.3",
         "@next/bundle-analyzer": "^14.2.13",
         "@t3-oss/env-core": "^0.11.1",
         "lucide-react": "^0.446.0",
