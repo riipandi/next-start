@@ -1,10 +1,10 @@
 import { Metadata } from 'next/types'
 
-import { siteMeta } from '@/config'
-import { fontInter, fontMono } from '@/utils/fontloader'
-import { cn } from '@/utils/helpers'
+import '#/assets/styles/globals.css'
 
-import '@/assets/styles/globals.css'
+import { siteMeta } from '#/config'
+import { fontInter, fontMono } from '#/utils/fontloader'
+import { cn } from '#/utils/helpers'
 
 export const metadata: Metadata = {
   title: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: siteMeta.description,
   keywords: ['nextjs', 'react', 'starter', 'boilerplate'],
   robots: { index: true, follow: true },
-  manifest: '/manifest.json',
+  manifest: '/site.webmanifest',
   icons: [
     { rel: 'icon', type: 'image/x-icon', url: '/favicon.ico' },
     { rel: 'icon', type: 'image/svg+xml', url: '/favicon.svg' },
@@ -43,7 +43,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
   const isDevelopment = process.env.NODE_ENV === 'development'
   return (
     <html lang='en' className={cn(fontInter.className, fontMono.variable)}>
-      <body className={cn(isDevelopment && 'debug-screens')} suppressHydrationWarning={true}>
+      <body className={cn(isDevelopment && 'debug-breakpoints')} suppressHydrationWarning={true}>
         {children}
       </body>
     </html>

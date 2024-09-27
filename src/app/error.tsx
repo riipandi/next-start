@@ -1,6 +1,7 @@
 'use client' // Error components must be Client Components
 
 import { useEffect } from 'react'
+import * as Lucide from 'lucide-react'
 
 interface ErrorProps {
   error: Error & { digest?: string }
@@ -39,7 +40,7 @@ export default function Error({ error, reset }: ErrorProps) {
                 className='inline-flex items-center rounded-lg border border-gray-200 bg-gray-900 px-6 py-3 text-center text-sm font-medium text-white hover:bg-gray-700 hover:text-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600'
                 onClick={() => reset()} // Attempt to recover by trying to re-render the segment
               >
-                <span className='i-heroicons-arrow-path-20-solid -ml-1 mr-1 h-4 w-4' />
+                <Lucide.RefreshCw className='-ml-1 mr-1 size-4' strokeWidth={1.8} />
                 Try reload this page
               </button>
             </div>
@@ -51,7 +52,7 @@ export default function Error({ error, reset }: ErrorProps) {
           href='/'
           className='inline-flex items-center justify-center text-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-white dark:hover:text-gray-300'
         >
-          <span className='i-heroicons-chevron-double-left-20-solid -ml-1 mr-1 h-4 w-4' />
+          <Lucide.ChevronsLeft className='-ml-1 mr-1 size-4' strokeWidth={1.8} />
           Back to homepage
         </a>
       </div>

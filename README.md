@@ -1,13 +1,13 @@
 <p align="center"><img src="./public/images/banner.svg" width="500" height="150" alt="Project Logo"></p>
 <p align="center">
     <a href="https://github.com/riipandi/next-start/pulse">
-        <img src="https://img.shields.io/badge/Contributions-welcome-blue.svg?style=flat-square" alt="Contribution welcome">
+        <img src="https://img.shields.io/badge/Contributions-welcome-blue.svg" alt="Contribution welcome">
     </a>
     <a href="https://github.com/riipandi/next-start">
-        <img src="https://img.shields.io/github/languages/top/riipandi/next-start?style=flat-square" alt="Top language">
+        <img src="https://img.shields.io/github/languages/top/riipandi/next-start" alt="Top language">
     </a>
     <a href="https://aris.mit-license.org">
-        <img src="https://img.shields.io/github/license/riipandi/next-start?style=flat-square" alt="License">
+        <img src="https://img.shields.io/github/license/riipandi/next-start" alt="License">
     </a>
     <a href="https://github.com/sponsors/riipandi">
         <img src="https://badgen.net/badge/icon/sponsors?icon=github&label&color=green&labelColor=black&style=flat-square" alt="Sponsor" />
@@ -83,7 +83,7 @@ If you are using monorepo you will need to configure a few things:
 
 #### Cloudflare Deployment
 
-You need to add `NODE_VERSION` with value `18.16.0` or greater than version 18 on the environment variables setting.
+You need to add `NODE_VERSION` with value `20.16.0` or greater than version 20 on the environment variables setting.
 Visit [Cloudflare pages docs](https://developers.cloudflare.com/pages/platform/build-configuration/) for more information.
 
 For the preview branch:

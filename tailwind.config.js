@@ -1,11 +1,14 @@
-import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons'
-import type { Config } from 'tailwindcss'
+import pluginAspectRatio from '@tailwindcss/aspect-ratio'
+import pluginForms from '@tailwindcss/forms'
+import pluginTypography from '@tailwindcss/typography'
+import pluginDebugBreakpoints from 'tailwind-debug-breakpoints'
 import colors from 'tailwindcss/colors'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ['src/**/*!(*.stories|*.spec).{ts,tsx}'],
-  darkMode: ['class'],
+  darkMode: 'media',
   theme: {
     extend: {
       fontFamily: {
@@ -21,20 +24,10 @@ export default {
     },
     debugScreens: {
       position: ['bottom', 'right'],
-      ignore: ['dark'],
+      borderTopLeftRadius: '4px',
+      printSize: false,
       prefix: '',
-      style: {
-        backgroundColor: '#f9fafb',
-        borderTopLeftRadius: '4px',
-        color: 'black',
-      },
     },
   },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    require('tailwindcss-debug-screens'),
-    iconsPlugin({ collections: getIconCollections(['heroicons', 'lucide']) }),
-  ],
-} satisfies Config
+  plugins: [pluginForms(), pluginTypography(), pluginAspectRatio, pluginDebugBreakpoints],
+}

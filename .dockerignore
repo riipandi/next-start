@@ -1,7 +1,6 @@
-/.cache
-/public/build
-/build
-/tmp
+build/
+tmp/
+.cache
 .next
 .fleet
 .github
@@ -12,6 +11,7 @@
 Dockerfile
 node_modules
 npm-debug.log
+CHANGELOG.md
 README.md
 *.log
 .env*

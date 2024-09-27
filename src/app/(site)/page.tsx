@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
+import * as Lucide from 'lucide-react'
 
-import { ExternalLink } from '@/components/external-link'
-
+import Link from '#/components/link'
 import VercelLogo from '~/images/vercel.svg'
 
 export const metadata: Metadata = {
@@ -36,35 +35,36 @@ export default function Page() {
               >
                 Example about page
               </Link>
-              <ExternalLink
+              <Link
                 href='https://beta.nextjs.org/docs'
                 className='inline-flex items-center rounded-md border border-transparent bg-primary-100 px-6 py-4 text-base font-medium text-primary-600 hover:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'
+                newTab
               >
                 Learn about Next.js
-              </ExternalLink>
+              </Link>
             </div>
           </div>
         </div>
         <div className='mt-4 flex items-center justify-center'>
-          <ExternalLink
+          <Link
             href='https://vercel.com?utm_source=next-start&utm_medium=next-start&utm_campaign=next-start'
             className='pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0'
           >
             <span className='font-medium dark:invert'>Hosted at</span>
             <Image src={VercelLogo} alt='Vercel Logo' className='h-5 w-auto dark:invert' priority />
-          </ExternalLink>
+          </Link>
         </div>
       </main>
       <footer className='mx-auto w-full max-w-7xl shrink-0 px-4 sm:px-6 lg:px-8'>
         <p className='flex justify-center'>
           <span className='mr-1 text-gray-600 dark:text-gray-200'>Brought to you by</span>
-          <ExternalLink
+          <Link
             href='https://twitter.com/riipandi'
             className='group inline-flex items-center space-x-1 text-primary-800 hover:text-red-600 dark:text-primary-500 dark:hover:text-primary-700'
           >
             <span>Aris Ripandi</span>
-            <span className='i-heroicons-arrow-top-right-on-square dark:invert' />
-          </ExternalLink>
+            <Lucide.ExternalLink className='size-4' strokeWidth={1.8} />
+          </Link>
         </p>
       </footer>
     </>

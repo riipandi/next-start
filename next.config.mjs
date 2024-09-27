@@ -3,22 +3,19 @@ const isProduction = process.env.NODE_ENV === 'production' || process.env.IS_VER
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [{ protocol: 'https', hostname: '**' }],
-  },
+  output: 'standalone',
   reactStrictMode: true,
   poweredByHeader: false,
-  output: 'standalone',
+  cleanDistDir: true,
+  images: { remotePatterns: [{ protocol: 'https', hostname: '**' }] },
   // @ref: https://nextjs.org/blog/next-14-1#improved-self-hosting
   // cacheHandler: require.resolve('./cache-handler.js'),
   // cacheMaxMemorySize: 0, // disable default in-memory caching
   eslint: { ignoreDuringBuilds: isProduction },
   typescript: { ignoreBuildErrors: isProduction },
-  logging: {
-    fetches: { fullUrl: true },
-  },
+  logging: { fetches: { fullUrl: true } },
   rewrites() {
-    return [{ source: '/health', destination: '/api/health' }]
+    return [{ source: '/healthz', destination: '/api/healthz' }]
   },
 }
 

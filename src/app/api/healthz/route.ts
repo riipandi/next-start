@@ -1,7 +1,7 @@
 import { type NextRequest } from 'next/server'
 import { ServerRuntime } from 'next/types'
 
-import { responseWithData, throwResponse } from '@/utils/response'
+import { responseWithData, throwResponse } from '#/utils/response'
 
 // FIXME replace nodejs runtime with edge runtime in the future
 // @reference: https://github.com/vercel/next.js/issues/48295#issuecomment-1717906097

@@ -1,69 +1,86 @@
-# syntax=docker/dockerfile:1.4
+# syntax=docker/dockerfile:1.7
 
 # Arguments with default value (for build).
+ARG RUN_IMAGE=gcr.io/distroless/nodejs20-debian12
+ARG PLATFORM=linux/amd64
 ARG NODE_VERSION=20
-ARG NODE_ENV=production
-
-# @reference: https://nextjs.org/docs/pages/api-reference/next-config-js/output
-ARG HOSTNAME=localhost
-ARG PORT=3000
-
-# Arguments for envars in runner step.
-ARG NEXT_PUBLIC_SITE_URL
 
 # -----------------------------------------------------------------------------
-# This is base image with `pnpm` package manager
+# Base image with pnpm package manager.
 # -----------------------------------------------------------------------------
-FROM node:${NODE_VERSION}-alpine AS base
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-RUN apk update && apk add --no-cache jq libc6-compat
-RUN corepack enable && corepack prepare pnpm@latest-8 --activate
-WORKDIR /app
+FROM --platform=$PLATFORM node:${NODE_VERSION}-bookworm-slim AS base
+ENV PNPM_HOME="/pnpm" PATH="$PNPM_HOME:$PATH" COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+ENV LEFTHOOK=0 PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=true NEXT_TELEMETRY_DISABLED=1
+RUN corepack enable && corepack prepare pnpm@latest-9 --activate
+WORKDIR /srv
 
 # -----------------------------------------------------------------------------
-# Build the application
+# Install dependencies and some toolchains.
 # -----------------------------------------------------------------------------
 FROM base AS builder
-ENV NEXT_TELEMETRY_DISABLED 1
 
-ENV NEXT_PUBLIC_SITE_URL $NEXT_PUBLIC_SITE_URL
+# Required for building the application.
+ENV NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
+# Copy the source files
 COPY --chown=node:node . .
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm add sharp
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --no-optional
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm build
 
-# Install dependencies for production
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
+RUN apt update && apt -yqq install tini jq
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install \
+  --ignore-scripts && pnpm add sharp && pnpm build
 
 # -----------------------------------------------------------------------------
-# Production image, copy build output files and run the application
+# Compile the application and install production only dependencies.
 # -----------------------------------------------------------------------------
-FROM node:${NODE_VERSION}-alpine AS runner
+FROM base AS pruner
+
+# Required generated files
+COPY --from=builder /srv/.next/standalone /srv/.next/standalone
+COPY --from=builder /srv/.next/static /srv/.next/standalone/.next/static
+COPY --from=builder /srv/public /srv/.next/standalone/public
+
+# Required metadata files
+COPY --from=builder /srv/package.json /srv/package.json
+COPY --from=builder /srv/pnpm-lock.yaml /srv/pnpm-lock.yaml
+COPY --from=builder /srv/next.config.mjs /srv/next.config.mjs
+COPY --from=builder /srv/.npmrc /srv/.npmrc
+
+# Install production dependencies and cleanup node_modules.
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install \
+  --prod --frozen-lockfile --ignore-scripts && pnpm prune --prod \
+  --ignore-scripts && pnpm dlx clean-modules clean --directory \
+  ".next/standalone/node_modules" --yes
+
+# -----------------------------------------------------------------------------
+# Production image, copy build output files and run the application.
+# -----------------------------------------------------------------------------
+FROM --platform=$PLATFORM $RUN_IMAGE AS runner
 LABEL org.opencontainers.image.source="https://github.com/riipandi/next-start"
 
-ENV NEXT_PUBLIC_SITE_URL $NEXT_PUBLIC_SITE_URL
+# ----- Read application environment variables --------------------------------
 
-ENV HOSTNAME $HOSTNAME
-ENV NODE_ENV $NODE_ENV
-ENV PORT $PORT
+ARG NEXT_PUBLIC_SITE_URL
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 
-WORKDIR /app
+# ----- Read application environment variables --------------------------------
 
-# Don't run production as root, spawns command as a child process.
-RUN addgroup --system --gid 1001 nonroot && adduser --system --uid 1001 nonroot
-RUN apk update && apk add --no-cache tini
-
+# Copy the build output files from the pruner stage.
 # Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=nonroot:nonroot /app/.next/standalone ./
-COPY --from=builder --chown=nonroot:nonroot /app/.next/static ./.next/static
-COPY --from=builder --chown=nonroot:nonroot /app/public ./public
-COPY --from=builder --chown=nonroot:nonroot /app/next.config.mjs .
+# @ref: https://nextjs.org/docs/app/api-reference/next-config-js/output
+COPY --from=pruner --chown=nonroot:nonroot /srv/.next/standalone /srv
+COPY --from=pruner --chown=nonroot:nonroot /srv/next.config.mjs /srv/next.config.mjs
 
+# Copy some utilities from builder image.
+COPY --from=builder /usr/bin/tini /usr/bin/tini
+
+# Define the host and port to listen on.
+ARG NODE_ENV=production HOSTNAME=0.0.0.0 PORT=3000
+ENV NEXT_TELEMETRY_DISABLED=1 TINI_SUBREAPER=true
+ENV NODE_ENV=$NODE_ENV HOSTNAME=$HOST PORT=$PORT
+
+WORKDIR /srv
 USER nonroot:nonroot
 EXPOSE $PORT
 
-ENTRYPOINT ["/sbin/tini", "--"]
-CMD ["node", "server.js"]
+ENTRYPOINT ["/usr/bin/tini", "--"]
+CMD ["/nodejs/bin/node", "/srv/server.js"]

@@ -6,8 +6,12 @@
             "request": "launch",
             "name": "Debug Next.js",
             "runtimeExecutable": "pnpm",
-            "runtimeArgs": ["dev"],
-            "skipFiles": ["<node_internals>/**"],
+            "runtimeArgs": [
+                "dev"
+            ],
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
             // "serverReadyAction": {
             //     "action": "debugWithChrome",
             //     "pattern": "started server on .+, url: (https?://.+)",
@@ -51,7 +55,10 @@
     "compounds": [
         {
             "name": "Start Development",
-            "configurations": ["Debug Next.js", "Browser Debug"],
+            "configurations": [
+                "Debug Next.js",
+                "Browser Debug"
+            ],
             "stopAll": true
         }
     ]

@@ -5,6 +5,8 @@
         "EditorConfig.EditorConfig",
         "esbenp.prettier-vscode",
         "foxundermoon.shell-format",
-        "unifiedjs.vscode-mdx"
+        "ms-playwright.playwright",
+        "tamasfe.even-better-toml",
+        "unifiedjs.vscode-mdx",
     ]
 }

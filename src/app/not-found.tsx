@@ -1,12 +1,14 @@
-import Link from 'next/link'
 import { Metadata } from 'next/types'
+import * as Lucide from 'lucide-react'
+
+import Link from '#/components/link'
 
 export const metadata: Metadata = { title: '404 Page not found' }
 
 export default function NotFound() {
   return (
     <div className='flex h-full min-h-screen w-full flex-col bg-white dark:bg-gray-900'>
-      <main className='content-wrapper flex grow items-center justify-center'>
+      <main className='content-wrapper debug flex grow items-center justify-center'>
         <div className='page-container'>
           <section className='mx-auto flex w-full max-w-2xl flex-col items-center justify-center py-24'>
             <h1 className='text-2xl font-extrabold text-gray-900 dark:invert sm:text-3xl lg:text-4xl'>
@@ -21,7 +23,7 @@ export default function NotFound() {
                 href='/'
                 className='inline-flex items-center rounded-lg border border-gray-200 bg-gray-900 px-6 py-3 text-center text-sm font-medium text-white hover:bg-gray-700 hover:text-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600'
               >
-                <span className='i-heroicons-chevron-double-left -ml-1 mr-1 h-4 w-4' />
+                <Lucide.ChevronsLeft className='-ml-1 mr-1 size-4' strokeWidth={1.8} />
                 Back to homepage
               </Link>
             </div>

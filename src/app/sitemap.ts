@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next/types'
 
-import { env } from '@/config'
+import { env } from '#/config'
 
 // @reference: https://github.com/vercel/next.js/issues/49373
 export const dynamic = 'force-dynamic'
