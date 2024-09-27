@@ -1,5 +1,15 @@
+import NextBundleAnalyzer from '@next/bundle-analyzer'
+
 // Avoid build and lint error in Docker or Vercel deployment
-const isProduction = process.env.NODE_ENV === 'production' || process.env.IS_VERCEL_ENV === 'true'
+const isProduction =
+  process.env.NODE_ENV === 'production' ||
+  process.env.IS_VERCEL_ENV === 'true' ||
+  process.env.FLY_MACHINE_ID
+
+const withBundleAnalyzer = NextBundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+  openAnalyzer: true,
+})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -19,4 +29,4 @@ const nextConfig = {
   },
 }
 
-export default nextConfig
+export default withBundleAnalyzer(nextConfig)

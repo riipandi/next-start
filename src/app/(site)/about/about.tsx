@@ -9,7 +9,7 @@ export default function AboutPage() {
     <main className='content-wrapper flex grow items-center justify-center'>
       <div className='page-container'>
         <section className='mx-auto flex w-full max-w-2xl flex-col items-center justify-center py-24'>
-          <h1 className='text-2xl font-extrabold text-gray-900 dark:invert sm:text-3xl lg:text-4xl'>
+          <h1 className='text-2xl font-extrabold text-gray-900 sm:text-3xl lg:text-4xl dark:invert'>
             Example About Page
           </h1>
           <div className='mt-8 space-x-4 sm:mt-12'>

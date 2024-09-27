@@ -1,36 +1,31 @@
-##
-# fly.toml app configuration file generated on 2023-09-29T16:10:32+07:00
-# See https://fly.io/docs/reference/configuration/ for information about
-# how to use this file.
-##
+# @ref: https://fly.io/docs/reference/configuration
 
 app = "next-start"
-primary_region = "sjc"
+primary_region = "dfw"
 kill_signal = "SIGINT"
 kill_timeout = 5
-swap_size_mb = 512
-console_command = "/usr/bin/npm"
+swap_size_mb = 256
+console_command = "/bin/sh"
 
 [build]
   dockerfile = "Dockerfile"
 
-[build.args]
-  NODE_VERSION = "18"
+  [build.args]
+    NODE_VERSION = "20"
 
 [deploy]
-  strategy = "immediate"
-  # release_command = "/usr/bin/npm run db:migrate"
+  # https://fly.io/docs/apps/deploy/#deployment-strategy
+  # Staging or Testing: `immediate` | Production: `bluegreen`
+  strategy = "bluegreen"
 
 [env]
   NODE_ENV = "production"
-  NEXT_TELEMETRY_DISABLED = "1"
   HOSTNAME = "0.0.0.0"
   PORT = "3000"
 
 [http_service]
   internal_port = 3000
   force_https = true
-  auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
   processes = ["app"]
@@ -45,11 +40,11 @@ console_command = "/usr/bin/npm"
     versions = ["TLSv1.2", "TLSv1.3"]
     default_self_signed = false
 
-[[http_service.checks]]
-  grace_period = "10s"
-  interval = "30s"
-  method = "GET"
-  timeout = "5s"
-  path = "/health"
-  protocol = "http"
-  tls_skip_verify = true
+  [[http_service.checks]]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    timeout = "5s"
+    path = "/healthz"
+    protocol = "http"
+    tls_skip_verify = true

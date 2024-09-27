@@ -3,6 +3,7 @@ import Image from 'next/image'
 import * as Lucide from 'lucide-react'
 
 import Link from '#/components/link'
+
 import VercelLogo from '~/images/vercel.svg'
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function Page() {
         <div className='py-16'>
           <div className='text-center'>
             <p className='text-lg font-semibold text-primary-600 sm:text-2xl'>Howdy, developer!</p>
-            <h1 className='mt-4 text-3xl font-bold tracking-tight text-gray-900 dark:invert sm:text-4xl lg:text-6xl'>
+            <h1 className='mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-6xl dark:invert'>
               Welcome to your new app
             </h1>
             <div className='mx-auto mt-8 max-w-4xl'>

@@ -15,11 +15,11 @@ export default function Error({ error, reset }: ErrorProps) {
   }, [error])
 
   return (
-    <div className='flex h-full min-h-screen w-full flex-col bg-white px-6 dark:bg-gray-900 md:px-0'>
+    <div className='flex h-full min-h-screen w-full flex-col bg-white px-6 md:px-0 dark:bg-gray-900'>
       <main className='flex grow items-center justify-center'>
         <div className='page-container'>
           <section className='mx-auto flex w-full max-w-2xl flex-col items-center justify-center py-24'>
-            <h1 className='text-2xl font-extrabold text-gray-900 dark:invert sm:text-3xl lg:text-4xl'>
+            <h1 className='text-2xl font-extrabold text-gray-900 sm:text-3xl lg:text-4xl dark:invert'>
               Hey, we got some problems :-(
             </h1>
             <p className='mt-8 text-center text-xl leading-8 text-gray-600 dark:text-gray-300/80'>

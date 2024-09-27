@@ -1,10 +1,10 @@
 import { Metadata } from 'next/types'
 
-import '#/assets/styles/globals.css'
-
 import { siteMeta } from '#/config'
 import { fontInter, fontMono } from '#/utils/fontloader'
 import { cn } from '#/utils/helpers'
+
+import '#/assets/styles/globals.css'
 
 export const metadata: Metadata = {
   title: {

@@ -11,7 +11,7 @@ export default function NotFound() {
       <main className='content-wrapper debug flex grow items-center justify-center'>
         <div className='page-container'>
           <section className='mx-auto flex w-full max-w-2xl flex-col items-center justify-center py-24'>
-            <h1 className='text-2xl font-extrabold text-gray-900 dark:invert sm:text-3xl lg:text-4xl'>
+            <h1 className='text-2xl font-extrabold text-gray-900 sm:text-3xl lg:text-4xl dark:invert'>
               404 - Page not found
             </h1>
             <p className='mt-8 text-center text-xl leading-8 text-gray-600 dark:text-gray-300/80'>

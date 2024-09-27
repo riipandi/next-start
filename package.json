@@ -4,8 +4,9 @@
     "license": "MIT",
     "private": true,
     "scripts": {
-        "dev": "next dev --turbo",
+        "dev": "next dev",
         "build": "next build && pnpm run copy-assets",
+        "build:analyze": "ANALYZE=true pnpm run build",
         "start": "PORT=3000 node .next/standalone/server.js",
         "copy-assets": "cp -r public/ .next/standalone/public/ && cp -r .next/static/ .next/standalone/.next/static/",
         "docker:build": "docker build -f Dockerfile . -t $npm_package_name:latest -t $npm_package_name:$npm_package_version",
@@ -23,6 +24,7 @@
         "pre-dev": "docker compose up -d --remove-orphans"
     },
     "dependencies": {
+        "@next/bundle-analyzer": "^14.2.13",
         "@t3-oss/env-nextjs": "^0.11.1",
         "lucide-react": "^0.446.0",
         "next": "~14.2.13",
