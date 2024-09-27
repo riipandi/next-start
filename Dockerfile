@@ -20,7 +20,8 @@ WORKDIR /srv
 FROM base AS builder
 
 # Required for building the application.
-ENV NEXT_PUBLIC_SITE_URL=http://localhost:3000
+ARG APP_BASE_URL=http://localhost:3000
+ENV APP_BASE_URL=$APP_BASE_URL
 
 # Copy the source files
 COPY --chown=node:node . .
@@ -59,8 +60,8 @@ LABEL org.opencontainers.image.source="https://github.com/riipandi/next-start"
 
 # ----- Read application environment variables --------------------------------
 
-ARG NEXT_PUBLIC_SITE_URL
-ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
+ARG APP_BASE_URL=http://localhost:3000
+ENV APP_BASE_URL=$APP_BASE_URL
 
 # ----- Read application environment variables --------------------------------
 

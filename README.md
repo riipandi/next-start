@@ -71,7 +71,7 @@ You'll want to fork this repository and deploy your own Next.js website. Once yo
 image generator that sparks joy, you can setup [automatic GitHub](https://vercel.com/github)
 deployments so that pushing to master will deploy to production! 🚀
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/riipandi/next-start&project-name=next-start&repo-name=next-start&env=NEXT_PUBLIC_SITE_URL,NEXT_PUBLIC_MAINTENANCE_MODE)
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/riipandi/next-start&project-name=next-start&repo-name=next-start&env=APP_BASE_URL,NEXT_PUBLIC_MAINTENANCE_MODE)
 
 #### Vercel Configuration (optional)
 
@@ -88,7 +88,7 @@ Visit [Cloudflare pages docs](https://developers.cloudflare.com/pages/platform/b
 For the preview branch:
 
 ```env
-NEXT_PUBLIC_SITE_URL=${CF_PAGES_URL}
+APP_BASE_URL=${CF_PAGES_URL}
 ```
 
 ## Thanks to...

@@ -1,6 +1,7 @@
+import ENV from '#/env'
+
 import { Metadata } from 'next/types'
 
-import { siteMeta } from '#/config'
 import { fontInter, fontMono } from '#/utils/fontloader'
 import { cn } from '#/utils/helpers'
 
@@ -8,11 +9,11 @@ import '#/assets/styles/globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: siteMeta.title,
-    template: `%s - ${siteMeta.title}`,
+    default: 'Next Start',
+    template: '%s - Next Start',
   },
-  applicationName: siteMeta.title,
-  description: siteMeta.description,
+  applicationName: 'Next Start',
+  description: 'A starter project for Next.js with Tailwind CSS and Typescript.',
   keywords: ['nextjs', 'react', 'starter', 'boilerplate'],
   robots: { index: true, follow: true },
   manifest: '/site.webmanifest',
@@ -22,28 +23,30 @@ export const metadata: Metadata = {
     { rel: 'icon', type: 'image/png', url: '/favicon.png' },
     { rel: 'apple-touch-icon', url: '/favicon.png' },
   ],
-  metadataBase: new URL(siteMeta.baseUrl),
+  metadataBase: new URL(ENV.APP_BASE_URL),
   openGraph: {
     type: 'website',
-    url: new URL(siteMeta.baseUrl),
-    title: siteMeta.title,
-    description: siteMeta.description,
-    siteName: siteMeta.title,
-    images: [{ url: `${siteMeta.baseUrl}/images/og-image.png` }],
+    url: new URL(ENV.APP_BASE_URL),
+    title: 'Next Start',
+    description: 'A starter project for Next.js with Tailwind CSS and Typescript.',
+    siteName: 'Next Start',
+    images: [{ url: `${ENV.APP_BASE_URL}/images/og-image.png` }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@site',
     creator: '@creator',
-    images: `${siteMeta.baseUrl}/images/og-image.png`,
+    images: `${ENV.APP_BASE_URL}/images/og-image.png`,
   },
 }
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
-  const isDevelopment = process.env.NODE_ENV === 'development'
   return (
     <html lang='en' className={cn(fontInter.className, fontMono.variable)}>
-      <body className={cn(isDevelopment && 'debug-breakpoints')} suppressHydrationWarning={true}>
+      <body
+        className={cn(ENV.NODE_ENV === 'development' && 'debug-breakpoints')}
+        suppressHydrationWarning={true}
+      >
         {children}
       </body>
     </html>

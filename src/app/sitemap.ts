@@ -1,19 +1,19 @@
-import { MetadataRoute } from 'next/types'
+import ENV from '#/env'
 
-import { env } from '#/config'
+import { MetadataRoute } from 'next/types'
 
 // @reference: https://github.com/vercel/next.js/issues/49373
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = ENV.APP_BASE_URL
   const now = new Date()
-  const baseUrl = env.NEXT_PUBLIC_SITE_URL
 
   const rootPath = {
     url: baseUrl,
     lastModified: now,
-    changeFrequency: 'yearly',
+    changeFrequency: 'yearly' as const,
     priority: 1,
   }
 

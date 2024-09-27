@@ -1,10 +1,13 @@
 import type React from 'react'
 import { forwardRef } from 'react'
-import { default as NextLink, LinkProps as NextLinkProps } from 'next/link'
+import type { Route } from 'next'
+import { default as NextLink } from 'next/link'
+import { LinkProps as NextLinkProps } from 'next/link'
 
 import { cn } from '#/utils/helpers'
 
 interface LinkProps extends NextLinkProps {
+  href: Route
   newTab?: boolean
 }
 
@@ -26,13 +29,14 @@ const Link = forwardRef(function Component(
   props: LinkProps & React.ComponentPropsWithoutRef<'a'>,
   ref: React.ForwardedRef<HTMLAnchorElement>
 ) {
-  const { className, newTab, ...rest } = props
+  const { href, className, newTab, ...rest } = props
   const NEW_TAB_REL = 'noopener noreferrer'
   const NEW_TAB_TARGET = '_blank'
   const DEFAULT_TARGET = '_self'
 
   return (
     <NextLink
+      href={href}
       className={cn(className)}
       rel={newTab ? NEW_TAB_REL : undefined}
       target={newTab ? NEW_TAB_TARGET : DEFAULT_TARGET}
