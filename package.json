@@ -9,7 +9,6 @@
         "preview": "wireit",
         "typegen": "wireit",
         "deploy": "wireit",
-        "postinstall": "pnpm approve-builds",
         "update-deps": "npm-check-updates",
         "check": "biome check . --write",
         "format": "biome format . --write",
@@ -47,26 +46,17 @@
     "wireit": {
         "build-workers": {
             "command": "opennextjs-cloudflare",
-            "output": [
-                ".next/**",
-                ".open-next/**"
-            ],
-            "dependencies": [
-                "typegen"
-            ],
+            "output": [".next/**", ".open-next/**"],
+            "dependencies": ["typegen"],
             "clean": "if-file-deleted"
         },
         "deploy": {
             "command": "wrangler deploy",
-            "dependencies": [
-                "build-workers"
-            ]
+            "dependencies": ["build-workers"]
         },
         "preview": {
             "command": "wrangler dev",
-            "dependencies": [
-                "build-workers"
-            ],
+            "dependencies": ["build-workers"],
             "service": true
         },
         "typegen": {
@@ -75,11 +65,6 @@
     },
     "packageManager": "pnpm@10.4.1",
     "pnpm": {
-        "onlyBuiltDependencies": [
-            "@biomejs/biome",
-            "esbuild",
-            "sharp",
-            "workerd"
-        ]
+        "onlyBuiltDependencies": ["@biomejs/biome", "esbuild", "sharp", "workerd"]
     }
 }
