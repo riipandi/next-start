@@ -26,10 +26,11 @@
     },
     "placement": { "mode": "smart" },
     "vars": {
-        "NEXT_TELEMETRY_DISABLED": "1",
-        "COREPACK_INTEGRITY_KEYS": "0",
-        "NODE_VERSION": "20.18.0",
-        "PNPM_VERSION": "10.4.1"
+        /* Build -> Variables and secrets */
+        // "WRANGLER_SEND_METRICS": "false",
+        // "NEXT_TELEMETRY_DISABLED": "1",
+        // "COREPACK_INTEGRITY_KEYS": "0",
+        // "NODE_VERSION": "20.18.0"
     },
     "env": {
         "preview": {
