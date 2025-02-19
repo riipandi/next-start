@@ -1,35 +1,91 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
+/.fleet
+/.idea
 /.pnp
+/.husky
 .pnp.js
-
-# testing
+.DS_Store
+.DS_Store?
 /coverage
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+node_modules/
+*tsbuildinfo
+.unikraft
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+*.bak
+
+# SQLite
+*.sqlite*
+*.sqlite3*
+*.db
+
+# Output directory
+_data/
+build/
+dist/
+.data
+.cache
+.output
+.wrangler
+.wireit
+.cache
+.temp
+.tmp
+
+# Vite & Vitest config
+vite.config.*
+!vite.config.ts
+vitest.config.*
+!vitest.config.ts
+vitest.workspace.*
+!vitest.workspace.ts
+
+# Envars
+.env.*
+!.env.example
+compose.env*
+!compose.env.example
+.dev.vars
+
+# Disable this line in your real app
+/playwright/.cache/
+/playwright-report/
+/tests-results/
+/blob-report/
+.playwright/
+
+# Sentry Config File
+.sentryclirc
+
+# Storybook
+*storybook.log
+storybook-static/
+
+# Miscellaneous
+pnpm-exec-summary.json
+slim.report.json
 
 # next.js
-/.next/
-/dist/
-/out/
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
-.env*
-!.env*.example
-
-# vercel
-.vercel
-
-# typescript
 *.tsbuildinfo
 next-env.d.ts
+.open-next
+.vercel
+.source
+.next
+/out/
+
+# Terraform
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate*
+terraform.tfvars*
+!terraform.tfvars.example
+
+# fly.io
+fly*.toml*
+!fly*.example.toml

@@ -1,47 +1,29 @@
 {
     "$schema": "https://json.schemastore.org/tsconfig",
     "compilerOptions": {
-        "target": "es5",
-        "lib": [
-            "dom",
-            "dom.iterable",
-            "esnext"
-        ],
         "allowJs": true,
-        "skipLibCheck": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
         "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "Bundler",
-        "resolveJsonModule": true,
+        "forceConsistentCasingInFileNames": true,
+        "incremental": true,
         "isolatedModules": true,
         "jsx": "preserve",
-        "incremental": true,
-        "strictNullChecks": true,
-        "strictFunctionTypes": true,
-        "plugins": [
-            {
-                "name": "next"
-            }
-        ],
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "noEmit": true,
+        "plugins": [{ "name": "next" }],
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "ES2017",
+        "tsBuildInfoFile": ".next/tsbuildinfo",
+        "types": ["@cloudflare/workers-types/2023-07-01"],
+        "baseUrl": ".",
         "paths": {
-            "#/*": [
-                "./src/*"
-            ],
-            "~/*": [
-                "./public/*"
-            ]
+            "@/.source": ["./.source/index.ts"],
+            "#/*": ["./src/*"]
         }
     },
-    "include": [
-        "next-env.d.ts",
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        ".next/types/**/*.ts"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+    "exclude": ["node_modules", ".open-next", ".wrangler"]
 }

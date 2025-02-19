@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "tailwindcss-motion";
+@variant dark (&:where([data-theme="dark"] *));
+
+@theme {
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+}

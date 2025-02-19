@@ -1,56 +1,20 @@
-import ENV from '#/env'
+import './global.css'
+import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+import { clx } from '#/libs/utils'
 
-import { Metadata } from 'next/types'
-
-import { fontInter, fontMono } from '#/utils/fontloader'
-import { cn } from '#/utils/helpers'
-
-import '#/assets/styles/globals.css'
+const fontSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
+const fontMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Next Start',
-    template: '%s - Next Start',
-  },
-  applicationName: 'Next Start',
-  description: 'A starter project for Next.js with Tailwind CSS and Typescript.',
-  keywords: ['nextjs', 'react', 'starter', 'boilerplate'],
-  robots: {
-    index: ENV.ALLOW_SEARCH_ENGINE_INDEXING,
-    follow: ENV.ALLOW_SEARCH_ENGINE_INDEXING,
-  },
-  manifest: '/manifest.webmanifest',
-  icons: [
-    { rel: 'icon', type: 'image/x-icon', url: '/favicon.ico' },
-    { rel: 'icon', type: 'image/svg+xml', url: '/favicon.svg' },
-    { rel: 'apple-touch-icon', url: '/favicon.png' },
-  ],
-  metadataBase: new URL(ENV.APP_BASE_URL),
-  openGraph: {
-    type: 'website',
-    url: new URL(ENV.APP_BASE_URL),
-    title: 'Next Start',
-    description: 'A starter project for Next.js with Tailwind CSS and Typescript.',
-    siteName: 'Next Start',
-    images: [{ url: `${ENV.APP_BASE_URL}/images/og-image.png` }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@site',
-    creator: '@creator',
-    images: `${ENV.APP_BASE_URL}/images/og-image.png`,
-  },
+  title: 'Next Cloudflare Workers',
+  description: 'Example of Next.js with Cloudflare Workers',
 }
 
-export default function RootLayout({ children }: React.PropsWithChildren) {
+export default function RootLayout({ children }: Readonly<React.PropsWithChildren>) {
   return (
-    <html lang='en' className={cn(fontInter.className, fontMono.variable)}>
-      <body
-        className={cn(ENV.NODE_ENV === 'development' && 'debug-breakpoints')}
-        suppressHydrationWarning={true}
-      >
-        {children}
-      </body>
+    <html lang="en" data-theme="light" suppressHydrationWarning>
+      <body className={clx(fontSans.variable, fontMono.variable, 'antialiased')}>{children}</body>
     </html>
   )
 }

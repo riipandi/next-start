@@ -1,49 +1,5 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "typescript.enablePromptUseWorkspaceTsdk": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit",
-        "source.fixAll.eslint": "always"
-    },
-    "eslint.workingDirectories": [
-        {
-            "mode": "auto"
-        }
-    ],
-    "eslint.format.enable": true,
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact"
-    ],
     "files.associations": {
-        "*.css": "tailwindcss",
-        "*.mdx": "markdown",
-        "*.yml.example": "yaml"
-    },
-    "search.exclude": {
-        "**/.husky": true,
-        "**/.output": true,
-        "**/build": true,
-        "**/dist": true,
-    },
-    "tailwindCSS.experimental.classRegex": [
-        [
-            "clsx\\(([^)]*)\\)",
-            "(?:'|\"|`)([^']*)(?:'|\"|`)"
-        ],
-        "cn\\(([^)]*)\\)", // cn(xxx)
-        "clx\\(([^)]*)\\)", // clx(xxx)
-        "cx\\(([^)]*)\\)", // cx(xxx)
-    ],
-    "[toml]": {
-        "editor.formatOnSave": false,
-        "editor.defaultFormatter": "tamasfe.even-better-toml"
-    },
-    "[markdown]": {
-        "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
+        "wrangler.json": "jsonc"
     }
 }
