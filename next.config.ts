@@ -1,7 +1,8 @@
-import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
 import type { NextConfig } from 'next'
 
-initOpenNextCloudflareForDev()
+/* Uncomment to enable OpenNext Cloudflare for Dev */
+// import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
+// initOpenNextCloudflareForDev()
 
 const nextConfig: NextConfig = {
   cleanDistDir: true,
