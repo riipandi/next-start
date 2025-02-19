@@ -1,8 +1,11 @@
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
 import type { NextConfig } from 'next'
 
-/* Uncomment to enable OpenNext Cloudflare for Dev */
-// import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
-// initOpenNextCloudflareForDev()
+const isVercel = process.env.IS_VERCEL_ENV === 'true'
+
+if (!isVercel) {
+  initOpenNextCloudflareForDev()
+}
 
 const nextConfig: NextConfig = {
   cleanDistDir: true,
