@@ -1,9 +1,10 @@
 import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
+import consola from 'consola'
 import type { NextConfig } from 'next'
+import { isWorkerd } from 'std-env'
 
-const isVercel = process.env.IS_VERCEL_ENV === 'true'
-
-if (!isVercel) {
+if (isWorkerd) {
+  consola.withTag('nextConfig').log('Initializing OpenNext for Cloudflare Workers')
   initOpenNextCloudflareForDev()
 }
 

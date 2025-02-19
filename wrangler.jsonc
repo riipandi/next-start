@@ -39,6 +39,7 @@
     */
     "vars": {
         "COREPACK_INTEGRITY_KEYS": "0",
+        "NEXT_TELEMETRY_DISABLED": "1",
         "NODE_VERSION": "20.18.0",
         "PNPM_VERSION": "10.4.1"
     }
