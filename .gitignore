@@ -73,6 +73,7 @@ slim.report.json
 # next.js
 *.tsbuildinfo
 next-env.d.ts
+cloudflare-env.d.ts
 .open-next
 .vercel
 .source

@@ -34,17 +34,5 @@
         // "NEXT_TELEMETRY_DISABLED": "1",
         // "COREPACK_INTEGRITY_KEYS": "0",
         // "NODE_VERSION": "20.18.0"
-    },
-    "env": {
-        "preview": {
-            "vars": {
-                "BASE_URL": "$CF_PAGES_URL"
-            }
-        },
-        "production": {
-            "vars": {
-                "BASE_URL": "$CF_PAGES_URL"
-            }
-        }
     }
 }
