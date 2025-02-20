@@ -10,6 +10,7 @@
         "preview": "wireit",
         "typegen": "wireit",
         "deploy": "wireit",
+        "build:workers": "wireit",
         "cleanup": "pnpm dlx del-cli .{next,open-next,wrangler} out",
         "update-deps": "npm-check-updates",
         "check": "biome check . --write",
@@ -22,7 +23,6 @@
         "consola": "^3.4.0",
         "lucide-react": "^0.475.0",
         "next": "15.1.7",
-        "ofetch": "^1.4.1",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "std-env": "^3.8.0",
@@ -48,7 +48,7 @@
         "wrangler": "^3.109.2"
     },
     "wireit": {
-        "build-workers": {
+        "build:workers": {
             "command": "opennextjs-cloudflare",
             "output": [".next/**", ".open-next/**"],
             "dependencies": ["typegen"],
@@ -56,15 +56,16 @@
         },
         "deploy": {
             "command": "wrangler deploy",
-            "dependencies": ["build-workers"]
+            "dependencies": ["build:workers"]
         },
         "preview": {
             "command": "wrangler dev",
-            "dependencies": ["build-workers"],
+            "dependencies": ["build:workers"],
             "service": true
         },
         "typegen": {
-            "command": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+            "command": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+            "output": ["cloudflare-env.d.ts"]
         }
     },
     "packageManager": "pnpm@10.4.1",

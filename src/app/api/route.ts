@@ -5,8 +5,6 @@
  * @see: https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
  */
 
-import { fetch } from 'ofetch'
-
 export const dynamic = 'force-static'
 
 export async function GET() {
