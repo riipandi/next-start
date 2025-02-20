@@ -10,7 +10,7 @@
         "defaultBranch": "main"
     },
     "linter": {
-        "enabled": false,
+        "enabled": true,
         "rules": {
             "recommended": true,
             "a11y": {
@@ -38,7 +38,7 @@
                     "level": "warn",
                     "fix": "safe",
                     "options": {
-                        "attributes": ["classList"],
+                        "attributes": ["class", "className"],
                         "functions": ["cn", "clx", "clsx", "cva", "tv", "tw"]
                     }
                 }
@@ -110,6 +110,7 @@
         },
         "formatter": {
             "enabled": true,
+            "indentWidth": 2,
             "quoteStyle": "double"
         }
     },

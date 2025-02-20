@@ -50,7 +50,7 @@ vitest.workspace.*
 !.env.example
 compose.env*
 !compose.env.example
-.dev.vars
+.*.vars
 
 # Disable this line in your real app
 /playwright/.cache/

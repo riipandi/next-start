@@ -1,5 +1,18 @@
 {
+    "editor.defaultFormatter": "biomejs.biome",
     "files.associations": {
+        "*.css": "css",
+        "*.vars": "dotenv",
+        "*.yml.example": "yaml",
         "wrangler.json": "jsonc"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
+    },
+    "[tailwindcss]": {
+        "editor.defaultFormatter": "biomejs.biome"
     }
 }

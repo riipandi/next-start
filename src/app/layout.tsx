@@ -7,8 +7,8 @@ const fontSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const fontMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Next Cloudflare Workers',
-  description: 'Example of Next.js with Cloudflare Workers',
+  title: 'Next.js Tailwind Starter',
+  description: 'A starter project for Next.js with Tailwind CSS and Typescript',
 }
 
 export default function RootLayout({ children }: Readonly<React.PropsWithChildren>) {
