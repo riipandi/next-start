@@ -25,7 +25,6 @@
         "verbatimModuleSyntax": true,
         "baseUrl": ".",
         "paths": {
-            "@/.source": ["./.source/index.ts"],
             "#/*": ["./src/*"]
         }
     },

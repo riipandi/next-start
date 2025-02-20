@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<React.PropsWithChildren>) {
   return (
-    <html lang="en" data-theme="light" suppressHydrationWarning>
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
       <body className={clx(fontSans.variable, fontMono.variable, 'antialiased')}>{children}</body>
     </html>
   )
