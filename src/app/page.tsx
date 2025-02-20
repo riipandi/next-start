@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from '#/app/link'
 
 export default function Page() {
   return (
@@ -38,14 +39,13 @@ export default function Page() {
 
           {/* Action buttons with organic hover effect */}
           <div className="flex flex-wrap justify-center gap-8">
-            <a
+            <Link
               href="https://vercel.com/new/clone?repository-url=https://github.com/riipandi/next-start"
-              target="_blank"
-              rel="noopener noreferrer"
               className="group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-3 text-white transition-all duration-300 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)]"
+              newTab
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 transition-opacity group-hover:opacity-100" />
-              <span className="relative flex items-center gap-2">
+              <span className="relative flex items-center gap-2 font-medium">
                 <Image
                   className="dark:invert"
                   src="/images/vercel.svg"
@@ -55,15 +55,14 @@ export default function Page() {
                 />
                 Deploy now
               </span>
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://nextjs.org/docs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative rounded-full px-8 py-3 text-gray-700 transition-all duration-300 after:absolute after:inset-0 after:rounded-full after:border after:border-gray-300 after:transition-transform hover:text-gray-900 hover:after:scale-110 dark:text-gray-300 dark:hover:text-white dark:after:border-gray-600"
+              className="relative rounded-full px-8 py-3 font-medium text-gray-700 transition-all duration-300 after:absolute after:inset-0 after:rounded-full after:border after:border-gray-300 after:transition-transform hover:text-gray-900 hover:after:scale-110 dark:text-gray-300 dark:hover:text-white dark:after:border-gray-600"
+              newTab
             >
-              Read our docs
-            </a>
+              Read the docs
+            </Link>
           </div>
         </main>
 
@@ -87,10 +86,11 @@ export default function Page() {
                 href: 'https://nextjs.org/?utm_source=next-start&utm_medium=appdir-template-tw&utm_campaign=next-start',
               },
             ].map(({ text, icon, href }) => (
-              <a
+              <Link
                 key={text}
                 href={href}
                 className="group flex items-center gap-2 transition-colors duration-300 hover:text-gray-900 dark:hover:text-gray-200"
+                newTab
               >
                 <Image
                   aria-hidden
@@ -103,7 +103,7 @@ export default function Page() {
                 <span className="relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all group-hover:after:w-full">
                   {text}
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
         </footer>
