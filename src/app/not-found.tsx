@@ -1,35 +1,51 @@
-import { Metadata } from 'next/types'
-import * as Lucide from 'lucide-react'
+'use client'
 
-import Link from '#/components/link'
-
-export const metadata: Metadata = { title: '404 Page not found' }
+import { useRouter } from 'next/navigation'
+import Link from '#/app/link'
+import { errorStyles } from '#/styles/error.css'
 
 export default function NotFound() {
+  const router = useRouter()
+  const styles = errorStyles()
+
+  const handleBack = () => {
+    if (window.history.length > 1) {
+      router.back()
+    } else {
+      router.push('/')
+    }
+  }
+
   return (
-    <div className='flex h-full min-h-screen w-full flex-col bg-white dark:bg-gray-900'>
-      <main className='content-wrapper flex grow items-center justify-center'>
-        <div className='page-container'>
-          <section className='mx-auto flex w-full max-w-2xl flex-col items-center justify-center py-24'>
-            <h1 className='text-2xl font-extrabold text-gray-900 sm:text-3xl lg:text-4xl dark:invert'>
-              404 - Page not found
-            </h1>
-            <p className='mt-8 text-center text-xl leading-8 text-gray-600 dark:text-gray-300/80'>
-              Sorry, we can&rsquo;t find that page. Check that you typed the address correctly, or
-              try using our site search to find something specific.
+    <>
+      <title>404 Not Found</title>
+      <div className={styles.wrapper()}>
+        <div className={styles.decorativeGradient()}>
+          <div className={styles.gradientInner()}>
+            <div className={styles.gradientBg()} />
+          </div>
+        </div>
+        <div className={styles.decorativeCode()}>
+          <h2 className={styles.decorativeText()}>404</h2>
+        </div>
+        <div className={styles.content()}>
+          <div className={styles.container()}>
+            <p className={styles.errorCode()}>404</p>
+            <h1 className={styles.title()}>Page not found</h1>
+            <p className={styles.description()}>
+              Sorry, we couldn&apos;t find the page you&apos;re looking for.
             </p>
-            <div className='mt-8 sm:mt-12'>
-              <Link
-                href='/'
-                className='inline-flex items-center rounded-lg border border-gray-200 bg-gray-900 px-6 py-3 text-center text-sm font-medium text-white hover:bg-gray-700 hover:text-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600'
-              >
-                <Lucide.ChevronsLeft className='-ml-1 mr-1 size-4' strokeWidth={1.8} />
-                Back to homepage
+            <div className={styles.actions()}>
+              <button type="button" onClick={handleBack} className={styles.primaryButton()}>
+                Go back
+              </button>
+              <Link href="#" className={styles.secondaryButton()}>
+                Docs
               </Link>
             </div>
-          </section>
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </>
   )
 }

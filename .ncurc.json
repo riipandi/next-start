@@ -7,5 +7,6 @@
     "deep": true,
     "install": "always",
     "packageManager": "pnpm",
-    "reject": ["typescript", "eslint"]
+    "silent": false,
+    "reject": []
 }
