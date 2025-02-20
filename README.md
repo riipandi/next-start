@@ -36,12 +36,12 @@ npx create-next-app myapp-name --use-npm -e https://github.com/riipandi/next-sta
 
 ### Up and Running
 
-| NPM             | Yarn         | PNPM           | Description              |
-|-----------------|--------------|----------------|--------------------------|
-| `npm install`   | `yarn`       | `pnpm install` | install the dependencies |
-| `npm run dev`   | `yarn dev`   | `pnpm dev`     | serve with hot reload    |
-| `npm run build` | `yarn build` | `pnpm build`   | build for production     |
-| `npm run start` | `yarn start` | `pnpm start`   | launch generated build   |
+| Task                   | NPM             | Yarn         | PNPM           |
+|------------------------|-----------------|--------------|----------------|
+| Install dependencies   | `npm install`   | `yarn`       | `pnpm install` |
+| Serve with hot reload  | `npm run dev`   | `yarn dev`   | `pnpm dev`     |
+| Build for production   | `npm run build` | `yarn build` | `pnpm build`   |
+| Launch generated build | `npm run start` | `yarn start` | `pnpm start`   |
 
 Application will run at `http://localhost:3000`
 
