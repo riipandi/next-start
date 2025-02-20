@@ -40,7 +40,7 @@ export default function Page() {
           {/* Action buttons with organic hover effect */}
           <div className="flex flex-wrap justify-center gap-8">
             <Link
-              href="https://vercel.com/new/clone?repository-url=https://github.com/riipandi/next-start"
+              href="https://vercel.com/new/clone?repository-url=https://github.com/riipandi/next-start&project-name=next-start&repo-name=next-start&env=NEXT_PUBLIC_BASE_URL"
               className="group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-3 text-white transition-all duration-300 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)]"
               newTab
             >
