@@ -7,6 +7,9 @@
  * @see: https://opennext.js.org/cloudflare/get-started#8-remove-any-export-const-runtime--edge-if-present
  */
 
+// import type { ServerRuntime } from 'next/types'
+// export const runtime: ServerRuntime = 'edge'
+
 export const dynamic = 'force-static'
 
 export async function GET() {
