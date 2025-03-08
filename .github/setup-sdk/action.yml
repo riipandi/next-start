@@ -32,9 +32,11 @@ runs:
         run_install: |
           - args: [--global, node-jq]
 
-    - name: Get pnpm store directory
-      run: echo "PNPM_STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+    - name: Post-install hook
       shell: bash
+      run: |
+        pnpm approve-builds --global
+        echo "PNPM_STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
     - uses: actions/cache@v4
       name: Setup pnpm cache
