@@ -24,8 +24,8 @@ jobs:
         with:
           nodeVersion: lts/*
 
-      - if: env.PNPM_CACHED != 'true'
-        name: Install dependencies
+      - name: Install dependencies
+        if: ${{ env.PNPM_CACHED }} != 'true'
         run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Cache Next.js build
