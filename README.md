@@ -14,11 +14,11 @@
 
 ## Introduction
 
-A minimal Next.js starter with Tailwind CSS v4 and TypeScript. Optionally, deploy to
+A minimal Next.js starter with Tailwind CSS and TypeScript. Optionally, deploy to
 [Cloudflare Workers](https://workers.cloudflare.com/) with [OpenNext](https://opennext.js.org/cloudflare)
 as an alternative to [Vercel](https://vercel.com) for fast, scalable hosting. This bare-bones
-Next.js template, powered by Tailwind CSS v4 and TypeScript, provides a solid foundation
-for building modern web applications with ease.
+Next.js template, powered by [Tailwind CSS v4](https://tailwindcss.com) and TypeScript,
+provides a solid foundation for building modern web applications with ease.
 
 ## Quick Start
 
