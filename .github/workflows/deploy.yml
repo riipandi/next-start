@@ -1,44 +1,43 @@
 name: Deploy
+
 on:
   push:
-    branches: main
+    branches: [main]
   pull_request:
-    branches: main
+    branches: [main]
+
+permissions:
+  id-token: write # Needed for auth with Deno Deploy
+  contents: read # Needed to clone the repository
 
 jobs:
   deploy:
-    name: Deploy
+    name: Deploy to Deno
     runs-on: ubuntu-latest
-
-    permissions:
-      id-token: write # Needed for auth with Deno Deploy
-      contents: read # Needed to clone the repository
-
     steps:
-      - name: Clone repository
-        uses: actions/checkout@v4
-
-      - name: Install Deno
-        uses: denoland/setup-deno@v2
+      - uses: actions/checkout@v4
         with:
-          deno-version: v2.x
+          fetch-depth: 0
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - name: Run actions/setup-sdk@local
+        uses: ./.github/setup-sdk
         with:
-          node-version: lts/*
+          nodeVersion: lts/*
 
-      - name: Install step
-        run: "npm install"
+      - if: ${{ steps.pnpm-cache.outputs.cache-hit != 'true' }}
+        name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
 
-      - name: Build step
-        run: "npm run build"
+      - name: Build the application
+        run: |
+          pnpm run build
+          echo "BUILD_SUCCESS=$([ -d ".next" ] && echo "true" || echo "false")" >> $GITHUB_ENV
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
+        if: env.BUILD_SUCCESS == 'true'
         with:
-          project: "next-start"
+          project: 'next-start' # Your project name
           entrypoint: "jsr:@deno/nextjs-start"
           root: "."
           include: .next, public
-          
