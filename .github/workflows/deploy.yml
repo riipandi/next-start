@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   deploy:
-    name: Deploy to Deno
+    name: Deno Deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,16 +28,26 @@ jobs:
         name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
 
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.STORE_PATH }}
+            ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.mjs', '**/*.ts', '**/*.tsx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
       - name: Build the application
         run: |
           pnpm run build
           echo "BUILD_SUCCESS=$([ -d ".next" ] && echo "true" || echo "false")" >> $GITHUB_ENV
 
-      - name: Upload to Deno Deploy
-        uses: denoland/deployctl@v1
-        if: env.BUILD_SUCCESS == 'true'
-        with:
-          project: 'next-start' # Your project name
-          entrypoint: "jsr:@deno/nextjs-start"
-          root: "."
-          include: .next, public
+      # - name: Upload to Deno Deploy
+      #   uses: denoland/deployctl@v1
+      #   if: env.BUILD_SUCCESS == 'true'
+      #   with:
+      #     project: 'next-start' # Your project name
+      #     entrypoint: "jsr:@deno/nextjs-start"
+      #     root: "."
+      #     include: .next, public
