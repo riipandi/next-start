@@ -30,7 +30,7 @@ runs:
       with:
         version: ${{ inputs.pnpmVersion }}
         run_install: |
-          - args: [--global, node-jq]
+          - args: [--global, node-jq, turbo]
 
     - name: Get pnpm store directory
       run: echo "PNPM_STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
