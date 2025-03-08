@@ -29,13 +29,19 @@ Next.js template provides a solid foundation for building modern web application
 
 ### Installation
 
-**Using pnpm (recomended):**
+**Using `tiged` (recomended):**
+
+```sh
+pnpm dlx tiged riipandi/next-start myapp-name
+```
+
+**Using `create-next-app` with pnpm:**
 
 ```sh
 pnpm create next-app@latest myapp-name --use-pnpm -e https://github.com/riipandi/next-start
 ```
 
-**If you want to use npm instead:**
+**Using `create-next-app` with npm:**
 
 ```sh
 npx create-next-app myapp-name --use-npm -e https://github.com/riipandi/next-start
