@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="container relative mx-auto px-4 py-16">
-      <main className="flex min-h-[80vh] flex-col items-center justify-center space-y-16">
+    <div className="container relative mx-auto h-full min-h-screen px-4 py-16">
+      <div className="flex min-h-[80vh] flex-col items-center justify-center space-y-12">
         {/* Logo with floating animation */}
         <div className="animate-float">
           <Image
@@ -28,7 +28,7 @@ export default function Page() {
         <ol className="max-w-xl space-y-4 text-center font-medium font-mono text-gray-700 dark:text-gray-300">
           <li className="animate-fade-in">
             Get started by editing{' '}
-            <code className="inline-block rounded-lg bg-gradient-to-r from-gray-100 to-gray-50 px-3 py-1 font-semibold text-gray-900 dark:from-gray-800 dark:to-gray-900 dark:text-gray-100">
+            <code className="inline-block rounded-lg bg-gradient-to-r from-gray-200/80 to-gray-100/80 px-3 py-1 font-semibold text-gray-900 text-sm dark:from-gray-800 dark:to-gray-900 dark:text-gray-100">
               src/app/page.tsx
             </code>
           </li>
@@ -38,45 +38,41 @@ export default function Page() {
         </ol>
 
         {/* Action buttons with organic hover effect */}
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-5">
           <Link
             href="https://vercel.com/new/clone?repository-url=https://github.com/riipandi/next-start&project-name=next-start&repo-name=next-start&env=NEXT_PUBLIC_BASE_URL"
-            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-3 text-white transition-all duration-300 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)]"
             newTab
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 transition-opacity group-hover:opacity-100" />
-            <span className="relative flex items-center gap-2 font-medium">
-              <Image
-                className="dark:invert"
-                src="/images/vercel.svg"
-                alt="Vercel logomark"
-                width={20}
-                height={20}
-              />
-              Deploy now
-            </span>
+            <img
+              src="https://vercel.com/button"
+              className="h-10 w-auto transition-transform duration-300 ease-in-out hover:scale-105"
+              alt="Deploy with Vercel"
+            />
           </Link>
           <Link
-            href="https://nextjs.org/docs"
-            className="relative rounded-full px-8 py-3 font-medium text-gray-700 transition-all duration-300 after:absolute after:inset-0 after:rounded-full after:border after:border-gray-300 after:transition-transform hover:text-gray-900 hover:after:scale-110 dark:text-gray-300 dark:hover:text-white dark:after:border-gray-600"
+            href="https://deploy.workers.cloudflare.com/?url=https://github.com/riipandi/next-start"
             newTab
           >
-            Read the docs
+            <img
+              src="https://deploy.workers.cloudflare.com/button"
+              className="h-10 w-auto transition-transform duration-300 ease-in-out hover:scale-105"
+              alt="Deploy to Cloudflare Workers"
+            />
           </Link>
         </div>
-      </main>
+      </div>
 
       {/* Floating footer */}
-      <footer className="absolute right-0 bottom-8 left-0">
+      <footer className="absolute right-0 bottom-0 left-0 py-12">
         <div className="flex flex-wrap justify-center gap-12 text-gray-600 dark:text-gray-400">
           {[
             {
-              text: 'Learn',
+              text: 'Learn Next.js',
               icon: 'file',
               href: 'https://nextjs.org/learn?utm_source=next-start&utm_medium=appdir-template-tw&utm_campaign=next-start',
             },
             {
-              text: 'Examples',
+              text: 'Templates',
               icon: 'window',
               href: 'https://vercel.com/templates?framework=next.js&utm_source=next-start&utm_medium=appdir-template-tw&utm_campaign=next-start',
             },
