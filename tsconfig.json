@@ -19,7 +19,7 @@
         "resolveJsonModule": true,
         "skipLibCheck": true,
         "strict": true,
-        "target": "ES2017",
+        "target": "ES2022",
         "tsBuildInfoFile": ".next/tsbuildinfo",
         "types": ["@cloudflare/workers-types/2023-07-01"],
         "verbatimModuleSyntax": true,

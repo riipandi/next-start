@@ -5,14 +5,14 @@
 /* @variant dark (&:where([data-theme="dark"] *)); */
 
 @theme inline {
-  /* @see: https://github.com/tailwindlabs/tailwindcss/discussions/13410#discussioncomment-11928917 */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    /* @see: https://github.com/tailwindlabs/tailwindcss/discussions/13410#discussioncomment-11928917 */
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
 /* Debug element */
 @utility debug {
-  border-width: 1px;
-  border-style: dashed;
-  border-color: #f87171;
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #f87171;
 }

@@ -15,7 +15,9 @@
             "recommended": true,
             "a11y": {
                 "noSvgWithoutTitle": "off",
-                "useKeyWithClickEvents": "off"
+                "useKeyWithClickEvents": "off",
+                "useSemanticElements": "off",
+                "useValidAnchor": "off"
             },
             "complexity": {
                 "noBannedTypes": "off",
@@ -30,16 +32,17 @@
                     "level": "warn",
                     "fix": "none"
                 },
-                "useJsxKeyInIterable": "error",
-                "noUnknownFunction": "off"
+                "noChildrenProp": "off",
+                "noUnknownFunction": "off",
+                "useJsxKeyInIterable": "error"
             },
             "nursery": {
                 "useSortedClasses": {
                     "level": "warn",
                     "fix": "safe",
                     "options": {
-                        "attributes": ["class", "className"],
-                        "functions": ["cn", "clx", "clsx", "cva", "tv", "tw"]
+                        "attributes": ["classList", "className", "style"],
+                        "functions": ["clsx", "clx", "cn", "cva", "tv", "tw"]
                     }
                 }
             },
@@ -51,11 +54,13 @@
                 "noDangerouslySetInnerHtml": "off"
             },
             "style": {
+                "noNonNullAssertion": "off",
+                "noParameterAssign": "warn",
                 "noUnusedTemplateLiteral": "off",
                 "useConsistentArrayType": "warn",
                 "useExportType": "warn",
                 "useImportType": {
-                    "level": "off",
+                    "level": "warn",
                     "fix": "none"
                 },
                 "useFilenamingConvention": {
@@ -66,7 +71,7 @@
                 }
             },
             "suspicious": {
-                "noArrayIndexKey": "error",
+                "noArrayIndexKey": "warn",
                 "noAssignInExpressions": "off",
                 "noCommentText": "off",
                 "noConsoleLog": {
@@ -110,7 +115,6 @@
         },
         "formatter": {
             "enabled": true,
-            "indentWidth": 2,
             "quoteStyle": "double"
         }
     },
@@ -121,7 +125,7 @@
             "jsxQuoteStyle": "double",
             "arrowParentheses": "always",
             "semicolons": "asNeeded",
-            "trailingCommas": "es5",
+            "trailingCommas": "all",
             "quoteProperties": "asNeeded",
             "bracketSpacing": true,
             "bracketSameLine": false
