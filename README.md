@@ -1,14 +1,14 @@
 # Next.js starter template
 
 <p align="left">
-    <a href="https://github.com/riipandi/next-start/pulse">
-        <img src="https://img.shields.io/badge/Contributions-welcome-gray.svg" alt="Contribution">
+    <a href="https://aris.mit-license.org">
+        <img src="https://img.shields.io/github/license/riipandi/next-start" alt="License">
     </a>
     <a href="https://github.com/riipandi/next-start">
         <img src="https://img.shields.io/github/languages/top/riipandi/next-start" alt="Top language">
     </a>
-    <a href="https://aris.mit-license.org">
-        <img src="https://img.shields.io/github/license/riipandi/next-start" alt="License">
+    <a href="https://github.com/riipandi/next-start/pulse">
+        <img src="https://img.shields.io/badge/Contributions-welcome-gray.svg" alt="Contribution">
     </a>
 </p>
 
