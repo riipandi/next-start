@@ -48,7 +48,7 @@ npx create-next-app myapp-name --use-npm -e https://github.com/riipandi/next-sta
 
 Application will run at `http://localhost:3000`
 
-For detailed explanation on how things work, check out [Next.js docs](https://nextjs.org/docs/getting-started).
+For detailed explanation on how things work, check out [Next.js docs][nextjs-docs].
 
 - [Next.js app router playground][nextjs-playground] - learn more about Next.js app directory.
 - [Dynamic Metadata][nextjs-metadata] - learn more about SEO using dynamic metadata.
@@ -110,6 +110,7 @@ See the [license file](./LICENSE) for more information.
 [biome-vscode]: https://marketplace.visualstudio.com/items?itemName=biomejs.biome
 [cf-pages]: https://developers.cloudflare.com/pages/platform/build-configuration
 [cf-workers]: https://workers.cloudflare.com
+[nextjs-docs]: https://nextjs.org/docs/getting-started
 [nextjs-metadata]: https://nextjs.org/blog/next-13-2#built-in-seo-support-with-new-metadata-api
 [nextjs-playground]: https://github.com/vercel/app-playground
 [open-next]: https://opennext.js.org/cloudflare
