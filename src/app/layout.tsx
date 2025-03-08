@@ -2,11 +2,11 @@
 import '../styles/global.css'
 
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { JetBrains_Mono, Mona_Sans } from 'next/font/google'
 import { clx } from '#/lib/utils'
 
-const fontSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
-const fontMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
+const fontSans = Mona_Sans({ variable: '--font-sans', subsets: ['latin'] })
+const fontMono = JetBrains_Mono({ variable: '--font-mono', subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Next Start',

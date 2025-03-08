@@ -25,10 +25,10 @@ export default function Page() {
         </div>
 
         {/* Instructions with staggered fade-in */}
-        <ol className="max-w-xl space-y-4 text-center font-medium font-mono text-gray-700 dark:text-gray-300">
+        <ol className="max-w-xl space-y-4 text-left font-medium font-sans text-gray-700 tracking-wide dark:text-gray-300">
           <li className="animate-fade-in">
-            Get started by editing{' '}
-            <code className="inline-block rounded-lg bg-gradient-to-r from-gray-200/80 to-gray-100/80 px-3 py-1 font-semibold text-gray-900 text-sm dark:from-gray-800 dark:to-gray-900 dark:text-gray-100">
+            Get started by editing
+            <code className="ml-2 inline-block rounded-sm bg-gradient-to-r from-gray-200/80 to-gray-100/80 px-2 py-0.5 font-medium text-gray-900 text-sm tracking-normal dark:from-gray-800 dark:to-gray-900 dark:text-gray-100">
               src/app/page.tsx
             </code>
           </li>
@@ -38,14 +38,14 @@ export default function Page() {
         </ol>
 
         {/* Action buttons with organic hover effect */}
-        <div className="flex flex-wrap justify-center gap-5">
+        <div className="-mt-1 flex flex-wrap justify-center gap-5">
           <Link
             href="https://vercel.com/new/clone?repository-url=https://github.com/riipandi/next-start&project-name=next-start&repo-name=next-start&env=NEXT_PUBLIC_BASE_URL"
             newTab
           >
             <img
               src="https://vercel.com/button"
-              className="h-10 w-auto transition-transform duration-300 ease-in-out hover:scale-105"
+              className="h-9 w-auto transition-transform duration-300 ease-in-out hover:scale-105"
               alt="Deploy with Vercel"
             />
           </Link>
@@ -55,7 +55,7 @@ export default function Page() {
           >
             <img
               src="https://deploy.workers.cloudflare.com/button"
-              className="h-10 w-auto transition-transform duration-300 ease-in-out hover:scale-105"
+              className="h-9 w-auto transition-transform duration-300 ease-in-out hover:scale-105"
               alt="Deploy to Cloudflare Workers"
             />
           </Link>
@@ -85,7 +85,7 @@ export default function Page() {
             <Link
               key={text}
               href={href}
-              className="group flex items-center gap-2 transition-colors duration-300 hover:text-gray-900 dark:hover:text-gray-200"
+              className="group flex items-center gap-2 font-medium text-sm transition-colors duration-300 hover:text-gray-900 dark:hover:text-gray-200"
               newTab
             >
               <Image

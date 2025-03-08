@@ -35,7 +35,7 @@
         "@eslint/eslintrc": "^3.3.0",
         "@opennextjs/cloudflare": "0.5.x",
         "@tailwindcss/postcss": "^4.0.12",
-        "@types/node": "22.13.9",
+        "@types/node": "22.13.10",
         "@types/react": "^19.0.10",
         "@types/react-dom": "^19.0.4",
         "eslint": "^9.22.0",
