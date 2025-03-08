@@ -3,7 +3,7 @@ import '../styles/global.css'
 
 import type { Metadata } from 'next'
 import { JetBrains_Mono, Mona_Sans } from 'next/font/google'
-import { clx } from '#/lib/utils'
+import { cn } from 'twistail-utils'
 
 const fontSans = Mona_Sans({ variable: '--font-sans', subsets: ['latin'] })
 const fontMono = JetBrains_Mono({ variable: '--font-mono', subsets: ['latin'] })
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<React.PropsWithChildren>) {
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
-      <body className={clx(fontSans.variable, fontMono.variable, 'font-sans antialiased')}>
+      <body className={cn(fontSans.variable, fontMono.variable, 'font-sans antialiased')}>
         {children}
       </body>
     </html>

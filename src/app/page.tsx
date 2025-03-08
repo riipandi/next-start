@@ -43,20 +43,22 @@ export default function Page() {
             href="https://vercel.com/new/clone?repository-url=https://github.com/riipandi/next-start&project-name=next-start&repo-name=next-start&env=NEXT_PUBLIC_BASE_URL"
             newTab
           >
-            <img
+            <Image
               src="https://vercel.com/button"
               className="h-9 w-auto transition-transform duration-300 ease-in-out hover:scale-105"
               alt="Deploy with Vercel"
+              unoptimized
             />
           </Link>
           <Link
             href="https://deploy.workers.cloudflare.com/?url=https://github.com/riipandi/next-start"
             newTab
           >
-            <img
+            <Image
               src="https://deploy.workers.cloudflare.com/button"
               className="h-9 w-auto transition-transform duration-300 ease-in-out hover:scale-105"
               alt="Deploy to Cloudflare Workers"
+              unoptimized
             />
           </Link>
         </div>

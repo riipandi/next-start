@@ -42,7 +42,7 @@
                     "fix": "safe",
                     "options": {
                         "attributes": ["classList", "className", "style"],
-                        "functions": ["clsx", "clx", "cn", "cva", "tv", "tw"]
+                        "functions": ["clsx", "cn", "cx", "cva", "tv", "tw"]
                     }
                 }
             },
