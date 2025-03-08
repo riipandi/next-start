@@ -46,11 +46,11 @@ jobs:
           pnpm run build
           echo "BUILD_SUCCESS=$([ -d ".next" ] && echo "true" || echo "false")" >> $GITHUB_ENV
 
-      # - name: Upload to Deno Deploy
-      #   uses: denoland/deployctl@v1
-      #   if: env.BUILD_SUCCESS == 'true'
-      #   with:
-      #     project: 'next-start' # Your project name
-      #     entrypoint: "jsr:@deno/nextjs-start"
-      #     root: "."
-      #     include: .next, public
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
+        if: ${{ env.BUILD_SUCCESS }} == 'true'
+        with:
+          project: 'next-start' # Your project name
+          entrypoint: "jsr:@deno/nextjs-start"
+          root: "."
+          include: .next, public
