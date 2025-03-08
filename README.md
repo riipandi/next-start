@@ -14,7 +14,11 @@
 
 ## Introduction
 
-Super simple starter project for [Next.js](https://nextjs.org) with [Tailwind CSS v4](https://tailwindcss.com) and [Typescript](https://www.typescriptlang.org).
+A minimal Next.js starter with Tailwind CSS v4 and TypeScript. Optionally, you can use OpenNext
+to deploy your project to Cloudflare Workers for a fast and scalable hosting solution.
+
+This starter pack provides a solid foundation for building modern web applications, with the power
+of Next.js, the styling flexibility of Tailwind CSS, and the convenience of TypeScript.
 
 ## Quick Start
 
