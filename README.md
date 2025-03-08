@@ -19,6 +19,12 @@ You can deploy this project to [Cloudflare Workers][cf-workers] as a fast and sc
 alternative to [Vercel][vercel] by enabling the [OpenNext][open-next] feature. This bare-bones
 Next.js template provides a solid foundation for building modern web applications with ease.
 
+**Explore the Demos:**
+
+- Vercel: <https://next-start.vercel.app>
+- Cloudflare Workers: <https://next-start.airis.workers.dev>
+<!-- - Deno Deploy: <https://next-start.deno.dev> -->
+
 ## Quick Start
 
 ### Installation
