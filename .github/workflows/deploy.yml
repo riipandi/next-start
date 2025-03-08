@@ -1,56 +1,44 @@
 name: Deploy
-
 on:
   push:
-    branches: [main]
+    branches: main
   pull_request:
-    branches: [main]
-
-permissions:
-  id-token: write # Needed for auth with Deno Deploy
-  contents: read # Needed to clone the repository
+    branches: main
 
 jobs:
   deploy:
-    name: Deno Deploy
+    name: Deploy
     runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write # Needed for auth with Deno Deploy
+      contents: read # Needed to clone the repository
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Install Deno
+        uses: denoland/setup-deno@v2
         with:
-          fetch-depth: 0
+          deno-version: v1.x
 
-      - name: Run actions/setup-sdk@local
-        uses: ./.github/setup-sdk
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          nodeVersion: lts/*
+          node-version: lts/*
 
-      - name: Install dependencies
-        if: ${{ env.PNPM_CACHED }} != 'true'
-        run: |
-          pnpm install --frozen-lockfile --ignore-scripts
-          pnpm approve-builds
+      - name: Install step
+        run: "pnpm install --frozen-lockfile --ignore-scripts"
 
-      - name: Cache Next.js build
-        uses: actions/cache@v4
+      - name: Build step
+        run: "pnpm build"
+
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
         with:
-          path: |
-            ${{ env.PNPM_STORE_PATH }}
-            ${{ github.workspace }}/.next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.mjs', '**/*.ts', '**/*.tsx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
-
-      - name: Build the application
-        run: |
-          pnpm run build
-          echo "BUILD_SUCCESS=$([ -d ".next" ] && echo "true" || echo "false")" >> $GITHUB_ENV
-
-      # - name: Upload to Deno Deploy
-      #   uses: denoland/deployctl@v1
-      #   if: env.BUILD_SUCCESS == 'true'
-      #   with:
-      #     project: 'next-start' # Your project name
-      #     entrypoint: "jsr:@deno/nextjs-start"
-      #     root: "."
-      #     include: .next, public
+          project: "next-start"
+          entrypoint: "jsr:@deno/nextjs-start"
+          root: "."
+          
+          
