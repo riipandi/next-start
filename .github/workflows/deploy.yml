@@ -24,14 +24,15 @@ jobs:
         with:
           nodeVersion: lts/*
 
-      - if: ${{ steps.pnpm-cache.outputs.cache-hit != 'true' }}
+      - if: env.PNPM_CACHED != 'true'
         name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
 
-      - uses: actions/cache@v4
+      - name: Cache Next.js build
+        uses: actions/cache@v4
         with:
           path: |
-            ${{ env.STORE_PATH }}
+            ${{ env.PNPM_STORE_PATH }}
             ${{ github.workspace }}/.next/cache
           # Generate a new cache whenever packages or source files change.
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.mjs', '**/*.ts', '**/*.tsx') }}

@@ -33,15 +33,20 @@ runs:
           - args: [--global, node-jq]
 
     - name: Get pnpm store directory
+      run: echo "PNPM_STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
       shell: bash
-      run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
     - uses: actions/cache@v4
       name: Setup pnpm cache
+      id: pnpm-cache
       with:
-        path: ${{ env.STORE_PATH }}
+        path: ${{ env.PNPM_STORE_PATH }}
         key: ${{ runner.os }}-pnpm-store-node-${{ inputs.nodeVersion }}-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: ${{ runner.os }}-pnpm-store-node-${{ inputs.nodeVersion }}-
+
+    - if: ${{ steps.pnpm-cache.outputs.cache-hit != 'true' }}
+      run: echo "PNPM_CACHED=$([ -d "node_modules" ] && echo "true" || echo "false")" >> $GITHUB_ENV
+      shell: bash
 
     - uses: denoland/setup-deno@v2
       name: Install Deno v2
