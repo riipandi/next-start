@@ -14,10 +14,9 @@
 
 ## Introduction
 
-A minimal Next.js starter with Tailwind CSS and TypeScript. Optionally, deploy to
-[Cloudflare Workers](https://workers.cloudflare.com/) with [OpenNext](https://opennext.js.org/cloudflare)
-as an alternative to [Vercel](https://vercel.com) for fast, scalable hosting. This bare-bones
-Next.js template, powered by [Tailwind CSS v4](https://tailwindcss.com) and TypeScript,
+A minimal Next.js starter with Tailwind CSS and TypeScript. Optionally, deploy to [Cloudflare Workers][cf-workers]
+with [OpenNext][open-next] as an alternative to [Vercel][vercel] for fast, scalable hosting.
+This bare-bones Next.js template, powered by [Tailwind CSS v4][tailwindcss] and [TypeScript][typescript],
 provides a solid foundation for building modern web applications with ease.
 
 ## Quick Start
@@ -51,8 +50,8 @@ Application will run at `http://localhost:3000`
 
 For detailed explanation on how things work, check out [Next.js docs](https://nextjs.org/docs/getting-started).
 
-- [Next.js app router playground](https://github.com/vercel/app-playground) - learn more about Next.js app directory.
-- [Dynamic Metadata](https://nextjs.org/blog/next-13-2#built-in-seo-support-with-new-metadata-api) - learn more about SEO using dynamic metadata.
+- [Next.js app router playground][nextjs-playground] - learn more about Next.js app directory.
+- [Dynamic Metadata][nextjs-metadata] - learn more about SEO using dynamic metadata.
 
 ## Deploy Your Own
 
@@ -78,8 +77,8 @@ If you are using monorepo you will need to configure a few things:
 
 #### Cloudflare Deployment
 
-You need to add `NODE_VERSION` with value `20.18.0` or greater than version 20 on the environment variables setting.
-Visit [Cloudflare pages docs](https://developers.cloudflare.com/pages/platform/build-configuration/) for more information.
+You need to add `NODE_VERSION` with value `20.18.0` or greater than version 20 on the
+environment variables setting. Visit [Cloudflare pages docs][cf-pages] for more information.
 
 For the preview branch:
 
@@ -89,9 +88,9 @@ NEXT_PUBLIC_BASE_URL=${CF_PAGES_URL}
 
 ## Development
 
-This project uses TypeScript for type checking, [Biome](https://biomejs.dev) for code formatting
+This project uses TypeScript for type checking, [Biome][biome] for code formatting
 and linting which is configured in [`biome.json`](./biome.json). It's recommended to get TypeScript
-set up for your editor and install an editor plugin (like the [VSCode Biome plugin](https://marketplace.visualstudio.com/items?itemName=biomejs.biome))
+set up for your editor and install an editor plugin (like the [VSCode Biome plugin][biome-vscode])
 to get auto-formatting on saving and get a really great in-editor experience with type checking
 and auto-complete.
 
@@ -105,3 +104,15 @@ See the [license file](./LICENSE) for more information.
 ---
 
 <sub>🤫 Psst! If you like my work you can support me via [GitHub sponsors](https://github.com/sponsors/riipandi).</sub>
+
+<!-- link reference definition -->
+[biome]: https://biomejs.dev
+[biome-vscode]: https://marketplace.visualstudio.com/items?itemName=biomejs.biome
+[cf-pages]: https://developers.cloudflare.com/pages/platform/build-configuration
+[cf-workers]: https://workers.cloudflare.com
+[nextjs-metadata]: https://nextjs.org/blog/next-13-2#built-in-seo-support-with-new-metadata-api
+[nextjs-playground]: https://github.com/vercel/app-playground
+[open-next]: https://opennext.js.org/cloudflare
+[tailwindcss]: https://tailwindcss.com
+[typescript]: https://www.typescriptlang.org
+[vercel]: https://vercel.com
