@@ -9,7 +9,7 @@
         "start": "next start",
         "preview": "wrangler dev",
         "deploy": "wrangler deploy",
-        "build:workers": "opennextjs-cloudflare",
+        "build:workers": "opennextjs-cloudflare build",
         "typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
         "cleanup": "pnpm dlx del-cli .{next,open-next,wrangler} out",
         "update-deps": "npm-check-updates",
