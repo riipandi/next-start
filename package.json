@@ -19,34 +19,34 @@
         "typecheck": "tsc -b"
     },
     "dependencies": {
-        "consola": "^3.4.0",
-        "lucide-react": "^0.479.0",
-        "next": "15.2.1",
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
-        "std-env": "^3.8.1",
+        "consola": "^3.4.2",
+        "lucide-react": "^0.503.0",
+        "next": "15.3.1",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "std-env": "^3.9.0",
         "tailwind-variants": "^1.0.0",
-        "twistail-utils": "^0.0.3"
+        "twistail-utils": "^0.11.0"
     },
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",
-        "@cloudflare/workers-types": "^4.20250303.0",
-        "@eslint/eslintrc": "^3.3.0",
-        "@opennextjs/cloudflare": "0.5.x",
-        "@tailwindcss/postcss": "^4.0.12",
-        "@types/node": "22.13.10",
-        "@types/react": "^19.0.10",
-        "@types/react-dom": "^19.0.4",
-        "eslint": "^9.22.0",
-        "eslint-config-next": "15.2.1",
-        "npm-check-updates": "^17.1.15",
+        "@cloudflare/workers-types": "^4.20250422.0",
+        "@eslint/eslintrc": "^3.3.1",
+        "@opennextjs/cloudflare": "1.0.0-beta.3",
+        "@tailwindcss/postcss": "^4.1.4",
+        "@types/node": "22.14.1",
+        "@types/react": "^19.1.2",
+        "@types/react-dom": "^19.1.2",
+        "eslint": "^9.25.1",
+        "eslint-config-next": "15.3.1",
+        "npm-check-updates": "^18.0.0",
         "postcss": "^8.5.3",
-        "tailwindcss": "^4.0.12",
+        "tailwindcss": "^4.1.4",
         "tailwindcss-motion": "^1.1.0",
         "typescript": "5.7.3",
-        "wrangler": "^3.114.0"
+        "wrangler": "^4.12.1"
     },
-    "packageManager": "pnpm@10.6.1",
+    "packageManager": "pnpm@10.9.0",
     "pnpm": {
         "onlyBuiltDependencies": ["@biomejs/biome", "esbuild", "sharp"]
     }

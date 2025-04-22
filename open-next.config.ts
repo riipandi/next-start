@@ -1,35 +1,14 @@
 /**
  * OpenNext adapter configuration for Cloudflare Workers.
- *
  * @see: https://opennext.js.org/cloudflare
+ * @see: https://opennext.js.org/cloudflare/caching
  */
 
-import incrementalCache from '@opennextjs/cloudflare/kv-cache'
-import memoryQueue from '@opennextjs/cloudflare/memory-queue'
+import { defineCloudflareConfig } from '@opennextjs/cloudflare/config'
+import incrementalCache from '@opennextjs/cloudflare/overrides/incremental-cache/kv-incremental-cache'
+import memoryQueue from '@opennextjs/cloudflare/overrides/queue/memory-queue'
 
-const config = {
-  default: {
-    override: {
-      converter: 'edge',
-      wrapper: 'cloudflare-node',
-      incrementalCache: () => incrementalCache,
-      queue: () => memoryQueue,
-      tagCache: 'dummy',
-    },
-  },
-
-  middleware: {
-    external: true,
-    override: {
-      converter: 'edge',
-      wrapper: 'cloudflare-edge',
-      proxyExternalRequest: 'fetch',
-    },
-  },
-
-  dangerous: {
-    enableCacheInterception: false,
-  },
-}
-
-export default config
+export default defineCloudflareConfig({
+  incrementalCache: incrementalCache,
+  queue: () => memoryQueue,
+})
