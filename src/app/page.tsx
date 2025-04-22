@@ -38,7 +38,7 @@ export default function Page() {
         </ol>
 
         {/* Action buttons with organic hover effect */}
-        <div className="-mt-1 flex flex-wrap justify-center gap-5">
+        <div className="-mt-1 flex flex-wrap justify-center gap-4">
           <Link
             href="https://vercel.com/new/clone?repository-url=https://github.com/riipandi/next-start&project-name=next-start&repo-name=next-start&env=NEXT_PUBLIC_BASE_URL"
             newTab
@@ -47,7 +47,8 @@ export default function Page() {
               src="https://vercel.com/button"
               className="h-9 w-auto transition-transform duration-300 ease-in-out hover:scale-105"
               alt="Deploy with Vercel"
-              unoptimized
+              width={116}
+              height={36}
             />
           </Link>
           <Link
@@ -58,7 +59,8 @@ export default function Page() {
               src="https://deploy.workers.cloudflare.com/button"
               className="h-9 w-auto transition-transform duration-300 ease-in-out hover:scale-105"
               alt="Deploy to Cloudflare Workers"
-              unoptimized
+              width={170}
+              height={36}
             />
           </Link>
         </div>
@@ -93,10 +95,10 @@ export default function Page() {
               <Image
                 aria-hidden
                 src={`/images/${icon}.svg`}
+                className="transition-transform group-hover:scale-110"
                 alt={`${text} icon`}
                 width={16}
                 height={16}
-                className="transition-transform group-hover:scale-110"
               />
               <span className="relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all group-hover:after:w-full">
                 {text}
