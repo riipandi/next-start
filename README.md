@@ -89,7 +89,7 @@ If you are using monorepo you will need to configure a few things:
 
 #### Cloudflare Deployment
 
-You need to add `NODE_VERSION` with value `20.18.0` or greater than version 20 on the
+You need to add `NODE_VERSION` with value `20.19.1` or greater than version 20 on the
 environment variables setting. Visit [Cloudflare pages docs][cf-pages] for more information.
 
 For the preview branch:

@@ -30,7 +30,7 @@
         // "WRANGLER_SEND_METRICS": "false",
         // "NEXT_TELEMETRY_DISABLED": "1",
         // "COREPACK_INTEGRITY_KEYS": "0",
-        // "NODE_VERSION": "20.18.0",
-        // "PNPM_VERSION": "10.6.1"
+        // "NODE_VERSION": "20.19.1",
+        // "PNPM_VERSION": "10.9.0"
     }
 }
