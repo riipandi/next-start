@@ -2,13 +2,13 @@
 
 <p align="left">
     <a href="https://github.com/riipandi/next-start">
-        <img src="https://img.shields.io/github/languages/top/riipandi/next-start" alt="Top language">
+        <img src="https://img.shields.io/github/languages/top/riipandi/next-start?color=blue" alt="Top language">
     </a>
     <a href="https://aris.mit-license.org">
-        <img src="https://img.shields.io/github/license/riipandi/next-start" alt="License">
+        <img src="https://img.shields.io/github/license/riipandi/next-start?color=blue" alt="License">
     </a>
     <a href="https://github.com/riipandi/next-start/pulse">
-        <img src="https://img.shields.io/badge/Contributions-welcome-gray.svg" alt="Contribution">
+        <img src="https://img.shields.io/badge/Contributions-welcome-brightgreen.svg" alt="Contribution">
     </a>
 </p>
 
