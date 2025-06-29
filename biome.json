@@ -1,13 +1,29 @@
 {
-    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-    "organizeImports": {
-        "enabled": true
-    },
+    "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
     "vcs": {
         "enabled": true,
         "clientKind": "git",
         "useIgnoreFile": true,
         "defaultBranch": "main"
+    },
+    "files": {
+        "ignoreUnknown": true,
+        "includes": [
+            "**",
+            "!**/dist/**",
+            "!**/out/**",
+            "!.source/**",
+            "!.next/**",
+            "!.open-next/**",
+            "!.wrangler/**"
+        ]
+    },
+    "formatter": {
+        "enabled": true,
+        "formatWithErrors": false,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 100
     },
     "linter": {
         "enabled": true,
@@ -30,7 +46,10 @@
                 },
                 "noUnusedVariables": {
                     "level": "warn",
-                    "fix": "none"
+                    "fix": "none",
+                    "options": {
+                        "ignoreRestSiblings": true
+                    }
                 },
                 "noChildrenProp": "off",
                 "noUnknownFunction": "off",
@@ -41,7 +60,7 @@
                     "level": "warn",
                     "fix": "safe",
                     "options": {
-                        "attributes": ["classList", "className", "style"],
+                        "attributes": ["classList"],
                         "functions": ["clsx", "cn", "cx", "cva", "tv", "tw"]
                     }
                 }
@@ -56,12 +75,23 @@
             "style": {
                 "noNonNullAssertion": "off",
                 "noParameterAssign": "warn",
+                "useAsConstAssertion": "error",
+                "useDefaultParameterLast": "error",
+                "useEnumInitializers": "error",
+                "useSelfClosingElements": "error",
+                "useSingleVarDeclarator": "error",
                 "noUnusedTemplateLiteral": "off",
+                "useNumberNamespace": "error",
+                "noInferrableTypes": "error",
+                "noUselessElse": "error",
                 "useConsistentArrayType": "warn",
                 "useExportType": "warn",
                 "useImportType": {
-                    "level": "warn",
-                    "fix": "none"
+                    "level": "off",
+                    "fix": "none",
+                    "options": {
+                        "style": "auto"
+                    }
                 },
                 "useFilenamingConvention": {
                     "level": "off",
@@ -74,10 +104,6 @@
                 "noArrayIndexKey": "warn",
                 "noAssignInExpressions": "off",
                 "noCommentText": "off",
-                "noConsoleLog": {
-                    "level": "info",
-                    "fix": "none"
-                },
                 "noDebugger": "off",
                 "noExplicitAny": "off",
                 "noConsole": {
@@ -101,13 +127,18 @@
             }
         }
     },
-    "formatter": {
-        "enabled": true,
-        "formatWithErrors": false,
-        "indentStyle": "space",
-        "indentWidth": 4,
-        "lineWidth": 100,
-        "ignore": []
+    "javascript": {
+        "formatter": {
+            "indentWidth": 2,
+            "quoteStyle": "single",
+            "jsxQuoteStyle": "double",
+            "arrowParentheses": "always",
+            "semicolons": "asNeeded",
+            "trailingCommas": "es5",
+            "quoteProperties": "asNeeded",
+            "bracketSpacing": true,
+            "bracketSameLine": false
+        }
     },
     "css": {
         "parser": {
@@ -118,28 +149,18 @@
             "quoteStyle": "double"
         }
     },
-    "javascript": {
-        "formatter": {
-            "indentWidth": 2,
-            "quoteStyle": "single",
-            "jsxQuoteStyle": "double",
-            "arrowParentheses": "always",
-            "semicolons": "asNeeded",
-            "trailingCommas": "all",
-            "quoteProperties": "asNeeded",
-            "bracketSpacing": true,
-            "bracketSameLine": false
-        }
-    },
     "json": {
         "formatter": {
             "indentWidth": 4,
             "trailingCommas": "none"
         }
     },
-    "files": {
-        "ignoreUnknown": true,
-        "include": ["**/*.js", "**/*.mjs", "**/*.ts", "**/*.tsx", "**/*.css", "**/*.json"],
-        "ignore": [".github", ".next", ".source", ".open-next", ".wrangler", "out"]
+    "assist": {
+        "enabled": true,
+        "actions": {
+            "source": {
+                "organizeImports": "on"
+            }
+        }
     }
 }

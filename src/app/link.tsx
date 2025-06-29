@@ -11,8 +11,8 @@
  *
  */
 
-import { default as RouterLink } from 'next/link'
 import type { LinkProps as RouterLinkProps } from 'next/link'
+import { default as RouterLink } from 'next/link'
 import * as React from 'react'
 
 interface LinkProps extends Omit<RouterLinkProps, 'to'> {
@@ -21,7 +21,7 @@ interface LinkProps extends Omit<RouterLinkProps, 'to'> {
 
 const Link = React.forwardRef(function Component(
   props: LinkProps & React.ComponentPropsWithoutRef<'a'>,
-  ref: React.ForwardedRef<HTMLAnchorElement>,
+  ref: React.ForwardedRef<HTMLAnchorElement>
 ) {
   const { className, newTab, ...rest } = props
   const NEW_TAB_REL = 'noopener noreferrer'
