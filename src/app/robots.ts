@@ -13,7 +13,8 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      disallow: env.ALLOW_SEARCH_ENGINE_INDEXING ? DISALLOW_LIST : '*',
+      disallow: env.DISALLOW_SEARCH_ENGINE_INDEXING || DISALLOW_LIST,
+      allow: env.ALLOW_SEARCH_ENGINE_INDEXING || undefined,
     },
     sitemap: env.ALLOW_SEARCH_ENGINE_INDEXING ? `${baseUrl}/sitemap.xml` : undefined,
   }
