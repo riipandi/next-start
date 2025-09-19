@@ -28,9 +28,8 @@ export const errorStyles = tv({
     title: 'mt-4 font-bold text-3xl text-gray-900 tracking-tight sm:text-5xl dark:text-white',
     description: 'mt-6 font-medium text-base text-gray-600 leading-7 dark:text-gray-400',
     pre: [
-      'w-full overflow-x-auto rounded-lg bg-gray-50 p-4 dark:bg-gray-900',
-      'border border-gray-200 dark:border-gray-800',
-      'mt-6 shadow-sm dark:shadow-gray-900/50',
+      'mt-6 w-full max-w-3xl overflow-x-auto rounded-lg bg-gray-50 p-4 text-left dark:bg-gray-900',
+      'border border-gray-200 shadow-sm dark:border-gray-800 dark:shadow-gray-900/50',
     ],
     code: [
       'font-mono text-gray-800 text-sm dark:text-gray-200',
