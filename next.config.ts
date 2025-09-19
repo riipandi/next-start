@@ -16,7 +16,6 @@ const nextConfig: NextConfig = {
     remotePatterns: [{ protocol: 'https', hostname: '**' }],
     unoptimized: true,
   },
-  eslint: { ignoreDuringBuilds: true /* disable eslint on build */ },
 }
 
 export default nextConfig

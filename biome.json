@@ -1,5 +1,5 @@
 {
-    "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+    "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
     "vcs": {
         "enabled": true,
         "clientKind": "git",
@@ -8,15 +8,7 @@
     },
     "files": {
         "ignoreUnknown": true,
-        "includes": [
-            "**",
-            "!**/dist/**",
-            "!**/out/**",
-            "!.source/**",
-            "!.next/**",
-            "!.open-next/**",
-            "!.wrangler/**"
-        ]
+        "includes": ["**", "!**/dist", "!**/out", "!.source", "!.next", "!.open-next", "!.wrangler"]
     },
     "formatter": {
         "enabled": true,
@@ -42,7 +34,8 @@
             "correctness": {
                 "noUnusedImports": {
                     "level": "off",
-                    "fix": "none"
+                    "fix": "none",
+                    "options": {}
                 },
                 "noUnusedVariables": {
                     "level": "warn",
@@ -103,6 +96,7 @@
             "suspicious": {
                 "noArrayIndexKey": "warn",
                 "noAssignInExpressions": "off",
+                "noUnknownAtRules": "off",
                 "noCommentText": "off",
                 "noDebugger": "off",
                 "noExplicitAny": "off",
