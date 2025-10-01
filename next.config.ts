@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [{ protocol: 'https', hostname: '**' }],
     unoptimized: true,
   },
+  output: 'standalone',
 }
 
 export default nextConfig
