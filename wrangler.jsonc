@@ -14,9 +14,7 @@
     "name": "next-start",
     "main": ".open-next/worker.js",
     "compatibility_date": "2025-09-15",
-    "compatibility_flags": [
-        "nodejs_compat"
-    ],
+    "compatibility_flags": ["nodejs_compat"],
     "minify": true,
     "assets": {
         "binding": "ASSETS",

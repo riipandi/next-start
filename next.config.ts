@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   output: 'standalone',
+  turbopack: undefined,
 }
 
 export default nextConfig

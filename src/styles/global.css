@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "tailwindcss-motion";
 
 /* Uncomment this line to enable dark mode via a data-theme attribute */
 /* @variant dark (&:where([data-theme="dark"] *)); */
